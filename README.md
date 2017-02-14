@@ -1,0 +1,2 @@
+# Bambu-Shoot
+Bambú Shoot is a cross-platform app developed with the mindset of being used as a research tool for measuring properties of bamboo cross sections. This will allow researchers to measure and caracterized bamboo out  on the field with low budget equipment. The app will work on Windows and Android using image processing modules such  as color filtering, edge detection, fiber counting and fiber density. The result will be a data table and density  graph of the processed bamboo.
