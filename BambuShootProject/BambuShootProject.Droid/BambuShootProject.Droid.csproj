@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,7 +14,7 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AssemblyName>BambuShootProject.Droid</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -62,8 +62,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
   </ItemGroup>
-<<<<<<< HEAD
-=======
+
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\BambuShootIcon.png" />
   </ItemGroup>
@@ -79,7 +78,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\BambuShootIcon.png" />
   </ItemGroup>
->>>>>>> f438fb7b8cd705a2dc2955d04c17e146fd6cb625
+
   <Import Project="..\BambuShootProject\BambuShootProject.projitems" Label="Shared" Condition="Exists('..\BambuShootProject\BambuShootProject.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

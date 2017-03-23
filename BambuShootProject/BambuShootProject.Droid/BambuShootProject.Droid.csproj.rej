@@ -1,0 +1,10 @@
+diff a/BambuShootProject/BambuShootProject.Droid/BambuShootProject.Droid.csproj b/BambuShootProject/BambuShootProject.Droid/BambuShootProject.Droid.csproj	(rejected hunks)
+@@ -62,6 +62,6 @@
+     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+   </ItemGroup>
+-      <Import Project="..\BambuShootProject\BambuShootProject.projitems" Label="Shared" Condition="Exists('..\BambuShootProject\BambuShootProject.projitems')" />
++  <Import Project="..\BambuShootProject\BambuShootProject.projitems" Label="Shared" Condition="Exists('..\BambuShootProject\BambuShootProject.projitems')" />
+   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+ </Project>
+\ No newline at end of file
