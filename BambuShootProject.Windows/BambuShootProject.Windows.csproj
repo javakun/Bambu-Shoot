@@ -108,10 +108,12 @@
     <None Include="BambuShootProject.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\bambuclose.jpeg" />
+    <Content Include="Assets\LOGO.jpg" />
+    <Content Include="Assets\moso-transverse-surface.jpg" />
     <Content Include="Assets\zukulento.jpg" />
     <Content Include="Assets\Image1.png" />
     <Content Include="Assets\Image2.png" />
-    <Content Include="Assets\LOGO.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
   </ItemGroup>
