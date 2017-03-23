@@ -10,4 +10,24 @@
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:id="@+id/BambuShootLogo" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout1">
+        <ImageView
+            android:src="@drawable/Image1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:id="@+id/Image1" />
+   
+        <ImageView
+        android:src="@drawable/Image2"
+        android:scaleType="fitCenter"
+        android:id="@+id/Image2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </FrameLayout>
 </LinearLayout>
