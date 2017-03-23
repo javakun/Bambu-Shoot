@@ -7,8 +7,9 @@
     android:minWidth="25px"
     android:minHeight="25px">
     <ImageView
-        android:src="@android:drawable/BambuShootIcon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/BambuShootIcon" />
+        android:src="@images/LOGOBambuShoot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:id="@+id/BambuShootLogo" />
 </LinearLayout>
