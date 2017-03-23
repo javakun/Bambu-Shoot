@@ -3,13 +3,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:background="@android:color/white">
     <ImageView
-        android:src="@images/LOGOBambuShoot"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:src="@drawable/LOGO_BambuShoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:id="@+id/BambuShootLogo" />
 </LinearLayout>

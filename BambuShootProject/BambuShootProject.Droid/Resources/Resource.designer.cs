@@ -50,6 +50,9 @@ namespace BambuShootProject.Droid
 			// aapt resource value: 0x7f020001
 			public const int Icon = 2130837505;
 			
+			// aapt resource value: 0x7f020002
+			public const int LOGO_BambuShoot = 2130837506;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -64,7 +67,7 @@ namespace BambuShootProject.Droid
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int BambuShootIcon = 2131034112;
+			public const int BambuShootLogo = 2131034112;
 			
 			static Id()
 			{
