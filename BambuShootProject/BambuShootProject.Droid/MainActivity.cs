@@ -34,6 +34,8 @@ namespace BambuShootProject.Droid
             Instructions_Dialog InstrucDialog = new Instructions_Dialog();
             InstrucDialog.Show(transaction,"dialog fragment");
         }
+
+
     }
 }
 
