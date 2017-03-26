@@ -9,21 +9,22 @@ using Android.OS;
 
 namespace BambuShootProject.Droid
 {
-	[Activity (Label = "BambuShootProject.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Bambú Shoot App", MainLauncher = true, Icon = "@drawable/BambuShootIcon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
+     
 
-		protected override void OnCreate (Bundle bundle)
+        protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
+           
 
-		
-		}
-	}
+
+        }
+    }
 }
 
 

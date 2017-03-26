@@ -1,33 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/background_light"
+    android:weightSum="100">
     <ImageView
         android:src="@drawable/LOGO_BambuShoot"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:id="@+id/BambuShootLogo" />
-    <FrameLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
+        android:layout_weight="20"
+        android:layout_height="113.0dp"
+        android:id="@+id/BambuShootLogo"
+        android:layout_marginBottom="0.0dp" />
+    <TextView
+        android:text="Instructions:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/frameLayout1">
-        <ImageView
-            android:src="@drawable/Image1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitCenter"
-            android:id="@+id/Image1" />
-   
-        <ImageView
-        android:src="@drawable/Image2"
-        android:scaleType="fitCenter"
-        android:id="@+id/Image2"
+        android:id="@+id/textView1"
+        android:textColor="@android:color/black"
+        android:layout_weight="50" />
+    <Button
+        android:text="Process New Image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/processnewimagebtn"
+        android:layout_weight="5" />
+    <Button
+        android:text="My Data Report Library"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mydatareportlibrarybtn"
+        android:layout_weight="5" />
+    <Button
+        android:text="Database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/databasebtn"
+        android:layout_weight="5" />
 </LinearLayout>

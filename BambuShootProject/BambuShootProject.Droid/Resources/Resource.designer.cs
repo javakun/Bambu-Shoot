@@ -45,13 +45,28 @@ namespace BambuShootProject.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int BambuShootIcon = 2130837504;
+			public const int BambuCrossSection = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int BambuShootIcon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int LOGO_BambuShoot = 2130837506;
+			public const int database = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Icon = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int Image1 = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int Image2 = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int LOGO_BambuShoot = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int test1 = 2130837511;
 			
 			static Drawable()
 			{
@@ -68,6 +83,18 @@ namespace BambuShootProject.Droid
 			
 			// aapt resource value: 0x7f050000
 			public const int BambuShootLogo = 2131034112;
+			
+			// aapt resource value: 0x7f050004
+			public const int databasebtn = 2131034116;
+			
+			// aapt resource value: 0x7f050003
+			public const int mydatareportlibrarybtn = 2131034115;
+			
+			// aapt resource value: 0x7f050002
+			public const int processnewimagebtn = 2131034114;
+			
+			// aapt resource value: 0x7f050001
+			public const int textView1 = 2131034113;
 			
 			static Id()
 			{

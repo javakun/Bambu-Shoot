@@ -87,7 +87,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\Image2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\moso-transverse-surface.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\BambuCrossSection.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\test1.jpg" />
