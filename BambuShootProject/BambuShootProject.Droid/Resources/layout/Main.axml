@@ -12,14 +12,12 @@
         android:layout_height="113.0dp"
         android:id="@+id/BambuShootLogo"
         android:layout_marginBottom="0.0dp" />
-    <TextView
-        android:text="Instructions:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+    <Button
+        android:text="Instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:textColor="@android:color/black"
-        android:layout_weight="50" />
+        android:id="@+id/instructionsbtn"
+        android:layout_weight="5" />
     <Button
         android:text="Process New Image"
         android:layout_width="match_parent"
@@ -37,5 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/databasebtn"
+        android:drawableLeft="@drawable/database"
         android:layout_weight="5" />
 </LinearLayout>
