@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="BambuShootProject.Windows.MainPage1"
+    x:Class="BambuShootProject.Windows.ImageLoadPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BambuShootProject.Windows"
@@ -10,7 +10,7 @@
     <Grid Background="White">
 
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Image Loading" VerticalAlignment="Top" Height="90" Width="1280" TextAlignment="Center" FontWeight="Bold" FontSize="60" FocusVisualSecondaryBrush="Black"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="454" Margin="672,132,0,0" VerticalAlignment="Top" Width="580" Source="Assets/zukulento.jpg"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="454" Margin="672,132,0,0" VerticalAlignment="Top" Width="580" Source="Assets/zukulento.jpg" Stretch="Fill"/>
         <Button x:Name="button" Content="Load" HorizontalAlignment="Left" Margin="739,610,0,0" VerticalAlignment="Top" Height="70" Width="230" Background="#F224D324" FontSize="24" FontWeight="Bold" Foreground="White"/>
         <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="312,610,0,0" VerticalAlignment="Top" Height="70" Width="230" Background="#F224D324" FontSize="24" FontWeight="Bold" Foreground="White"/>
         <Button x:Name="button2" Content="Choose File" HorizontalAlignment="Left" Margin="92,148,0,0" VerticalAlignment="Top" Width="103"/>

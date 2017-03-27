@@ -1,6 +1,6 @@
 ﻿<Page
-    x:Class="BambuShootProject.Windows.MainPage1"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="BambuShootProject.Windows.ImageCalibration"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BambuShootProject.Windows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -26,3 +26,4 @@
         <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="312,294,0,0" TextWrapping="Wrap" Text="2560 x 1920" VerticalAlignment="Top" Width="294" Height="45"/>
     </Grid>
 </Page>
+
