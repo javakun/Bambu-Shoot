@@ -14,7 +14,11 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+<<<<<<< HEAD
     <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+=======
+    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
+>>>>>>> 051c5dcaa8f3056963ab5c26b81a6b414036cc01
     <AssemblyName>BambuShootProject.Droid</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

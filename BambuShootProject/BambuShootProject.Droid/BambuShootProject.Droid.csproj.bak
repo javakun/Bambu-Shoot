@@ -113,6 +113,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\LOGO_BambuShoot.png" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Image1.png" />
   </ItemGroup>
@@ -143,5 +144,8 @@
       <Name>ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+=======
+  <Import Project="..\BambuShootProject\BambuShootProject.projitems" Label="Shared" Condition="Exists('..\BambuShootProject\BambuShootProject.projitems')" />
+>>>>>>> 051c5dcaa8f3056963ab5c26b81a6b414036cc01
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

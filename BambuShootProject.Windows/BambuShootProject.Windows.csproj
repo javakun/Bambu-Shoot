@@ -89,12 +89,20 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="ClassDiagram1.cd" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageCalibration.xaml.cs">
+      <DependentUpon>ImageCalibration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageLoadPage.xaml.cs">
+      <DependentUpon>ImageLoadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryListPage.xaml.cs">
+      <DependentUpon>LibraryListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -122,29 +130,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ImageCalibration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageLoadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LibraryListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="LoadImagePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CalibrationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DataReportLibraryPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\..\..\..\..\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.UI\obj\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\..\..\..\..\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.World\obj\Debug\Emgu.CV.World.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="..\BambuShootProject\BambuShootProject\BambuShootProject.projitems" Label="Shared" />
+=======
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
       <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
       <Name>ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+>>>>>>> 247bd7cbbe84a56ab1717cf4dcb6ba1fde532713
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
