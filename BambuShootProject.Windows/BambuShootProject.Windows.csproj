@@ -113,7 +113,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="BambuShootProject.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bambuclose.jpeg" />
@@ -148,22 +147,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Reference Include="Emgu.CV.UI">
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.UI\obj\Debug\Emgu.CV.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.World">
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.World\obj\Debug\Emgu.CV.World.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <Import Project="..\BambuShootProject\BambuShootProject\BambuShootProject.projitems" Label="Shared" />
-=======
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
       <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
       <Name>ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
->>>>>>> 247bd7cbbe84a56ab1717cf4dcb6ba1fde532713
+  <Import Project="..\BambuShootProject\BambuShootProject\BambuShootProject.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

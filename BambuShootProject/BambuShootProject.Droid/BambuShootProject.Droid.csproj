@@ -14,11 +14,8 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-<<<<<<< HEAD
     <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
-=======
     <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
->>>>>>> 051c5dcaa8f3056963ab5c26b81a6b414036cc01
     <AssemblyName>BambuShootProject.Droid</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -72,8 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Image_Load.cs" />
+    <Compile Include="MainApplication.cs" />
     <Compile Include="Instructions_Dialog.cs" />
+    <Compile Include="LoadImageActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

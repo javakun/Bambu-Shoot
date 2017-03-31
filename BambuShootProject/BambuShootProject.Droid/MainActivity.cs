@@ -1,5 +1,6 @@
 ﻿using System;
-
+using Android.Graphics;
+using Android.Content.PM;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -9,11 +10,12 @@ using Android.OS;
 
 namespace BambuShootProject.Droid
 {
-	[Activity (Label = "Bambú Shoot App", MainLauncher = true, Icon = "@drawable/BambuShootIcon")]
+	[Activity (Label = "Bambú Shoot", MainLauncher = true, Icon = "@drawable/BambuShootIcon", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation , ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
         private Button gBtnInstructions;            // Initialize Button as Global Variable
+        private Button gBtnLoadImage;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -21,9 +23,19 @@ namespace BambuShootProject.Droid
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
+            gBtnLoadImage = FindViewById<Button>(Resource.Id.processnewimagebtn);
+            gBtnLoadImage.Click += GBtnLoadImage_Click;
 
             gBtnInstructions = FindViewById<Button>(Resource.Id.instructionsbtn);   //Link Button variable with Axml button
             gBtnInstructions.Click += gBtnInstructions_Click;
+
+        }
+
+
+        private void GBtnLoadImage_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(LoadImageActivity));
+            this.StartActivity(intent);
 
         }
 
@@ -37,6 +49,7 @@ namespace BambuShootProject.Droid
 
 
     }
+
 }
 
 

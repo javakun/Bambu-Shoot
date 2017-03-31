@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@android:color/background_light"
-    android:weightSum="100"
     android:minWidth="25px"
-    android:minHeight="25px">
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+    android:minHeight="25px"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:id="@+id/LinearLayout1">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView1" />
+        android:id="@+id/linearLayout2">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/imageView1" />
+    </LinearLayout>
+    <Button
+        android:text="Select Image to Process (BMP or JPEG)"
+        android:id="@+id/addImageBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
