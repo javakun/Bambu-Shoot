@@ -6,46 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    android:id="@+id/LinearLayout1">
+    android:id="@+id/LinearLayoutinputcalibration1">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2">
+        android:id="@+id/linearLayoutinputcalibration2">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/imageView1" />
+            android:id="@+id/loadedimageview" />
     </LinearLayout>
-    <Button
-        android:text="Select Image to Process "
-        android:id="@+id/addImageBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10.0dp"
-        android:layout_marginRight="10.0dp" />
-    <EditText xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText_Username"
-        android:hint="@string/username_placeholder"
-        android:inputType="textAutoComplete"
-        android:maxLength="20"
-        android:textColor="#000"
-        android:background="@android:drawable/edit_text"
-        android:textColorHint="#000"
-        android:gravity="left" />
-    <EditText xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText_Imagetitle"
-        android:hint="@string/imagetitle_placeholder"
-        android:maxLength="20"
-        android:textColor="#000"
-        android:background="@android:drawable/edit_text"
-        android:textColorHint="#000"
-        android:gravity="left" />
     <EditText xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,4 +58,11 @@
         android:id="@+id/loadimageBtn"
         android:layout_marginLeft="10.0dp"
         android:layout_marginRight="10.0dp" />
+    <TextView
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/testingdata"
+        android:textColor="#000" />
 </LinearLayout>
