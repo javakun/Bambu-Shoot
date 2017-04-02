@@ -110,7 +110,7 @@ namespace BambuShootProject.Droid
 			public const int LinearLayout1 = 2131165193;
 			
 			// aapt resource value: 0x7f070000
-			public const int LinearLayout3 = 2131165184;
+			public const int LinearLayoutinputcalibration1 = 2131165184;
 			
 			// aapt resource value: 0x7f07000c
 			public const int addImageBtn = 2131165196;
@@ -143,7 +143,7 @@ namespace BambuShootProject.Droid
 			public const int linearLayout2 = 2131165194;
 			
 			// aapt resource value: 0x7f070001
-			public const int linearLayout4 = 2131165185;
+			public const int linearLayoutinputcalibration2 = 2131165185;
 			
 			// aapt resource value: 0x7f070002
 			public const int loadedimageview = 2131165186;
