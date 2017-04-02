@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">BambuShootProject.Droid</string>
+	<string name="app_name">Bambú Shoot</string>
+  <string name="username">User Name</string>
+  <string name="image_title">Image Title</string>
+  <string name="location">Location</string>
+  <string name="name_species">Name of Species</string>
+  <string name="date_harvest">Date of Harvest</string>
+  
+  
+  <string name="username_placeholder">Enter User Name </string>
+  <string name="imagetitle_placeholder">Enter Image Title </string>
+  <string name="location_placeholder">Enter Location</string>
+  <string name="name_species_placeholder">Enter Name of Species</string>
+  <string name="date_harvest_placeholder">Enter Date of Harvest</string>
+  
 </resources>

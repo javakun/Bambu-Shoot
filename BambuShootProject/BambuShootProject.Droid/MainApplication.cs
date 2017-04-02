@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Part of Media Plugin Library
+//Used to manage The activity lifecycles and Active Permission
+
+using System;
 
 using Android.App;
 using Android.OS;

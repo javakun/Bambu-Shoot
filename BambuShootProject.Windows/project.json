@@ -2,6 +2,7 @@
   "dependencies": {
     "Microsoft.Bcl.Build": "1.0.21",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
+    "Newtonsoft.Json": "10.0.1",
     "Xam.Plugin.Media": "2.6.2",
     "Xamarin.Forms": "2.3.3.193"
   },
