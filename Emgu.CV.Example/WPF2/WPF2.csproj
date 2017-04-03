@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1D43BE6-AF83-41E5-990E-3E163CE42C79}</ProjectGuid>
+    <ProjectGuid>{B8AF754B-94C8-474F-AAD5-8AF33CB0621B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Emgu.CV.WPF</RootNamespace>
