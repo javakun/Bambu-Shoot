@@ -146,15 +146,6 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-
-    <Reference Include="Emgu.CV.UI">
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.UI\obj\Debug\Emgu.CV.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.World">
-      <HintPath>..\..\..\..\..\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.World\obj\Debug\Emgu.CV.World.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <Import Project="..\BambuShootProject\BambuShootProject\BambuShootProject.projitems" Label="Shared" />
   <Import Project="..\BambuShootProject\BambuShootProject\BambuShootProject.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
