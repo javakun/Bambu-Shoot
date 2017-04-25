@@ -1,0 +1,4 @@
+bin/
+obj/
+*.userprefs
+/.vs/CropImage/v14

@@ -67,12 +67,13 @@ namespace Emgu.CV.WPF
                 CvInvoke.Decolor(mat, dest, dest2);
                // CvInvoke.Threshold(dest, dest3, 165,255, Emgu.CV.CvEnum.ThresholdType.BinaryInv);
                 CvInvoke.AdaptiveThreshold(dest, dest3, 255, Emgu.CV.CvEnum.AdaptiveThresholdType.MeanC, Emgu.CV.CvEnum.ThresholdType.Binary,251,1);
-               //CvInvoke.FindContours(dest3, contoursDetected, null, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
-                int counter = contoursDetected.Size;
-                Image<Gray, byte> imgbw = dest3.ToImage<Gray, Byte>();
-                myImage.Source = Emgu.CV.WPF.BitmapSourceConvert.ToBitmapSource(imgbw);
+                //CvInvoke.FindContours(dest3, contoursDetected, null, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
+                // int counter = contoursDetected.Size;
                 countf = CvInvoke.CountNonZero(dest3);
-                BWCount.Text = counter.ToString();
+                Image<Gray, byte> imgbw = dest2.ToImage<Gray, Byte>();
+                myImage.Source = Emgu.CV.WPF.BitmapSourceConvert.ToBitmapSource(imgbw);
+              
+                BWCount.Text = countf.ToString();
                 Mat imgseg = new Mat(dest3, seg);
                 Mat imgseg1 = new Mat(dest3, seg1);
                 Mat imgseg2 = new Mat(dest3, seg2);

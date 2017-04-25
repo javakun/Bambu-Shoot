@@ -14,7 +14,9 @@ using Android.Content.PM;
 using Java.IO;
 using System.IO;
 using Newtonsoft.Json;
-using Java.Nio.Channels;
+
+
+
 
 namespace BambuShootProject.Droid
 {
@@ -30,8 +32,9 @@ namespace BambuShootProject.Droid
         EditText imagetitle;
         EditText location;
         EditText nameofspecies;
-        EditText dateofharvest;
-
+        DatePicker dateofharvest;
+        TextView NoImageSelected;
+        bool ImagePicked = false;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -46,10 +49,11 @@ namespace BambuShootProject.Droid
             username = FindViewById<EditText>(Resource.Id.editText_Username);
             location = FindViewById<EditText>(Resource.Id.editText_location);
             nameofspecies = FindViewById<EditText>(Resource.Id.editText_Nameofspecies);
-            dateofharvest = FindViewById<EditText>(Resource.Id.editText_dateofharvest);
+            dateofharvest = FindViewById<DatePicker>(Resource.Id.datePicker1);
 
             originalImage = FindViewById<ImageView>(Resource.Id.imageView1);
-            // var switchSize = FindViewById<Switch>(Resource.Id.switch_size);
+            NoImageSelected = FindViewById<TextView>(Resource.Id.Noimageselected);
+          
             loadImageBtn.Click += LoadImageBtn_Click;
 
             addImageBtn.Click += async (sender, args) =>
@@ -57,9 +61,6 @@ namespace BambuShootProject.Droid
                 try
                 {
                     var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync();
-                    //  {
-                    //PhotoSize = switchSize.Checked ? Plugin.Media.Abstractions.PhotoSize.Large : Plugin.Media.Abstractions.PhotoSize.Full
-                    //  });
                     if (file == null)
                         return;
                     var path = file.Path;
@@ -69,6 +70,7 @@ namespace BambuShootProject.Droid
                     originalImage.SetImageBitmap(bitmap);
                     filepath = file.Path;
                     file.Dispose();
+                    ImagePicked = true;
                 }
                 catch (Exception ex)
                 {
@@ -79,25 +81,72 @@ namespace BambuShootProject.Droid
 
 
         }
+        private bool verifyData(ClassLibrary.ImageInfoandCalibration data)
+        {
+            
+            bool somethingempty = false;
+            //Check for empty edit text
+            if(data.username.Length == 0 )
+            {
+                username.FindFocus();
+                username.Error = "Empty Username";
+                somethingempty = true;
+            }
+            if (data.imagetitle.Length == 0 )
+            {
+                imagetitle.FindFocus();
+                imagetitle.Error = "Empty Image Title";
+                somethingempty = true;
+            }
+            if (data.location.Length == 0 )
+            {
+                location.FindFocus();
+                location.Error = "Empty Location";
+                somethingempty = true;
+            }
+            if (data.nameofspecies.Length == 0)
+            {
+                nameofspecies.FindFocus();
+                nameofspecies.Error = "Empty Name of Species";
+                somethingempty = true;
+            }
+            if(!ImagePicked)
+            {
+                NoImageSelected.Visibility = ViewStates.Visible ;
+                somethingempty = true;
+            }
+            else
+            {
+                NoImageSelected.Visibility = ViewStates.Gone;
+            }
 
+            return somethingempty;
+
+        }
         private void LoadImageBtn_Click(object sender, EventArgs e)
         {
+           
             Intent intent = new Intent(this, typeof(InputCalibration));
+            var dest = MakeNewFileDestination(imagetitle.Text);
+
             ClassLibrary.ImageInfoandCalibration imageinfo = new ClassLibrary.ImageInfoandCalibration()
             {
                 username = username.Text,
                 imagetitle = imagetitle.Text,
                 location = location.Text,
                 nameofspecies = nameofspecies.Text,
-                dateofharvest = dateofharvest.Text
+                dateofharvest = dateofharvest.DayOfMonth.ToString() + "-" + dateofharvest.Month.ToString() + "-" + dateofharvest.Year.ToString(),
+                originalimagefilepath = dest + "/" + imagetitle.Text + "_original.bmp" ,
+                editedimagefilepath = dest + "/" + imagetitle.Text + "_edited.bmp"
 
             };
-
-            var dest = MakeNewFileDestination(imagetitle.Text);
-            System.IO.File.Copy(filepath, System.IO.Path.Combine(dest,imagetitle.Text+".bmp"), true);
-            intent.PutExtra("imagefile", dest+ imagetitle.Text + ".bmp");
-            intent.PutExtra("imageinfo", JsonConvert.SerializeObject(imageinfo));
-            this.StartActivity(intent);
+            if (verifyData(imageinfo) == false && ImagePicked)
+            { 
+                System.IO.File.Copy(filepath, System.IO.Path.Combine(dest, imagetitle.Text + "_original.bmp"), true);
+                System.IO.File.Copy(filepath, System.IO.Path.Combine(dest, imagetitle.Text + "_edited.bmp"), true);
+                intent.PutExtra("Imageinfo", JsonConvert.SerializeObject(imageinfo));
+                this.StartActivity(intent);
+            }
         }
         public String MakeNewFileDestination(String imagetitle)
         {

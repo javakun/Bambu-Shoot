@@ -15,54 +15,102 @@
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:id="@+id/loadedimageview" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/editedimageview" />
     </LinearLayout>
-    <EditText xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText_location"
-        android:hint="@string/location_placeholder"
-        android:inputType="textAutoComplete"
-        android:maxLength="20"
-        android:textColor="#000"
-        android:background="@android:drawable/edit_text"
-        android:textColorHint="#000"
-        android:gravity="left" />
-    <EditText xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText_Nameofspecies"
-        android:hint="@string/name_species_placeholder"
-        android:inputType="textAutoComplete"
-        android:maxLength="20"
-        android:textColor="#000"
-        android:background="@android:drawable/edit_text"
-        android:textColorHint="#000"
-        android:gravity="left" />
-    <EditText xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText_dateofharvest"
-        android:hint="@string/date_harvest_placeholder"
-        android:inputType="date"
-        android:maxLength="20"
-        android:textColor="#000"
-        android:background="@android:drawable/edit_text"
-        android:textColorHint="#000"
-        android:gravity="left" />
-    <Button
-        android:text="Load"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/loadimageBtn"
-        android:layout_marginLeft="10.0dp"
-        android:layout_marginRight="10.0dp" />
-    <TextView
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/testingdata"
-        android:textColor="#000" />
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imagetransform">
+                <Button
+                    android:text="Crop"
+                    android:id="@+id/cropBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:text="Rotate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rotateBtn" />
+            </LinearLayout>
+            <RadioGroup
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/radioGroup1">
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Grayscale"
+                    android:id="@+id/GSRadioBtn"
+                    android:textColor="@android:color/black"
+                    android:checked="true"
+                    android:buttonTint="#ff008000" />
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Black and White"
+                    android:id="@+id/BWRadioBtn"
+                    android:textColor="@android:color/black"
+                    android:buttonTint="#ff008000" />
+            </RadioGroup>
+            <TextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imagetitledata"
+                android:textColor="#000" />
+            <TextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/testingdata1"
+                android:textColor="#000" />
+            <TextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/testingdata2"
+                android:textColor="#000" />
+            <TextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/testingdata3"
+                android:textColor="#000" />
+            <TextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/testingdata4"
+                android:textColor="#000" />
+            <Button
+                android:text="Load"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loadimageBtn"
+                android:layout_marginLeft="10.0dp"
+                android:layout_marginRight="10.0dp" />
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

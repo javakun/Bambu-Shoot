@@ -26,6 +26,8 @@ namespace BambuShootProject.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::ClassLibrary.Resource.String.ApplicationName = global::BambuShootProject.Droid.Resource.String.ApplicationName;
+			global::ClassLibrary.Resource.String.Hello = global::BambuShootProject.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -100,47 +102,68 @@ namespace BambuShootProject.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07000f
-			public const int BambuShootLogo = 2131165199;
+			// aapt resource value: 0x7f07000a
+			public const int BWRadioBtn = 2131165194;
 			
-			// aapt resource value: 0x7f070008
-			public const int Instructions = 2131165192;
+			// aapt resource value: 0x7f07001c
+			public const int BambuShootLogo = 2131165212;
 			
 			// aapt resource value: 0x7f070009
-			public const int LinearLayout1 = 2131165193;
+			public const int GSRadioBtn = 2131165193;
+			
+			// aapt resource value: 0x7f070011
+			public const int Instructions = 2131165201;
+			
+			// aapt resource value: 0x7f070012
+			public const int LinearLayout1 = 2131165202;
 			
 			// aapt resource value: 0x7f070000
 			public const int LinearLayoutinputcalibration1 = 2131165184;
 			
-			// aapt resource value: 0x7f07000c
-			public const int addImageBtn = 2131165196;
+			// aapt resource value: 0x7f07001b
+			public const int Noimageselected = 2131165211;
 			
-			// aapt resource value: 0x7f070013
-			public const int databasebtn = 2131165203;
+			// aapt resource value: 0x7f070015
+			public const int addImageBtn = 2131165205;
 			
-			// aapt resource value: 0x7f07000e
-			public const int editText_Imagetitle = 2131165198;
+			// aapt resource value: 0x7f070006
+			public const int cropBtn = 2131165190;
 			
-			// aapt resource value: 0x7f070004
-			public const int editText_Nameofspecies = 2131165188;
+			// aapt resource value: 0x7f070020
+			public const int databasebtn = 2131165216;
 			
-			// aapt resource value: 0x7f07000d
-			public const int editText_Username = 2131165197;
+			// aapt resource value: 0x7f07001a
+			public const int datePicker1 = 2131165210;
 			
-			// aapt resource value: 0x7f070005
-			public const int editText_dateofharvest = 2131165189;
+			// aapt resource value: 0x7f070017
+			public const int editText_Imagetitle = 2131165207;
+			
+			// aapt resource value: 0x7f070019
+			public const int editText_Nameofspecies = 2131165209;
+			
+			// aapt resource value: 0x7f070016
+			public const int editText_Username = 2131165206;
+			
+			// aapt resource value: 0x7f070018
+			public const int editText_location = 2131165208;
 			
 			// aapt resource value: 0x7f070003
-			public const int editText_location = 2131165187;
+			public const int editedimageview = 2131165187;
+			
+			// aapt resource value: 0x7f070014
+			public const int imageView1 = 2131165204;
 			
 			// aapt resource value: 0x7f07000b
-			public const int imageView1 = 2131165195;
+			public const int imagetitledata = 2131165195;
 			
-			// aapt resource value: 0x7f070010
-			public const int instructionsbtn = 2131165200;
+			// aapt resource value: 0x7f070005
+			public const int imagetransform = 2131165189;
 			
-			// aapt resource value: 0x7f07000a
-			public const int linearLayout2 = 2131165194;
+			// aapt resource value: 0x7f07001d
+			public const int instructionsbtn = 2131165213;
+			
+			// aapt resource value: 0x7f070013
+			public const int linearLayout2 = 2131165203;
 			
 			// aapt resource value: 0x7f070001
 			public const int linearLayoutinputcalibration2 = 2131165185;
@@ -148,17 +171,35 @@ namespace BambuShootProject.Droid
 			// aapt resource value: 0x7f070002
 			public const int loadedimageview = 2131165186;
 			
-			// aapt resource value: 0x7f070006
-			public const int loadimageBtn = 2131165190;
+			// aapt resource value: 0x7f070010
+			public const int loadimageBtn = 2131165200;
 			
-			// aapt resource value: 0x7f070012
-			public const int mydatareportlibrarybtn = 2131165202;
+			// aapt resource value: 0x7f07001f
+			public const int mydatareportlibrarybtn = 2131165215;
 			
-			// aapt resource value: 0x7f070011
-			public const int processnewimagebtn = 2131165201;
+			// aapt resource value: 0x7f07001e
+			public const int processnewimagebtn = 2131165214;
+			
+			// aapt resource value: 0x7f070008
+			public const int radioGroup1 = 2131165192;
 			
 			// aapt resource value: 0x7f070007
-			public const int testingdata = 2131165191;
+			public const int rotateBtn = 2131165191;
+			
+			// aapt resource value: 0x7f070004
+			public const int scrollView1 = 2131165188;
+			
+			// aapt resource value: 0x7f07000c
+			public const int testingdata1 = 2131165196;
+			
+			// aapt resource value: 0x7f07000d
+			public const int testingdata2 = 2131165197;
+			
+			// aapt resource value: 0x7f07000e
+			public const int testingdata3 = 2131165198;
+			
+			// aapt resource value: 0x7f07000f
+			public const int testingdata4 = 2131165199;
 			
 			static Id()
 			{
@@ -174,16 +215,25 @@ namespace BambuShootProject.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int InputCalibration = 2130903040;
+			public const int DatabaseLibrary = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Instruction_Dialog = 2130903041;
+			public const int DataReportLibrary = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int LoadImage = 2130903042;
+			public const int DataReportPage = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Main = 2130903043;
+			public const int InputCalibration = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int Instruction_Dialog = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int LoadImage = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int Main = 2130903046;
 			
 			static Layout()
 			{
@@ -198,38 +248,44 @@ namespace BambuShootProject.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
+			
 			// aapt resource value: 0x7f050000
-			public const int app_name = 2131034112;
-			
-			// aapt resource value: 0x7f050005
-			public const int date_harvest = 2131034117;
-			
-			// aapt resource value: 0x7f05000a
-			public const int date_harvest_placeholder = 2131034122;
+			public const int Hello = 2131034112;
 			
 			// aapt resource value: 0x7f050002
-			public const int image_title = 2131034114;
+			public const int app_name = 2131034114;
 			
 			// aapt resource value: 0x7f050007
-			public const int imagetitle_placeholder = 2131034119;
+			public const int date_harvest = 2131034119;
 			
-			// aapt resource value: 0x7f050003
-			public const int location = 2131034115;
-			
-			// aapt resource value: 0x7f050008
-			public const int location_placeholder = 2131034120;
+			// aapt resource value: 0x7f05000c
+			public const int date_harvest_placeholder = 2131034124;
 			
 			// aapt resource value: 0x7f050004
-			public const int name_species = 2131034116;
+			public const int image_title = 2131034116;
 			
 			// aapt resource value: 0x7f050009
-			public const int name_species_placeholder = 2131034121;
+			public const int imagetitle_placeholder = 2131034121;
 			
-			// aapt resource value: 0x7f050001
-			public const int username = 2131034113;
+			// aapt resource value: 0x7f050005
+			public const int location = 2131034117;
+			
+			// aapt resource value: 0x7f05000a
+			public const int location_placeholder = 2131034122;
 			
 			// aapt resource value: 0x7f050006
-			public const int username_placeholder = 2131034118;
+			public const int name_species = 2131034118;
+			
+			// aapt resource value: 0x7f05000b
+			public const int name_species_placeholder = 2131034123;
+			
+			// aapt resource value: 0x7f050003
+			public const int username = 2131034115;
+			
+			// aapt resource value: 0x7f050008
+			public const int username_placeholder = 2131034120;
 			
 			static String()
 			{
