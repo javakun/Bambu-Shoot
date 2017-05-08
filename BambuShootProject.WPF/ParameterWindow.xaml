@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BambuShootProject.WPF"
         mc:Ignorable="d"
-        Title="ParameterWindow" Height="410" Width="642">
+        Title="ParameterWindow" Height="720" Width="1280">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="137" Margin="205,10,0,0" VerticalAlignment="Top" Width="224"/>
-        <Button x:Name="button" Content="Open File" HorizontalAlignment="Left" Margin="257,152,0,0" VerticalAlignment="Top" Width="119" Height="28"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Enter Username" VerticalAlignment="Top" Width="194" Margin="220,192,0,0"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="220,220,0,0" TextWrapping="Wrap" Text="Enter Image Title" VerticalAlignment="Top" Width="194"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="220,248,0,0" TextWrapping="Wrap" Text="Enter Location" VerticalAlignment="Top" Width="194"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="220,276,0,0" TextWrapping="Wrap" Text="Enter Name of Species " VerticalAlignment="Top" Width="194"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="220,304,0,0" TextWrapping="Wrap" Text="Enter Date of Harvest" VerticalAlignment="Top" Width="194"/>
-        <Button x:Name="button1" Content="Load" HorizontalAlignment="Left" Margin="257,341,0,0" VerticalAlignment="Top" Width="119" Height="28"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="239" Margin="495,168,0,0" VerticalAlignment="Top" Width="290"/>
+        <Button x:Name="button" Content="Open File" HorizontalAlignment="Left" Margin="580,421,0,0" VerticalAlignment="Top" Width="120" Height="28"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Enter Username" VerticalAlignment="Top" Width="194" Margin="545,463,0,0"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="545,491,0,0" TextWrapping="Wrap" Text="Enter Image Title" VerticalAlignment="Top" Width="194"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="545,519,0,0" TextWrapping="Wrap" Text="Enter Location" VerticalAlignment="Top" Width="194"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="545,547,0,0" TextWrapping="Wrap" Text="Enter Name of Species " VerticalAlignment="Top" Width="194"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="545,575,0,0" TextWrapping="Wrap" Text="Enter Date of Harvest" VerticalAlignment="Top" Width="194"/>
+        <Button x:Name="button1" Content="Load" HorizontalAlignment="Left" Margin="580,612,0,0" VerticalAlignment="Top" Width="120" Height="28"/>
 
     </Grid>
 </Window>
