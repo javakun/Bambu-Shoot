@@ -20,7 +20,7 @@ using Newtonsoft.Json;
 
 namespace BambuShootProject.Droid
 {
-    [Activity(Label = "LoadImageActivity")]
+    [Activity(Label = "LoadImageActivity", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoadImageActivity : Activity
     {
         Button addImageBtn;
@@ -28,7 +28,6 @@ namespace BambuShootProject.Droid
         ImageView originalImage;
         Bitmap bitmap;
         String filepath;
-        EditText username;
         EditText imagetitle;
         EditText location;
         EditText nameofspecies;
@@ -46,7 +45,6 @@ namespace BambuShootProject.Droid
             addImageBtn = FindViewById<Button>(Resource.Id.addImageBtn);
             loadImageBtn = FindViewById<Button>(Resource.Id.loadimageBtn);
             imagetitle = FindViewById<EditText>(Resource.Id.editText_Imagetitle);
-            username = FindViewById<EditText>(Resource.Id.editText_Username);
             location = FindViewById<EditText>(Resource.Id.editText_location);
             nameofspecies = FindViewById<EditText>(Resource.Id.editText_Nameofspecies);
             dateofharvest = FindViewById<DatePicker>(Resource.Id.datePicker1);
@@ -81,30 +79,24 @@ namespace BambuShootProject.Droid
 
 
         }
-        private bool verifyData(ClassLibrary.ImageInfoandCalibration data)
+        private bool verifyData(ClassLibrary.Reports reportsdata)
         {
             
             bool somethingempty = false;
             //Check for empty edit text
-            if(data.username.Length == 0 )
-            {
-                username.FindFocus();
-                username.Error = "Empty Username";
-                somethingempty = true;
-            }
-            if (data.imagetitle.Length == 0 )
+            if (reportsdata.imagetitle.Length == 0 )
             {
                 imagetitle.FindFocus();
                 imagetitle.Error = "Empty Image Title";
                 somethingempty = true;
             }
-            if (data.location.Length == 0 )
+            if (reportsdata.location.Length == 0 )
             {
                 location.FindFocus();
                 location.Error = "Empty Location";
                 somethingempty = true;
             }
-            if (data.nameofspecies.Length == 0)
+            if (reportsdata.nameofspecies.Length == 0)
             {
                 nameofspecies.FindFocus();
                 nameofspecies.Error = "Empty Name of Species";
@@ -129,9 +121,8 @@ namespace BambuShootProject.Droid
             Intent intent = new Intent(this, typeof(InputCalibration));
             var dest = MakeNewFileDestination(imagetitle.Text);
 
-            ClassLibrary.ImageInfoandCalibration imageinfo = new ClassLibrary.ImageInfoandCalibration()
+            ClassLibrary.Reports imageinfo = new ClassLibrary.Reports()
             {
-                username = username.Text,
                 imagetitle = imagetitle.Text,
                 location = location.Text,
                 nameofspecies = nameofspecies.Text,

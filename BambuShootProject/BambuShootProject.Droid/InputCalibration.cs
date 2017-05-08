@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Android.App;
-using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace BambuShootProject.Droid
 {
-    [Activity(Label = "InputCalibration")]
+    [Activity(Label = "InputCalibration", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class InputCalibration : Activity
     {
         ImageView LoadedImage;
@@ -28,7 +28,7 @@ namespace BambuShootProject.Droid
         Button Crop;
         Button Rotate;
 
-        ClassLibrary.ImageInfoandCalibration previousimageinfo;
+        ClassLibrary.Reports previousimageinfo;
         
         String originalFilepath,editedFilepath;
 
@@ -41,11 +41,10 @@ namespace BambuShootProject.Droid
             // Create your application here
             SetContentView(Resource.Layout.InputCalibration);
 
-            previousimageinfo = JsonConvert.DeserializeObject<ClassLibrary.ImageInfoandCalibration>(Intent.GetStringExtra("Imageinfo"));
+            previousimageinfo = JsonConvert.DeserializeObject<ClassLibrary.Reports>(Intent.GetStringExtra("Imageinfo"));
             LoadedImage = FindViewById<ImageView>(Resource.Id.loadedimageview);
             EditedImage = FindViewById<ImageView>(Resource.Id.editedimageview);
             imagetitle = FindViewById<TextView>(Resource.Id.imagetitledata);
-            Username = FindViewById<TextView>(Resource.Id.testingdata1);
             Location = FindViewById<TextView>(Resource.Id.testingdata2);
             NameofSpecies = FindViewById<TextView>(Resource.Id.testingdata3);
             DateofHavest = FindViewById<TextView>(Resource.Id.testingdata4);
@@ -60,7 +59,7 @@ namespace BambuShootProject.Droid
             loadedbmp = BitmapFactory.DecodeFile(originalFilepath);
             LoadedImage.SetImageBitmap(loadedbmp);
             imagetitle.Text = previousimageinfo.imagetitle;
-            Username.Text = previousimageinfo.username;
+
             Location.Text = previousimageinfo.location;
             NameofSpecies.Text = previousimageinfo.nameofspecies;
             DateofHavest.Text = previousimageinfo.dateofharvest;

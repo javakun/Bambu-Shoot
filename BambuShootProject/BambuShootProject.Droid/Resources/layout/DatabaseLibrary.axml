@@ -1,7 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#71BCFA"
+        android:padding="6dip"
+        android:id="@+id/SearchLinearLayout">
+        <EditText
+            android:id="@+id/SearchEdttxt"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search Bar" />
+        <Button
+            android:id="@+id/SearchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="android.widget.SearchView" />
+    </LinearLayout>
+    <HorizontalScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/horizontalScrollView1">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1"
+            android:id="@+id/tableLayout2"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#F2F2F2"
+                    android:padding="6dip"
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/usernametxtview"
+                        android:text="Username"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/imagetitletxtview"
+                        android:text="Image Title"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/locationtxtview"
+                        android:text="Location"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/nameofspeciestxtview"
+                        android:text="Name of Species"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/dateofharvesttxtview"
+                        android:text="Date of Harvest"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/listViewReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/Row_list_Report_DB"
+                    android:padding="6dip" />
+            </LinearLayout>
+        </TableLayout>
+    </HorizontalScrollView>
 </LinearLayout>

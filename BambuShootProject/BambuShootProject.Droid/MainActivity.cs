@@ -14,8 +14,10 @@ namespace BambuShootProject.Droid
 	public class MainActivity : Activity
 	{
 
-        private Button gBtnInstructions;            // Initialize Button as Global Variable
-        private Button gBtnLoadImage;
+        public Button gBtnInstructions;            // Initialize Button as Global Variable
+        public Button gBtnLoadImage;
+        public Button gBtnDatabase;
+        public Button gBtnDataReportLib;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -24,13 +26,28 @@ namespace BambuShootProject.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
             gBtnLoadImage = FindViewById<Button>(Resource.Id.processnewimagebtn);
-            gBtnLoadImage.Click += GBtnLoadImage_Click;
-
+            gBtnDatabase = FindViewById<Button>(Resource.Id.databasebtn);
+            gBtnDataReportLib = FindViewById<Button>(Resource.Id.mydatareportlibrarybtn);
             gBtnInstructions = FindViewById<Button>(Resource.Id.instructionsbtn);   //Link Button variable with Axml button
-            gBtnInstructions.Click += gBtnInstructions_Click;
+
+            gBtnLoadImage.Click += GBtnLoadImage_Click;
+            gBtnInstructions.Click += GBtnInstructions_Click;
+            gBtnDatabase.Click += GBtnDatabase_Click;
+            gBtnDataReportLib.Click += GBtnDataReportLib_Click;
 
         }
 
+        private void GBtnDataReportLib_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(DataReportLibPage));
+            this.StartActivity(intent);
+        }
+
+        private void GBtnDatabase_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(DatabasePage));
+            this.StartActivity(intent);
+        }
 
         private void GBtnLoadImage_Click(object sender, EventArgs e)
         {
@@ -39,7 +56,7 @@ namespace BambuShootProject.Droid
 
         }
 
-        private void gBtnInstructions_Click(object sender, EventArgs e)
+        private void GBtnInstructions_Click(object sender, EventArgs e)
         {
             //Pull the Instruction Dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();  // Pull up the dialog from the activity

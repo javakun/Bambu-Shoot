@@ -38,17 +38,6 @@
             <EditText xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText_Username"
-                android:hint="@string/username_placeholder"
-                android:inputType="text"
-                android:maxLength="20"
-                android:textColor="#000"
-                android:background="@android:drawable/edit_text"
-                android:textColorHint="#000"
-                android:gravity="left" />
-            <EditText xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/editText_Imagetitle"
                 android:hint="@string/imagetitle_placeholder"
                 android:maxLength="20"
@@ -79,6 +68,12 @@
                 android:background="@android:drawable/edit_text"
                 android:textColorHint="#000"
                 android:gravity="left" />
+            <TextView
+                android:text="Pick Harvest Date:"
+                android:id="@+id/harvestdate"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:paddingLeft="10dp" />
             <DatePicker xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -89,18 +84,20 @@
                 android:calendarTextColor="#ff00ffff"
                 tools:visibility="visible"
                 android:datePickerMode="spinner"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
                 android:background="@android:color/holo_green_dark"
                 android:spinnersShown="false"
-                android:startYear="2000"
-                android:endYear="2099" />
-            <TextView
+                android:startYear="2017"
+                android:endYear="2099"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:paddingBottom="20dp"
+                android:layout_marginTop="10dp" />
+            <TextView xmlns:tools="http://schemas.android.com/tools"
                 android:text="Image not Selected"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/Noimageselected"
                 android:textColor="@android:color/black"
-                xmlns:tools="http://schemas.android.com/tools"
                 tools:visibility="gone"
                 android:visibility="gone" />
             <Button

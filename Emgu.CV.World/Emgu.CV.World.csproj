@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -78,13 +78,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="..\Emgu.CV\Emgu.CV.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.Contrib\Emgu.CV.Contrib.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.Cuda\Emgu.CV.Cuda.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.ML\Emgu.CV.ML.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.OCR\Emgu.CV.OCR.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.Shape\Emgu.CV.Shape.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.Stitching\Emgu.CV.Stitching.projitems" Label="Shared" />
-  <Import Project="..\Emgu.CV.Superres\Emgu.CV.Superres.projitems" Label="Shared" />
   <Import Project="..\Emgu.CV.VideoStab\Emgu.CV.VideoStab.projitems" Label="Shared" />
   <Import Project="..\Emgu.Util\Emgu.Util.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

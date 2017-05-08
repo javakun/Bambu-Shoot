@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
 
+
 namespace MediaAndroidTest
 {
     //You can specify additional application information in this attribute
@@ -23,6 +24,7 @@ namespace MediaAndroidTest
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             //A great place to initialize Xamarin.Insights and Dependency Services!
         }
 
