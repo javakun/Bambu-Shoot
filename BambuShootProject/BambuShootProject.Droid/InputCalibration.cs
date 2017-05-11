@@ -18,17 +18,13 @@ namespace BambuShootProject.Droid
     {
         ImageView LoadedImage;
         ImageView EditedImage;
-        TextView Username;
-        TextView Location;
-        TextView NameofSpecies;
-        TextView DateofHavest;
-        TextView imagetitle;
+        EditText Threshold;
         Bitmap loadedbmp;
         Bitmap editedbmp;
         Button Crop;
         Button Rotate;
-
-        ClassLibrary.Reports previousimageinfo;
+        int thresholdinput;
+       ClassLibrary.Reports previousimageinfo;
         
         String originalFilepath,editedFilepath;
 
@@ -44,31 +40,24 @@ namespace BambuShootProject.Droid
             previousimageinfo = JsonConvert.DeserializeObject<ClassLibrary.Reports>(Intent.GetStringExtra("Imageinfo"));
             LoadedImage = FindViewById<ImageView>(Resource.Id.loadedimageview);
             EditedImage = FindViewById<ImageView>(Resource.Id.editedimageview);
-            imagetitle = FindViewById<TextView>(Resource.Id.imagetitledata);
-            Location = FindViewById<TextView>(Resource.Id.testingdata2);
-            NameofSpecies = FindViewById<TextView>(Resource.Id.testingdata3);
-            DateofHavest = FindViewById<TextView>(Resource.Id.testingdata4);
-
+            Threshold = FindViewById<EditText>(Resource.Id.editText_threshold);
             Crop = FindViewById<Button>(Resource.Id.cropBtn);
             Rotate = FindViewById<Button>(Resource.Id.rotateBtn);
 
             originalFilepath = previousimageinfo.originalimagefilepath;
             editedFilepath = previousimageinfo.editedimagefilepath;
 
-
             loadedbmp = BitmapFactory.DecodeFile(originalFilepath);
             LoadedImage.SetImageBitmap(loadedbmp);
-            imagetitle.Text = previousimageinfo.imagetitle;
-
-            Location.Text = previousimageinfo.location;
-            NameofSpecies.Text = previousimageinfo.nameofspecies;
-            DateofHavest.Text = previousimageinfo.dateofharvest;
-
 
             ClassLibrary.ImageProcessingMethods Methods = new ClassLibrary.ImageProcessingMethods();
+           
+            if (Threshold.Text.Length == 0)
+                thresholdinput = 165;
+            else
+                thresholdinput = int.Parse(Threshold.Text);
 
-
-            editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath);
+            editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput);
             //editedbmp = BitmapFactory.DecodeFile(editedFilepath);
             EditedImage.SetImageBitmap(editedbmp);
 

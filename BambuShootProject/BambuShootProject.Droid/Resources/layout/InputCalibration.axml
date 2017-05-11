@@ -69,41 +69,16 @@
                     android:textColor="@android:color/black"
                     android:buttonTint="#ff008000" />
             </RadioGroup>
-            <TextView
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imagetitledata"
-                android:textColor="#000" />
-            <TextView
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/testingdata1"
-                android:textColor="#000" />
-            <TextView
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/testingdata2"
-                android:textColor="#000" />
-            <TextView
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/testingdata3"
-                android:textColor="#000" />
-            <TextView
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/testingdata4"
-                android:textColor="#000" />
+          <EditText xmlns:tools="http://schemas.android.com/tools"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/editText_threshold"
+               android:hint="@string/threshold_placeholder"
+               android:maxLength="3"
+               android:textColor="#000"
+               android:textColorHint="#000"
+               android:gravity="left"
+               android:inputType="text" />
             <Button
                 android:text="Load"
                 android:layout_width="match_parent"

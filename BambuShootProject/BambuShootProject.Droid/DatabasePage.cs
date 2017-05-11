@@ -1,5 +1,5 @@
 ﻿
-#define OFFLINE_SYNC_ENABLED
+//#define OFFLINE_SYNC_ENABLED
 
 using System;
 using System.Collections.Generic;
@@ -68,9 +68,10 @@ namespace BambuShootProject.Droid
             UserTable = client.GetTable<ClassLibrary.Users>();
 #endif
 
+            OnRefreshItemsSelected();
             SearchTxt = FindViewById<EditText>(Resource.Id.SearchEdttxt);
             SearchBtn = FindViewById<Button>(Resource.Id.SearchBtn);
-            adapter = new DatabaseAdapter(this,this,Resource.Layout.Row_list_Report_DB);
+            adapter = new DatabaseAdapter(this,Resource.Layout.Row_list_Report_DB);
             ReportView = FindViewById<ListView>(Resource.Id.listViewReports);
             ReportView.Adapter = adapter;
 
@@ -94,7 +95,7 @@ namespace BambuShootProject.Droid
                 if (pullData)
                 {
                     await ReportsTable.PullAsync("allReports", ReportsTable.CreateQuery()); // query ID is used for incremental sync
-                    await UserTable.PullAsync("allUsers", UserTable.CreateQuery());
+                   // await UserTable.PullAsync("allUsers", UserTable.CreateQuery());
                 }
             }
             catch (Java.Net.MalformedURLException)
@@ -145,16 +146,16 @@ namespace BambuShootProject.Droid
             try
             {
                 // Get the reports from table
-                var Reportlist = await ReportsTable.OrderBy(c => c.id).ToListAsync();
-                var Userlist = await UserTable.OrderBy(c => c.id).ToListAsync();
+                var Reportlist = await ReportsTable.ToListAsync();
+              //  var Userlist = await UserTable.ToListAsync();
 
                 adapter.Clear();
 
                 foreach (ClassLibrary.Reports current in Reportlist)
                     adapter.AddReports(current);
                 
-                foreach (ClassLibrary.Users current in Userlist)
-                    adapter.AddUsers(current);
+               // foreach (ClassLibrary.Users current in Userlist)
+              //      adapter.AddUsers(current);
 
             }
             catch (Exception e)

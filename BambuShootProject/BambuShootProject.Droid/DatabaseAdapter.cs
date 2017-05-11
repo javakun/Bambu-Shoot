@@ -16,16 +16,14 @@ namespace BambuShootProject.Droid
 {
     public class DatabaseAdapter : BaseAdapter<Reports>
     {
-        Context gContext;
         Activity activity;
         int layoutResourceId;
         List<Reports> reports = new List<Reports>();
         List<Users> users = new List<Users>();
         int[] gAlternatingColors;
 
-        public DatabaseAdapter(Context context, Activity activity, int layoutResourceId)
+        public DatabaseAdapter( Activity activity, int layoutResourceId)
         {
-            gContext = context;
             this.activity = activity;
             this.layoutResourceId = layoutResourceId;
             gAlternatingColors = new int[] { 0xF2F2F2, 0x009900 };
@@ -37,14 +35,17 @@ namespace BambuShootProject.Droid
 
             if (row == null)
             {
-                row = LayoutInflater.From(gContext).Inflate(layoutResourceId, parent, false);
+                var inflater = activity.LayoutInflater;
+                row = inflater.Inflate(layoutResourceId, parent, false);
             }
+            
             row.SetBackgroundColor(GetColorFromInteger(gAlternatingColors[position % gAlternatingColors.Length]));
 
-            int userreport = reports[position].userid;
+          //  int userreport = reports[position].userid;
 
             TextView username = row.FindViewById<TextView>(Resource.Id.txtUsername);
-            username.Text = users[userreport].username;
+            //username.Text = users[userreport].username;
+            username.Text = reports[position].userid.ToString();
 
             TextView imagetitle = row.FindViewById<TextView>(Resource.Id.txtImageTitle);
             imagetitle.Text = reports[position].imagetitle;

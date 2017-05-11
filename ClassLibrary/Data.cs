@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using Android.Graphics;
 
 namespace ClassLibrary
 {
@@ -79,6 +80,17 @@ namespace ClassLibrary
         public int FiberDensityS10 { get; set; }
         //Total FiberDensity of Image: totalSegCount/(imageheight*imagewidth)
         public int TotalFiberDensity { get; set; }
+
+
+    }
+    public class ImgProcessData
+    {
+        public Bitmap[] Segments { get; set; }
+        public int[] SegmentCounts { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public int Countfinal { get; set; }
+        public int FiberDensityTotal { get; set; }
 
 
     }
