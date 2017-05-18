@@ -35,61 +35,68 @@
             android:minHeight="25px"
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:background="#F2F2F2"
-                android:id="@+id/linearLayout2"
+            android:layout_height="match_parent">
+            <HorizontalScrollView
+                android:minWidth="25px"
+                android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="30dip"
-                android:layout_weight="100">
-                <TextView
-                    android:id="@+id/usernametxtview"
-                    android:text="Username"
+                android:id="@+id/horizontalScrollView2">
+                <LinearLayout
+                    android:background="#F2F2F2"
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="20"
-                    android:gravity="center"
-                    android:textColor="#333333"
-                    android:paddingRight="10dip"
-                    android:paddingLeft="10dip" />
-                <TextView
-                    android:id="@+id/imagetitletxtview"
-                    android:text="Image Title"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="20"
-                    android:paddingRight="10dip"
-                    android:gravity="center"
-                    android:textColor="#333333" />
-                <TextView
-                    android:id="@+id/locationtxtview"
-                    android:text="Location"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="20"
-                    android:paddingRight="10dip"
-                    android:gravity="center"
-                    android:textColor="#333333" />
-                <TextView
-                    android:id="@+id/nameofspeciestxtview"
-                    android:text="Name of Species"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="20"
-                    android:paddingRight="10dip"
-                    android:gravity="center"
-                    android:textColor="#333333" />
-                <TextView
-                    android:id="@+id/dateofharvesttxtview"
-                    android:text="Date of Harvest"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="20"
-                    android:paddingRight="10dip"
-                    android:paddingLeft="10dip"
-                    android:gravity="center"
-                    android:textColor="#333333" />
-            </LinearLayout>
+                    android:layout_weight="100">
+                    <TextView
+                        android:id="@+id/usernametxtview"
+                        android:text="Username"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="center"
+                        android:textColor="#333333"
+                        android:paddingRight="10dip"
+                        android:paddingLeft="10dip" />
+                    <TextView
+                        android:id="@+id/imagetitletxtview"
+                        android:text="Image Title"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:paddingRight="10dip"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/locationtxtview"
+                        android:text="Location"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:paddingRight="10dip"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/nameofspeciestxtview"
+                        android:text="Name of Species"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:paddingRight="10dip"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/dateofharvesttxtview"
+                        android:text="Date of Harvest"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="20"
+                        android:paddingRight="10dip"
+                        android:paddingLeft="10dip"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                </LinearLayout>
+            </HorizontalScrollView>
             <ListView
                 android:id="@+id/listViewReports"
                 tools:listitem="@layout/row_list_report_db"
