@@ -1,5 +1,5 @@
 ﻿
-//#define OFFLINE_SYNC_ENABLED
+#define OFFLINE_SYNC_ENABLED
 
 using System;
 using System.Collections.Generic;
@@ -42,14 +42,14 @@ namespace BambuShootProject.Droid
         private IMobileServiceSyncTable<Users> UserTable;
         private IMobileServiceSyncTable<Reports> ReportsTable;
 
-        const string localDbFilename = "localstore.db";
+        const string localDbFilename = "syncstore.db";
 
 #else
         private IMobileServiceTable<ClassLibrary.Users> UserTable;
         private IMobileServiceTable<ClassLibrary.Reports> ReportsTable;
 #endif
 
-        protected override async void OnCreate(Bundle bundle)
+        protected async override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -95,7 +95,7 @@ namespace BambuShootProject.Droid
                 if (pullData)
                 {
                     await ReportsTable.PullAsync("allReports", ReportsTable.CreateQuery()); // query ID is used for incremental sync
-                   // await UserTable.PullAsync("allUsers", UserTable.CreateQuery());
+                    //await UserTable.PullAsync("allUsers", UserTable.CreateQuery());
                 }
             }
             catch (Java.Net.MalformedURLException)
@@ -147,7 +147,8 @@ namespace BambuShootProject.Droid
             {
                 // Get the reports from table
                 var Reportlist = await ReportsTable.ToListAsync();
-              //  var Userlist = await UserTable.ToListAsync();
+                //  var Userlist = await UserTable.ToListAsync();
+                
 
                 adapter.Clear();
 

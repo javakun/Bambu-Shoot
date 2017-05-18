@@ -45,7 +45,7 @@ namespace BambuShootProject.Droid
 
             TextView username = row.FindViewById<TextView>(Resource.Id.txtUsername);
             //username.Text = users[userreport].username;
-            username.Text = reports[position].userid.ToString();
+            username.Text = reports[position].userid;
 
             TextView imagetitle = row.FindViewById<TextView>(Resource.Id.txtImageTitle);
             imagetitle.Text = reports[position].imagetitle;

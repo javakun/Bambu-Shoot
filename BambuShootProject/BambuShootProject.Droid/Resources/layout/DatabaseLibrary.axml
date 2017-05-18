@@ -40,7 +40,7 @@
                 android:background="#F2F2F2"
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="30dip"
                 android:layout_weight="100">
                 <TextView
                     android:id="@+id/usernametxtview"
@@ -49,13 +49,16 @@
                     android:layout_width="wrap_content"
                     android:layout_weight="20"
                     android:gravity="center"
-                    android:textColor="#333333" />
+                    android:textColor="#333333"
+                    android:paddingRight="10dip"
+                    android:paddingLeft="10dip" />
                 <TextView
                     android:id="@+id/imagetitletxtview"
                     android:text="Image Title"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="20"
+                    android:paddingRight="10dip"
                     android:gravity="center"
                     android:textColor="#333333" />
                 <TextView
@@ -64,6 +67,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="20"
+                    android:paddingRight="10dip"
                     android:gravity="center"
                     android:textColor="#333333" />
                 <TextView
@@ -72,6 +76,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="20"
+                    android:paddingRight="10dip"
                     android:gravity="center"
                     android:textColor="#333333" />
                 <TextView
@@ -80,6 +85,8 @@
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="20"
+                    android:paddingRight="10dip"
+                    android:paddingLeft="10dip"
                     android:gravity="center"
                     android:textColor="#333333" />
             </LinearLayout>

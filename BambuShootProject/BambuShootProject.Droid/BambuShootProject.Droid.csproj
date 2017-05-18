@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateUser_Dialog.cs" />
     <Compile Include="DatabaseAdapter.cs" />
     <Compile Include="DatabasePage.cs" />
     <Compile Include="DataReportLibPage.cs" />
@@ -150,6 +151,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Row_list_Report_DB.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CreateUser.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

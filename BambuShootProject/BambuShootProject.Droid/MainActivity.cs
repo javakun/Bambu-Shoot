@@ -18,6 +18,7 @@ namespace BambuShootProject.Droid
         public Button gBtnLoadImage;
         public Button gBtnDatabase;
         public Button gBtnDataReportLib;
+        public Button gBtnCreateUser;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -29,12 +30,22 @@ namespace BambuShootProject.Droid
             gBtnDatabase = FindViewById<Button>(Resource.Id.databasebtn);
             gBtnDataReportLib = FindViewById<Button>(Resource.Id.mydatareportlibrarybtn);
             gBtnInstructions = FindViewById<Button>(Resource.Id.instructionsbtn);   //Link Button variable with Axml button
+            gBtnCreateUser = FindViewById<Button>(Resource.Id.CreateUserBtn);
 
+            gBtnCreateUser.Click += GBtnCreateUser_Click;
             gBtnLoadImage.Click += GBtnLoadImage_Click;
             gBtnInstructions.Click += GBtnInstructions_Click;
             gBtnDatabase.Click += GBtnDatabase_Click;
             gBtnDataReportLib.Click += GBtnDataReportLib_Click;
 
+        }
+
+        private void GBtnCreateUser_Click(object sender, EventArgs e)
+        {
+            //Pull the Create User Dialog
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();  // Pull up the dialog from the activity
+            CreateUser_Dialog User_Dialog = new CreateUser_Dialog();
+            User_Dialog.Show(transaction, "dialog fragment");
         }
 
         private void GBtnDataReportLib_Click(object sender, EventArgs e)

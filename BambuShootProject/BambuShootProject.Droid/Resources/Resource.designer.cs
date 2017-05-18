@@ -102,143 +102,158 @@ namespace BambuShootProject.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080017
-			public const int BWRadioBtn = 2131230743;
-			
-			// aapt resource value: 0x7f080023
-			public const int BambuShootLogo = 2131230755;
-			
-			// aapt resource value: 0x7f080016
-			public const int GSRadioBtn = 2131230742;
-			
-			// aapt resource value: 0x7f08001a
-			public const int Instructions = 2131230746;
-			
-			// aapt resource value: 0x7f080000
-			public const int LinearLayout1 = 2131230720;
-			
-			// aapt resource value: 0x7f08000d
-			public const int LinearLayoutinputcalibration1 = 2131230733;
-			
-			// aapt resource value: 0x7f080022
-			public const int Noimageselected = 2131230754;
-			
-			// aapt resource value: 0x7f080003
-			public const int SearchBtn = 2131230723;
-			
-			// aapt resource value: 0x7f080002
-			public const int SearchEdttxt = 2131230722;
-			
-			// aapt resource value: 0x7f080001
-			public const int SearchLinearLayout = 2131230721;
-			
-			// aapt resource value: 0x7f08001c
-			public const int addImageBtn = 2131230748;
-			
-			// aapt resource value: 0x7f080013
-			public const int cropBtn = 2131230739;
+			// aapt resource value: 0x7f08001b
+			public const int BWRadioBtn = 2131230747;
 			
 			// aapt resource value: 0x7f080027
-			public const int databasebtn = 2131230759;
+			public const int BambuShootLogo = 2131230759;
 			
-			// aapt resource value: 0x7f080021
-			public const int datePicker1 = 2131230753;
-			
-			// aapt resource value: 0x7f08000b
-			public const int dateofharvesttxtview = 2131230731;
-			
-			// aapt resource value: 0x7f08001d
-			public const int editText_Imagetitle = 2131230749;
-			
-			// aapt resource value: 0x7f08001f
-			public const int editText_Nameofspecies = 2131230751;
-			
-			// aapt resource value: 0x7f08001e
-			public const int editText_location = 2131230750;
-			
-			// aapt resource value: 0x7f080018
-			public const int editText_threshold = 2131230744;
-			
-			// aapt resource value: 0x7f080010
-			public const int editedimageview = 2131230736;
-			
-			// aapt resource value: 0x7f080020
-			public const int harvestdate = 2131230752;
-			
-			// aapt resource value: 0x7f080004
-			public const int horizontalScrollView1 = 2131230724;
-			
-			// aapt resource value: 0x7f08001b
-			public const int imageView1 = 2131230747;
-			
-			// aapt resource value: 0x7f080008
-			public const int imagetitletxtview = 2131230728;
-			
-			// aapt resource value: 0x7f080012
-			public const int imagetransform = 2131230738;
-			
-			// aapt resource value: 0x7f080024
-			public const int instructionsbtn = 2131230756;
-			
-			// aapt resource value: 0x7f080006
-			public const int linearLayout2 = 2131230726;
-			
-			// aapt resource value: 0x7f080005
-			public const int linearLayout3 = 2131230725;
-			
-			// aapt resource value: 0x7f08000e
-			public const int linearLayoutinputcalibration2 = 2131230734;
-			
-			// aapt resource value: 0x7f08000c
-			public const int listViewReports = 2131230732;
-			
-			// aapt resource value: 0x7f08000f
-			public const int loadedimageview = 2131230735;
-			
-			// aapt resource value: 0x7f080019
-			public const int loadimageBtn = 2131230745;
-			
-			// aapt resource value: 0x7f080009
-			public const int locationtxtview = 2131230729;
-			
-			// aapt resource value: 0x7f08002d
-			public const int menu_refresh = 2131230765;
-			
-			// aapt resource value: 0x7f080026
-			public const int mydatareportlibrarybtn = 2131230758;
-			
-			// aapt resource value: 0x7f08000a
-			public const int nameofspeciestxtview = 2131230730;
-			
-			// aapt resource value: 0x7f080025
-			public const int processnewimagebtn = 2131230757;
-			
-			// aapt resource value: 0x7f080015
-			public const int radioGroup1 = 2131230741;
-			
-			// aapt resource value: 0x7f080014
-			public const int rotateBtn = 2131230740;
-			
-			// aapt resource value: 0x7f080011
-			public const int scrollView1 = 2131230737;
-			
-			// aapt resource value: 0x7f08002c
-			public const int txtDateofHarvest = 2131230764;
-			
-			// aapt resource value: 0x7f080029
-			public const int txtImageTitle = 2131230761;
-			
-			// aapt resource value: 0x7f08002a
-			public const int txtLocation = 2131230762;
-			
-			// aapt resource value: 0x7f08002b
-			public const int txtNameofspecies = 2131230763;
+			// aapt resource value: 0x7f080003
+			public const int CreateBtn = 2131230723;
 			
 			// aapt resource value: 0x7f080028
-			public const int txtUsername = 2131230760;
+			public const int CreateUserBtn = 2131230760;
+			
+			// aapt resource value: 0x7f080000
+			public const int CreateUsertxt = 2131230720;
+			
+			// aapt resource value: 0x7f08001a
+			public const int GSRadioBtn = 2131230746;
+			
+			// aapt resource value: 0x7f08001e
+			public const int Instructions = 2131230750;
+			
+			// aapt resource value: 0x7f080004
+			public const int LinearLayout1 = 2131230724;
+			
+			// aapt resource value: 0x7f080011
+			public const int LinearLayoutinputcalibration1 = 2131230737;
+			
+			// aapt resource value: 0x7f080026
+			public const int Noimageselected = 2131230758;
+			
+			// aapt resource value: 0x7f080002
+			public const int PasswordEdt = 2131230722;
 			
 			// aapt resource value: 0x7f080007
-			public const int usernametxtview = 2131230727;
+			public const int SearchBtn = 2131230727;
+			
+			// aapt resource value: 0x7f080006
+			public const int SearchEdttxt = 2131230726;
+			
+			// aapt resource value: 0x7f080005
+			public const int SearchLinearLayout = 2131230725;
+			
+			// aapt resource value: 0x7f080001
+			public const int UsernameEdt = 2131230721;
+			
+			// aapt resource value: 0x7f080020
+			public const int addImageBtn = 2131230752;
+			
+			// aapt resource value: 0x7f080017
+			public const int cropBtn = 2131230743;
+			
+			// aapt resource value: 0x7f08002c
+			public const int databasebtn = 2131230764;
+			
+			// aapt resource value: 0x7f080025
+			public const int datePicker1 = 2131230757;
+			
+			// aapt resource value: 0x7f08000f
+			public const int dateofharvesttxtview = 2131230735;
+			
+			// aapt resource value: 0x7f080021
+			public const int editText_Imagetitle = 2131230753;
+			
+			// aapt resource value: 0x7f080023
+			public const int editText_Nameofspecies = 2131230755;
+			
+			// aapt resource value: 0x7f080022
+			public const int editText_location = 2131230754;
+			
+			// aapt resource value: 0x7f08001c
+			public const int editText_threshold = 2131230748;
+			
+			// aapt resource value: 0x7f080014
+			public const int editedimageview = 2131230740;
+			
+			// aapt resource value: 0x7f080024
+			public const int harvestdate = 2131230756;
+			
+			// aapt resource value: 0x7f080008
+			public const int horizontalScrollView1 = 2131230728;
+			
+			// aapt resource value: 0x7f08001f
+			public const int imageView1 = 2131230751;
+			
+			// aapt resource value: 0x7f08000c
+			public const int imagetitletxtview = 2131230732;
+			
+			// aapt resource value: 0x7f080016
+			public const int imagetransform = 2131230742;
+			
+			// aapt resource value: 0x7f080029
+			public const int instructionsbtn = 2131230761;
+			
+			// aapt resource value: 0x7f08000a
+			public const int linearLayout2 = 2131230730;
+			
+			// aapt resource value: 0x7f080009
+			public const int linearLayout3 = 2131230729;
+			
+			// aapt resource value: 0x7f080012
+			public const int linearLayoutinputcalibration2 = 2131230738;
+			
+			// aapt resource value: 0x7f080010
+			public const int listViewReports = 2131230736;
+			
+			// aapt resource value: 0x7f080013
+			public const int loadedimageview = 2131230739;
+			
+			// aapt resource value: 0x7f08001d
+			public const int loadimageBtn = 2131230749;
+			
+			// aapt resource value: 0x7f08000d
+			public const int locationtxtview = 2131230733;
+			
+			// aapt resource value: 0x7f080032
+			public const int menu_refresh = 2131230770;
+			
+			// aapt resource value: 0x7f08002b
+			public const int mydatareportlibrarybtn = 2131230763;
+			
+			// aapt resource value: 0x7f08000e
+			public const int nameofspeciestxtview = 2131230734;
+			
+			// aapt resource value: 0x7f08002a
+			public const int processnewimagebtn = 2131230762;
+			
+			// aapt resource value: 0x7f080019
+			public const int radioGroup1 = 2131230745;
+			
+			// aapt resource value: 0x7f080018
+			public const int rotateBtn = 2131230744;
+			
+			// aapt resource value: 0x7f080015
+			public const int scrollView1 = 2131230741;
+			
+			// aapt resource value: 0x7f080031
+			public const int txtDateofHarvest = 2131230769;
+			
+			// aapt resource value: 0x7f08002e
+			public const int txtImageTitle = 2131230766;
+			
+			// aapt resource value: 0x7f08002f
+			public const int txtLocation = 2131230767;
+			
+			// aapt resource value: 0x7f080030
+			public const int txtNameofspecies = 2131230768;
+			
+			// aapt resource value: 0x7f08002d
+			public const int txtUsername = 2131230765;
+			
+			// aapt resource value: 0x7f08000b
+			public const int usernametxtview = 2131230731;
 			
 			static Id()
 			{
@@ -254,28 +269,31 @@ namespace BambuShootProject.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int DatabaseLibrary = 2130903040;
+			public const int CreateUser = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int DataReportLibrary = 2130903041;
+			public const int DatabaseLibrary = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int DataReportPage = 2130903042;
+			public const int DataReportLibrary = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int InputCalibration = 2130903043;
+			public const int DataReportPage = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Instruction_Dialog = 2130903044;
+			public const int InputCalibration = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int LoadImage = 2130903045;
+			public const int Instruction_Dialog = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Main = 2130903046;
+			public const int LoadImage = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Row_list_Report_DB = 2130903047;
+			public const int Main = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int Row_list_Report_DB = 2130903048;
 			
 			static Layout()
 			{

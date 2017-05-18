@@ -14,10 +14,12 @@ using Android.Graphics;
 
 namespace ClassLibrary
 {
+ 
     public class Users
     {
+      
         [JsonProperty(PropertyName = "id")]
-        public int id { get; set; }
+        public string id { get; set; }
 
         [JsonProperty(PropertyName = "username")]
         public string username { get; set; }
@@ -30,10 +32,10 @@ namespace ClassLibrary
     public class Reports
     {
         [JsonProperty(PropertyName = "id")]
-        public int id { get; set; }
+        public string id { get; set; }
 
         [JsonProperty(PropertyName = "userid")]
-        public int userid { get; set; }
+        public string userid { get; set; }
 
         [JsonProperty(PropertyName = "imagetitle")]
         public string imagetitle { get; set; }
