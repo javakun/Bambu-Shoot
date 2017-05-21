@@ -84,7 +84,7 @@
                 android:calendarTextColor="#ff00ffff"
                 tools:visibility="visible"
                 android:datePickerMode="spinner"
-                 android:background="#009900"
+                android:background="#009900"
                 android:spinnersShown="false"
                 android:startYear="2017"
                 android:endYear="2099"

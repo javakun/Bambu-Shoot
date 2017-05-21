@@ -2,4 +2,98 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/reportScroll">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageslayout">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/loadedimageview" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="100"
+                android:id="@+id/imageSegments"
+                android:paddingTop="10dp">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_weight="10"
+                    android:id="@+id/segment1" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment2"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment3"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment4"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment5"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment6"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment7"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment8"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment9"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:id="@+id/segment10"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

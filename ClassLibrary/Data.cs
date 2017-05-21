@@ -14,10 +14,10 @@ using Android.Graphics;
 
 namespace ClassLibrary
 {
- 
+
     public class Users
     {
-      
+
         [JsonProperty(PropertyName = "id")]
         public string id { get; set; }
 
@@ -85,15 +85,27 @@ namespace ClassLibrary
 
 
     }
+
     public class ImgProcessData
     {
+        //public byte[] Segment1 { get; set; }
+        //public byte[] Segment2 { get; set; }
+        //public byte[] Segment3 { get; set; }
+        //public byte[] Segment4 { get; set; }
+        //public byte[] Segment5 { get; set; }
+        //public byte[] Segment6 { get; set; }
+        //public byte[] Segment7 { get; set; }
+        //public byte[] Segment8 { get; set; }
+        //public byte[] Segment9 { get; set; }
+        //public byte[] Segment10 { get; set; }
+
+        public Bitmap bmp { get; set; }
         public Bitmap[] Segments { get; set; }
         public int[] SegmentCounts { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
         public int Countfinal { get; set; }
         public int FiberDensityTotal { get; set; }
-
 
     }
 

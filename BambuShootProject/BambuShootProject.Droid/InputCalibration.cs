@@ -10,6 +10,10 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using Newtonsoft.Json;
+using Android.Content;
+using Java.IO;
+using System.IO;
+using ClassLibrary;
 
 namespace BambuShootProject.Droid
 {
@@ -23,14 +27,18 @@ namespace BambuShootProject.Droid
         Bitmap editedbmp;
         Button Crop;
         Button Rotate;
+        Button Preview;
+        Button ProcessImage;
         int thresholdinput;
-       ClassLibrary.Reports previousimageinfo;
-        
-        String originalFilepath,editedFilepath;
+        Reports previousimageinfo;
+        ImageProcessingMethods Methods;
+        RadioGroup ColorFilter;
+
+        String originalFilepath, editedFilepath;
 
         protected override void OnCreate(Bundle bundle)
         {
-           
+
 
             base.OnCreate(bundle);
 
@@ -43,31 +51,67 @@ namespace BambuShootProject.Droid
             Threshold = FindViewById<EditText>(Resource.Id.editText_threshold);
             Crop = FindViewById<Button>(Resource.Id.cropBtn);
             Rotate = FindViewById<Button>(Resource.Id.rotateBtn);
+            Preview = FindViewById<Button>(Resource.Id.previewBtn);
+            ProcessImage = FindViewById<Button>(Resource.Id.processimageBtn);
+            ColorFilter = FindViewById<RadioGroup>(Resource.Id.colorfilterRadioGroup);
 
             originalFilepath = previousimageinfo.originalimagefilepath;
             editedFilepath = previousimageinfo.editedimagefilepath;
 
             loadedbmp = BitmapFactory.DecodeFile(originalFilepath);
             LoadedImage.SetImageBitmap(loadedbmp);
+            Methods = new ImageProcessingMethods();
+            EditedImage.Visibility = ViewStates.Gone;
+            Preview.Click += Preview_Click;
 
-            ClassLibrary.ImageProcessingMethods Methods = new ClassLibrary.ImageProcessingMethods();
+            Crop.Click += Crop_Click;
+            ProcessImage.Click += ProcessImage_Click;
+
+        }
+
+        private void Preview_Click(object sender, EventArgs e)
+        {
            
             if (Threshold.Text.Length == 0)
                 thresholdinput = 165;
             else
                 thresholdinput = int.Parse(Threshold.Text);
+            
+            if(ColorFilter.CheckedRadioButtonId == 2131230759)
+                 editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, true);
+            else
+                editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, false);
 
-            editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput);
-            //editedbmp = BitmapFactory.DecodeFile(editedFilepath);
+            //Color image Filtering
             EditedImage.SetImageBitmap(editedbmp);
+            EditedImage.Visibility = ViewStates.Visible;
+        }
 
-            Crop.Click += Crop_Click;
+        private void ProcessImage_Click(object sender, EventArgs e)
+        {
+            //Save the Colored filtered Image
+            try
+            {
+                Preview_Click(sender, e);
+                FileStream Imagesave = new FileStream(editedFilepath, FileMode.Open);
+                editedbmp.Compress(Bitmap.CompressFormat.Png, 100, Imagesave);
+                Imagesave.Flush();
+                Imagesave.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            Intent intent = new Intent(this, typeof(ReportPage));
+            intent.PutExtra("reportdata", JsonConvert.SerializeObject(previousimageinfo));
+            this.StartActivity(intent);
 
         }
 
         private void Crop_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

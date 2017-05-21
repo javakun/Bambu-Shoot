@@ -17,18 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:id="@+id/loadedimageview" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/editedimageview" />
     </LinearLayout>
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView1">
+        android:id="@+id/inputscroll">
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -52,7 +47,7 @@
             <RadioGroup
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:id="@+id/radioGroup1">
+                android:id="@+id/colorfilterRadioGroup">
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,21 +64,44 @@
                     android:textColor="@android:color/black"
                     android:buttonTint="#ff008000" />
             </RadioGroup>
-          <EditText xmlns:tools="http://schemas.android.com/tools"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:id="@+id/editText_threshold"
-               android:hint="@string/threshold_placeholder"
-               android:maxLength="3"
-               android:textColor="#000"
-               android:textColorHint="#000"
-               android:gravity="left"
-               android:inputType="text" />
-            <Button
-                android:text="Load"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/loadimageBtn"
+                android:layout_weight="100"
+                android:id="@+id/previewlayout">
+                <EditText xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/editText_threshold"
+                    android:hint="@string/threshold_placeholder"
+                    android:maxLength="3"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="75"
+                    android:inputType="number" />
+                <Button
+                    android:text="Preview"
+                    android:id="@+id/previewBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25" />
+            </LinearLayout>
+            <ImageView xmlns:tools="http://schemas.android.com/tools"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:id="@+id/editedimageview"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                tools:visibility="gone"
+                android:visibility="gone" />
+            <Button
+                android:text="Process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/processimageBtn"
                 android:layout_marginLeft="10.0dp"
                 android:layout_marginRight="10.0dp" />
         </TableLayout>

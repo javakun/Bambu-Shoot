@@ -12,20 +12,20 @@ using Android.Graphics;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
+using Android.Media;
+using System.IO;
+using Java.IO;
 
 namespace ClassLibrary
 {
     public class ImageProcessingMethods
     {
-        Bitmap blackandwhiteimage;
-        Bitmap grayscaleimage;
-        Bitmap BmpImage;
+        Bitmap resultingfilter;
         Bitmap[] segmentos;
+
         int[] segmentcounts;
 
-
-
-        public Bitmap BWandGrayScaleFiltering(String filepath, int threshold)
+        public Bitmap BWandGrayScaleFiltering(String filepath, int threshold, bool colorfiltermode)
         {
             int thresholdDef;
             //BmpImage = BitmapFactory.DecodeFile(filepath);
@@ -41,34 +41,37 @@ namespace ClassLibrary
             Mat dest = new Mat();
             Mat dest3 = new Mat();
             Mat dest2 = new Mat();
-            System.Drawing.Rectangle seg1 = new System.Drawing.Rectangle(0, 0, width / 10, height);
-
 
             CvInvoke.Decolor(img, dest, dest2);
             CvInvoke.Threshold(dest, dest3, thresholdDef, 255, 0);
-            Mat dest4 = new Mat(dest3, seg1);
-
 
             Image<Gray, byte> imggray = dest2.ToImage<Gray, Byte>();
-            Image<Gray, byte> imgbw = dest4.ToImage<Gray, Byte>();
-            // myGreyImage.Source = Emgu.CV.WPF.BitmapSourceConvert.ToBitmapSource(imggray);
-            // mybWImage.Source = Emgu.CV.WPF.BitmapSourceConvert.ToBitmapSource(imgbw);
-
-            grayscaleimage = imggray.ToBitmap();
-            
+            Image<Gray, byte> imgbw = dest3.ToImage<Gray, Byte>();
 
 
-            return grayscaleimage;
+            if (colorfiltermode == true)
+            {
+                
+                resultingfilter = imggray.ToBitmap();
+            }
+            else
+            {
+             
+                resultingfilter = imgbw.ToBitmap();
+            }
+           
+            return resultingfilter;
         }
 
-        public ClassLibrary.ImgProcessData FiberDensity(String filepath)
+        public ImgProcessData FiberDensity(String filepath)
         {
-
-            Mat imgsrc = CvInvoke.Imread(filepath, Emgu.CV.CvEnum.ImreadModes.AnyColor);
+            segmentos = new Bitmap[11];
+            segmentcounts = new int[11];
+          
+            Mat imgsrc = CvInvoke.Imread(filepath, Emgu.CV.CvEnum.ImreadModes.Grayscale);
 
             int countf, count, count1, count2, count3, count4, count5, count6, count7, count8, count9;
             int width = imgsrc.Width;
-            VectorOfVectorOfPoint contoursDetected = new VectorOfVectorOfPoint();
             int height = imgsrc.Height;
             int slice = width / 10;
          
@@ -87,15 +90,13 @@ namespace ClassLibrary
             System.Drawing.Rectangle seg9 = new System.Drawing.Rectangle(slice * 9, 0, slice, height);
 
 
-            CvInvoke.Decolor(imgsrc, dest, dest2);
-            // CvInvoke.Threshold(dest, dest3, 165,255, Emgu.CV.CvEnum.ThresholdType.BinaryInv);
-            CvInvoke.AdaptiveThreshold(dest, dest3, 255, Emgu.CV.CvEnum.AdaptiveThresholdType.MeanC, Emgu.CV.CvEnum.ThresholdType.Binary, 251, 1);
-            //CvInvoke.FindContours(dest3, contoursDetected, null, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
-            // int counter = contoursDetected.Size;
-            countf = CvInvoke.CountNonZero(dest3);
-            Image<Gray, byte> imgbw = dest2.ToImage<Gray, Byte>();
+           // CvInvoke.Decolor(imgsrc, dest, dest2);
+            CvInvoke.AdaptiveThreshold(imgsrc, dest3, 255, Emgu.CV.CvEnum.AdaptiveThresholdType.MeanC, Emgu.CV.CvEnum.ThresholdType.Binary, 251, 1);
 
-            blackandwhiteimage = imgbw.ToBitmap();
+            countf = CvInvoke.CountNonZero(dest3);
+         //   Image<Gray, byte> imgbw = dest2.ToImage<Gray, Byte>();
+
+           // blackandwhiteimage = imgbw.ToBitmap();
             // return countf
 
             Mat imgseg = new Mat(dest3, seg);
@@ -121,6 +122,7 @@ namespace ClassLibrary
             Image<Gray, byte> canto7 = imgseg7.ToImage<Gray, Byte>();
             Image<Gray, byte> canto8 = imgseg8.ToImage<Gray, Byte>();
             Image<Gray, byte> canto9 = imgseg9.ToImage<Gray, Byte>();
+
 
             segmentos[1] = canto.ToBitmap();
             segmentos[2] = canto1.ToBitmap();
@@ -163,11 +165,13 @@ namespace ClassLibrary
                 Height = height,
                 Width = width,
                 Countfinal = countf,
-                FiberDensityTotal= (countf/(height*width))
-    };
+                FiberDensityTotal = (countf / (height * width))
+            };
 
             return Alldata;
         }
 
+
     }
+
 }
