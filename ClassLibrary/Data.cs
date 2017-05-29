@@ -54,6 +54,7 @@ namespace ClassLibrary
 
         public int imagewidth { get; set; }
         public int imageheigth { get; set; }
+        public string filter { get; set; }
         //Value for image transform 0-255
         public int threshold { get; set; }
         //Amount of Black Pixels(Fibers)
@@ -70,42 +71,44 @@ namespace ClassLibrary
         //Sum of All Segments
         public int totalSegCount { get; set; }
         //Count of seg / Count de complete image
-        public int FiberDensityS1 { get; set; }
-        public int FiberDensityS2 { get; set; }
-        public int FiberDensityS3 { get; set; }
-        public int FiberDensityS4 { get; set; }
-        public int FiberDensityS5 { get; set; }
-        public int FiberDensityS6 { get; set; }
-        public int FiberDensityS7 { get; set; }
-        public int FiberDensityS8 { get; set; }
-        public int FiberDensityS9 { get; set; }
-        public int FiberDensityS10 { get; set; }
+        public double FiberDensityS1Total { get; set; }
+        public double FiberDensityS2Total { get; set; }
+        public double FiberDensityS3Total { get; set; }
+        public double FiberDensityS4Total { get; set; }
+        public double FiberDensityS5Total { get; set; }
+        public double FiberDensityS6Total { get; set; }
+        public double FiberDensityS7Total { get; set; }
+        public double FiberDensityS8Total { get; set; }
+        public double FiberDensityS9Total { get; set; }
+        public double FiberDensityS10Total { get; set; }
+
+        //Count of seg / Count de segment image
+        public double FiberDensityS1 { get; set; }
+        public double FiberDensityS2 { get; set; }
+        public double FiberDensityS3 { get; set; }
+        public double FiberDensityS4 { get; set; }
+        public double FiberDensityS5 { get; set; }
+        public double FiberDensityS6 { get; set; }
+        public double FiberDensityS7 { get; set; }
+        public double FiberDensityS8 { get; set; }
+        public double FiberDensityS9 { get; set; }
+        public double FiberDensityS10 { get; set; }
         //Total FiberDensity of Image: totalSegCount/(imageheight*imagewidth)
-        public int TotalFiberDensity { get; set; }
+        public double TotalFiberDensity { get; set; }
 
 
     }
 
     public class ImgProcessData
     {
-        //public byte[] Segment1 { get; set; }
-        //public byte[] Segment2 { get; set; }
-        //public byte[] Segment3 { get; set; }
-        //public byte[] Segment4 { get; set; }
-        //public byte[] Segment5 { get; set; }
-        //public byte[] Segment6 { get; set; }
-        //public byte[] Segment7 { get; set; }
-        //public byte[] Segment8 { get; set; }
-        //public byte[] Segment9 { get; set; }
-        //public byte[] Segment10 { get; set; }
 
-        public Bitmap bmp { get; set; }
         public Bitmap[] Segments { get; set; }
         public int[] SegmentCounts { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
         public int Countfinal { get; set; }
-        public int FiberDensityTotal { get; set; }
+        public double FiberDensityTotal { get; set; }
+        public double[] FiberDensitySegs { get; set; }
 
     }
 

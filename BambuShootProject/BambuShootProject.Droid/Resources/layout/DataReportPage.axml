@@ -18,82 +18,938 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageslayout">
-            <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
+            android:id="@+id/reportlayout">
+            <TextView
+                android:text="Image Title"
+                android:background="#009900"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:id="@+id/loadedimageview" />
+                android:layout_height="40dp"
+                android:id="@+id/imagetitlebar"
+                android:textSize="30sp" />
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/imageslayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/loadedimageview" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100"
+                    android:id="@+id/imageSegments"
+                    android:paddingTop="10dp">
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:layout_weight="10"
+                        android:id="@+id/segment1" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment2"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment3"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment4"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment5"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment6"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment7"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment8"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment9"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:id="@+id/segment10"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_height="150dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="100"
-                android:id="@+id/imageSegments"
-                android:paddingTop="10dp">
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    android:layout_weight="10"
-                    android:id="@+id/segment1" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment2"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment3"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment4"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment5"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment6"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment7"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment8"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment9"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
-                <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/segment10"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="10"
-                    android:layout_height="150dp" />
+                android:id="@+id/graphlayout">
+                <OxyPlot.Xamarin.Android.PlotView
+                    android:id="@+id/plot_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
             </LinearLayout>
+            <TextView
+                android:text="Processed Image Values"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#009900"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:id="@+id/datareportvalues"
+                android:textSize="28sp" />
+            <HorizontalScrollView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontalScrollView1">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/linearLayoutfortables"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TableLayout
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout1">
+                        <TableRow
+                            android:id="@+id/tableRow1">
+                            <TextView
+                                android:text="Location:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/locationshow"
+                                android:textSize="24sp"
+                                android:layout_width="match_parent" />
+                            <TextView
+                                android:text="Location"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/locationinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow2">
+                            <TextView
+                                android:text="Name of Species:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/nameofspeciesshow"
+                                android:textSize="24sp" />
+                            <TextView
+                                android:text="Name of Species"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/nameofspeciesinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow3">
+                            <TextView
+                                android:text="Date of Harvest:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/dateofharvestsshow"
+                                android:textSize="24sp" />
+                            <TextView
+                                android:text="Date"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/dateofharvestinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow4">
+                            <TextView
+                                android:text="Image Width:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/imagewidthshow"
+                                android:textSize="24sp" />
+                            <TextView
+                                android:text="Width"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/imagewidthinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow5">
+                            <TextView
+                                android:text="Image Height:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/imageheightshow"
+                                android:textSize="24sp" />
+                            <TextView
+                                android:text="Height"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/imageheightinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow6">
+                            <TextView
+                                android:text="Threshold:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/thresholdshow"
+                                android:textSize="24sp" />
+                            <TextView
+                                android:text="Threshold"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/thresholdinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow7">
+                            <TextView
+                                android:text="Color Filter:"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:gravity="left"
+                                android:id="@+id/colorfiltershow"
+                                android:textSize="24sp" />
+                            <TextView
+                                android:text="Filter"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:id="@+id/colorfilterinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp" />
+                        </TableRow>
+                    </TableLayout>
+                    <TableLayout
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:paddingTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableLayout2">
+                        <TableRow
+                            android:id="@+id/tableRow8">
+                            <TextView
+                                android:text="Data Results"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/resultstitle"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Fiber Count"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercounttitle"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="FDensity of Seg"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensitysegtitle"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="FDensity Seg/TPixels"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensitytotaltitle"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow9"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment1"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg1title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg1 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg1"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg1 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg1"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg1 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg1total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow10"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment2"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg2title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg2 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg2"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg2 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg2"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg2 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg2total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow11"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment3"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg3title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg3 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg3"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg3 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg3"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg3 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg3total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow12"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment4"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg4title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg4 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg4"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg4 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg4"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg4 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg4total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow13"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment5"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg5title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg5 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg5"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg5 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg5"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg5 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg5total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow14"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment6"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg6title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg6 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg6"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg6 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg6"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg6 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg6total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow15"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment7"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg7title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg7 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg7"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg7 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg7"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg7 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg7total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow16"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment8"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg8title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg8 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg8"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg8 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg8"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg8 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg8total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow17"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment9"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg9title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg9 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg9"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg9 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg9"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg9 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg9total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow18"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="Segment10"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/seg10title"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text=" Seg10 FCount"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercountseg10"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg10 FDensity"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg10"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Seg10 FDensity Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensityseg10total"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                    </TableLayout>
+                    <TableLayout
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:id="@+id/tableLayout3">
+                        <TableRow
+                            android:id="@+id/tableRow19">
+                            <TextView
+                                android:text="Fiber Count Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercounttotaltitle"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="Fiber Density Total"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensitytotalalltitle"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/tableRow20"
+                            android:paddingTop="5dp">
+                            <TextView
+                                android:text="FCount Total "
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fibercounttotalinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                            <TextView
+                                android:text="FDensity Total "
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:background="@drawable/border"
+                                android:id="@+id/fiberdensitytotalallinfo"
+                                android:textSize="24sp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TableLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayout4">
+                <TableRow
+                    android:id="@+id/tableRow21"
+                    android:layout_weight="100">
+                    <TextView
+                        android:text="Comments:"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:id="@+id/commenttitle"
+                        android:layout_weight="25"
+                        android:textSize="24sp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp" />
+                    <EditText
+                        android:layout_width="0dp"
+                        android:inputType="textMultiLine"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="75"
+                        android:hint="Enter Comments" />
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tableRow22"
+                    android:layout_weight="75">
+                    <Button
+                        android:text="Share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/share"
+                        android:id="@+id/share"
+                        android:layout_weight="25" />
+                    <Button
+                        android:text="Save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/save"
+                        android:id="@+id/saveinternal"
+                        android:layout_weight="25" />
+                    <Button
+                        android:text="Database"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/databaseadd"
+                        android:drawableLeft="@drawable/database"
+                        android:layout_weight="25" />
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

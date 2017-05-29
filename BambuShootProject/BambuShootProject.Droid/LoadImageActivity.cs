@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -14,9 +13,7 @@ using Android.Content.PM;
 using Java.IO;
 using System.IO;
 using Newtonsoft.Json;
-
-
-
+using Plugin.ShareFile;
 
 namespace BambuShootProject.Droid
 {
@@ -33,7 +30,12 @@ namespace BambuShootProject.Droid
         EditText nameofspecies;
         DatePicker dateofharvest;
         TextView NoImageSelected;
+        
         bool ImagePicked = false;
+        ClassLibrary.Reports imageinfo;
+
+        //testing
+        //Button sharing;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -48,11 +50,16 @@ namespace BambuShootProject.Droid
             location = FindViewById<EditText>(Resource.Id.editText_location);
             nameofspecies = FindViewById<EditText>(Resource.Id.editText_Nameofspecies);
             dateofharvest = FindViewById<DatePicker>(Resource.Id.datePicker1);
+     
 
             originalImage = FindViewById<ImageView>(Resource.Id.imageView1);
             NoImageSelected = FindViewById<TextView>(Resource.Id.Noimageselected);
           
             loadImageBtn.Click += LoadImageBtn_Click;
+
+            //Testing Share
+            //    sharing = FindViewById<Button>(Resource.Id.sharetest);
+            //   sharing.Click += Sharing_Click;
 
             addImageBtn.Click += async (sender, args) =>
             {
@@ -79,6 +86,12 @@ namespace BambuShootProject.Droid
 
 
         }
+
+    //    private void Sharing_Click(object sender, EventArgs e)
+    //    {
+    //        CrossShareFile.Current.ShareLocalFile(imageinfo.originalimagefilepath);
+    //    }
+
         private bool verifyData(ClassLibrary.Reports reportsdata)
         {
             
@@ -121,7 +134,7 @@ namespace BambuShootProject.Droid
             Intent intent = new Intent(this, typeof(InputCalibration));
             var dest = MakeNewFileDestination(imagetitle.Text);
 
-            ClassLibrary.Reports imageinfo = new ClassLibrary.Reports()
+            imageinfo = new ClassLibrary.Reports()
             {
                 imagetitle = imagetitle.Text,
                 location = location.Text,
@@ -148,7 +161,7 @@ namespace BambuShootProject.Droid
             return destination;
         }
     
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        public void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }

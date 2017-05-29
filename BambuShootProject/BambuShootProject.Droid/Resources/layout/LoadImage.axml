@@ -107,6 +107,15 @@
                 android:id="@+id/loadimageBtn"
                 android:layout_marginLeft="10.0dp"
                 android:layout_marginRight="10.0dp" />
+          <!-- Testing Share
+            <Button
+                android:text="Share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/share"
+                android:id="@+id/sharetest"
+                android:layout_weight="25" />
+            -->
         </TableLayout>
     </ScrollView>
 </LinearLayout>

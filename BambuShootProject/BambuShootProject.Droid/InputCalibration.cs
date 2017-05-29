@@ -33,7 +33,6 @@ namespace BambuShootProject.Droid
         Reports previousimageinfo;
         ImageProcessingMethods Methods;
         RadioGroup ColorFilter;
-
         String originalFilepath, editedFilepath;
 
         protected override void OnCreate(Bundle bundle)
@@ -62,8 +61,8 @@ namespace BambuShootProject.Droid
             LoadedImage.SetImageBitmap(loadedbmp);
             Methods = new ImageProcessingMethods();
             EditedImage.Visibility = ViewStates.Gone;
-            Preview.Click += Preview_Click;
 
+            Preview.Click += Preview_Click;
             Crop.Click += Crop_Click;
             ProcessImage.Click += ProcessImage_Click;
 
@@ -76,12 +75,19 @@ namespace BambuShootProject.Droid
                 thresholdinput = 165;
             else
                 thresholdinput = int.Parse(Threshold.Text);
-            
-            if(ColorFilter.CheckedRadioButtonId == 2131230759)
-                 editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, true);
-            else
-                editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, false);
 
+            if (ColorFilter.CheckedRadioButtonId == Resource.Id.GSRadioBtn )
+            {
+                editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, true);
+                previousimageinfo.threshold = thresholdinput;
+                previousimageinfo.filter = "GrayScale";
+            }
+            else
+            {
+                editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, false);
+                previousimageinfo.threshold = thresholdinput;
+                previousimageinfo.filter = "Black & White";
+            }
             //Color image Filtering
             EditedImage.SetImageBitmap(editedbmp);
             EditedImage.Visibility = ViewStates.Visible;
