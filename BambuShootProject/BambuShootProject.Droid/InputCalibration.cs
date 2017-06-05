@@ -54,8 +54,8 @@ namespace BambuShootProject.Droid
             ProcessImage = FindViewById<Button>(Resource.Id.processimageBtn);
             ColorFilter = FindViewById<RadioGroup>(Resource.Id.colorfilterRadioGroup);
 
-            originalFilepath = previousimageinfo.originalimagefilepath;
-            editedFilepath = previousimageinfo.editedimagefilepath;
+            originalFilepath = previousimageinfo.Originalimagefilepath;
+            editedFilepath = previousimageinfo.Editedimagefilepath;
 
             loadedbmp = BitmapFactory.DecodeFile(originalFilepath);
             LoadedImage.SetImageBitmap(loadedbmp);
@@ -79,14 +79,14 @@ namespace BambuShootProject.Droid
             if (ColorFilter.CheckedRadioButtonId == Resource.Id.GSRadioBtn )
             {
                 editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, true);
-                previousimageinfo.threshold = thresholdinput;
-                previousimageinfo.filter = "GrayScale";
+                previousimageinfo.Threshold = thresholdinput;
+                previousimageinfo.Filter = "GrayScale";
             }
             else
             {
                 editedbmp = Methods.BWandGrayScaleFiltering(editedFilepath, thresholdinput, false);
-                previousimageinfo.threshold = thresholdinput;
-                previousimageinfo.filter = "Black & White";
+                previousimageinfo.Threshold = thresholdinput;
+                previousimageinfo.Filter = "Black & White";
             }
             //Color image Filtering
             EditedImage.SetImageBitmap(editedbmp);

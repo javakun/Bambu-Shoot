@@ -5,24 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#009900"
-        android:padding="6dip"
-        android:id="@+id/SearchLinearLayout">
-        <EditText
-            android:id="@+id/SearchEdttxt"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Search Bar" />
-        <Button
-            android:id="@+id/SearchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search" />
-    </LinearLayout>
     <HorizontalScrollView
         android:minWidth="25px"
         android:minHeight="25px"

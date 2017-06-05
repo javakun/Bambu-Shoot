@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -45,19 +44,19 @@ namespace BambuShootProject.Droid
 
             TextView username = row.FindViewById<TextView>(Resource.Id.txtUsername);
             //username.Text = users[userreport].username;
-            username.Text = reports[position].userid;
+            username.Text = reports[position].Userid;
 
             TextView imagetitle = row.FindViewById<TextView>(Resource.Id.txtImageTitle);
-            imagetitle.Text = reports[position].imagetitle;
+            imagetitle.Text = reports[position].Imagetitle;
 
             TextView location = row.FindViewById<TextView>(Resource.Id.txtLocation);
-            location.Text = reports[position].location;
+            location.Text = reports[position].Location;
 
             TextView nameofspecies = row.FindViewById<TextView>(Resource.Id.txtNameofspecies);
-            nameofspecies.Text = reports[position].nameofspecies;
+            nameofspecies.Text = reports[position].Nameofspecies;
 
             TextView dateofharvest = row.FindViewById<TextView>(Resource.Id.txtDateofHarvest);
-            dateofharvest.Text = reports[position].dateofharvest;
+            dateofharvest.Text = reports[position].Dateofharvest;
 
             if ((position % 2) == 1)
             {

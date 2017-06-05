@@ -28,8 +28,6 @@ namespace BambuShootProject.Droid
     {
 
         DatabaseAdapter adapter;
-        EditText SearchTxt;
-        Button SearchBtn;
         ListView ReportView;
 
         // URL of the mobile app backend.
@@ -49,7 +47,7 @@ namespace BambuShootProject.Droid
         private IMobileServiceTable<ClassLibrary.Reports> ReportsTable;
 #endif
 
-        protected async override void OnCreate(Bundle bundle)
+        protected async  override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -69,8 +67,6 @@ namespace BambuShootProject.Droid
 #endif
 
             OnRefreshItemsSelected();
-            SearchTxt = FindViewById<EditText>(Resource.Id.SearchEdttxt);
-            SearchBtn = FindViewById<Button>(Resource.Id.SearchBtn);
             adapter = new DatabaseAdapter(this,Resource.Layout.Row_list_Report_DB);
             ReportView = FindViewById<ListView>(Resource.Id.listViewReports);
             ReportView.Adapter = adapter;
@@ -80,10 +76,19 @@ namespace BambuShootProject.Droid
 #if OFFLINE_SYNC_ENABLED
         private async Task InitLocalStoreAsync()
         {
-            var store = new MobileServiceSQLiteStore(localDbFilename);
-            store.DefineTable<Reports>();
+            
+            try
+            {
+                var store = new MobileServiceSQLiteStore(localDbFilename);
+                store.DefineTable<ClassLibrary.Reports>();
+                await client.SyncContext.InitializeAsync(store);
+             }
+            catch(Exception ex)
+            {
+                Console.Write(ex);
+            }
+            
 
-            await client.SyncContext.InitializeAsync(store);
         }
 
         private async Task SyncAsync(bool pullData = false)

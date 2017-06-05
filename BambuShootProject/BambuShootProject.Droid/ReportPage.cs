@@ -20,6 +20,8 @@ using Plugin.ShareFile;
 using Android.Graphics.Pdf;
 using static Android.Graphics.Pdf.PdfDocument;
 using System.IO;
+using Microsoft.WindowsAzure.MobileServices;
+using Android.Net;
 
 namespace BambuShootProject.Droid
 {
@@ -27,7 +29,9 @@ namespace BambuShootProject.Droid
     public class ReportPage : Activity
     {
         ImageView LoadedImage;
+        ImageView EditedImage;
         Bitmap loadedimgbmp;
+        Bitmap editedimgbmp;
 
         ImageView Segment1;
         ImageView Segment2;
@@ -91,11 +95,21 @@ namespace BambuShootProject.Droid
         Button Share;
         Button DBAdd;
         string reportfilepath;
+        bool isOnline;
+        const string applicationURL = @"https://bambushoot.azurewebsites.net";
+        Users RegisteredUser;
+
+
+        // Create the client instance, using the mobile app backend URL.
+        private MobileServiceClient client;
+
+        private MobileServiceCollection<Reports, Reports> ReportsTableItems;
+        private IMobileServiceTable<Reports> ReportsTable;
 
         protected override void OnCreate(Bundle bundle)
         {
             Methods = new ImageProcessingMethods();
-
+            
             base.OnCreate(bundle);
 
             // Create your application here
@@ -103,6 +117,7 @@ namespace BambuShootProject.Droid
 
             FinalReport = JsonConvert.DeserializeObject<Reports>(Intent.GetStringExtra("reportdata"));
             LoadedImage = FindViewById<ImageView>(Resource.Id.loadedimageview);
+            EditedImage = FindViewById<ImageView>(Resource.Id.editedimageview);
             Segment1 = FindViewById<ImageView>(Resource.Id.segment1);
             Segment2 = FindViewById<ImageView>(Resource.Id.segment2);
             Segment3 = FindViewById<ImageView>(Resource.Id.segment3);
@@ -119,38 +134,42 @@ namespace BambuShootProject.Droid
             DBAdd = FindViewById<Button>(Resource.Id.databaseadd);
 
             //Set Original Image
-            loadedimgbmp = BitmapFactory.DecodeFile(FinalReport.originalimagefilepath);
+            loadedimgbmp = BitmapFactory.DecodeFile(FinalReport.Originalimagefilepath);
             LoadedImage.SetImageBitmap(loadedimgbmp);
 
+            //Set Edited Image
+            editedimgbmp = BitmapFactory.DecodeFile(FinalReport.Editedimagefilepath);
+            EditedImage.SetImageBitmap(editedimgbmp);
+
             ImgProcessData ImgReportdata = new ImgProcessData();
-            ImgReportdata = Methods.FiberDensity(FinalReport.editedimagefilepath);
-            FinalReport.imagewidth = ImgReportdata.Width;
-            FinalReport.imageheigth = ImgReportdata.Height;
+            ImgReportdata = Methods.FiberDensity(FinalReport.Editedimagefilepath);
+            FinalReport.Imagewidth = ImgReportdata.Width;
+            FinalReport.Imageheight = ImgReportdata.Height;
 
-            FinalReport.countS1 = ImgReportdata.SegmentCounts[1];
-            FinalReport.countS2 = ImgReportdata.SegmentCounts[2];
-            FinalReport.countS3 = ImgReportdata.SegmentCounts[3];
-            FinalReport.countS4 = ImgReportdata.SegmentCounts[4];
-            FinalReport.countS5 = ImgReportdata.SegmentCounts[5];
-            FinalReport.countS6 = ImgReportdata.SegmentCounts[6];
-            FinalReport.countS7 = ImgReportdata.SegmentCounts[7];
-            FinalReport.countS8 = ImgReportdata.SegmentCounts[8];
-            FinalReport.countS9 = ImgReportdata.SegmentCounts[9];
-            FinalReport.countS10 = ImgReportdata.SegmentCounts[10];
+            FinalReport.CountS1 = ImgReportdata.SegmentCounts[1];
+            FinalReport.CountS2 = ImgReportdata.SegmentCounts[2];
+            FinalReport.CountS3 = ImgReportdata.SegmentCounts[3];
+            FinalReport.CountS4 = ImgReportdata.SegmentCounts[4];
+            FinalReport.CountS5 = ImgReportdata.SegmentCounts[5];
+            FinalReport.CountS6 = ImgReportdata.SegmentCounts[6];
+            FinalReport.CountS7 = ImgReportdata.SegmentCounts[7];
+            FinalReport.CountS8 = ImgReportdata.SegmentCounts[8];
+            FinalReport.CountS9 = ImgReportdata.SegmentCounts[9];
+            FinalReport.CountS10 = ImgReportdata.SegmentCounts[10];
 
-            FinalReport.totalSegCount = ImgReportdata.Countfinal;
+            FinalReport.TotalSegCount = ImgReportdata.Countfinal;
             FinalReport.TotalFiberDensity = ImgReportdata.FiberDensityTotal;
 
-            FinalReport.FiberDensityS1Total = Math.Round((double) FinalReport.countS1 / (FinalReport.imageheigth*FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS2Total = Math.Round((double)FinalReport.countS2 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS3Total = Math.Round((double)FinalReport.countS3 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS4Total = Math.Round((double)FinalReport.countS4 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS5Total = Math.Round((double)FinalReport.countS5 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS6Total = Math.Round((double)FinalReport.countS6 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS7Total = Math.Round((double)FinalReport.countS7 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS8Total = Math.Round((double)FinalReport.countS8 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS9Total = Math.Round((double)FinalReport.countS9 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
-            FinalReport.FiberDensityS10Total = Math.Round((double)FinalReport.countS10 / (FinalReport.imageheigth * FinalReport.imagewidth), 6);
+            FinalReport.FiberDensityS1Total = Math.Round((double) FinalReport.CountS1 / (FinalReport.Imageheight*FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS2Total = Math.Round((double)FinalReport.CountS2 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS3Total = Math.Round((double)FinalReport.CountS3 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS4Total = Math.Round((double)FinalReport.CountS4 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS5Total = Math.Round((double)FinalReport.CountS5 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS6Total = Math.Round((double)FinalReport.CountS6 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS7Total = Math.Round((double)FinalReport.CountS7 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS8Total = Math.Round((double)FinalReport.CountS8 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS9Total = Math.Round((double)FinalReport.CountS9 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
+            FinalReport.FiberDensityS10Total = Math.Round((double)FinalReport.CountS10 / (FinalReport.Imageheight * FinalReport.Imagewidth), 6);
 
             FinalReport.FiberDensityS1 = Math.Round((double)ImgReportdata.FiberDensitySegs[1], 6);
             FinalReport.FiberDensityS2 = Math.Round((double)ImgReportdata.FiberDensitySegs[2], 6);
@@ -225,25 +244,25 @@ namespace BambuShootProject.Droid
             TotalCount = FindViewById<TextView>(Resource.Id.fibercounttotalinfo);
             TotalDensity = FindViewById<TextView>(Resource.Id.fiberdensitytotalallinfo);
 
-            imagetitle.Text = FinalReport.imagetitle;
-            location.Text = FinalReport.location;
-            nameofspecies.Text = FinalReport.nameofspecies;
-            dateofharvest.Text = FinalReport.dateofharvest;
-            imagewidth.Text = FinalReport.imagewidth.ToString();
-            imageheight.Text = FinalReport.imageheigth.ToString();
-            threshold.Text = FinalReport.threshold.ToString();
-            colorfilter.Text = FinalReport.filter;
+            imagetitle.Text = FinalReport.Imagetitle;
+            location.Text = FinalReport.Location;
+            nameofspecies.Text = FinalReport.Nameofspecies;
+            dateofharvest.Text = FinalReport.Dateofharvest;
+            imagewidth.Text = FinalReport.Imagewidth.ToString();
+            imageheight.Text = FinalReport.Imageheight.ToString();
+            threshold.Text = FinalReport.Threshold.ToString();
+            colorfilter.Text = FinalReport.Filter;
 
-            seg1fcount.Text = FinalReport.countS1.ToString();
-            seg2fcount.Text = FinalReport.countS2.ToString();
-            seg3fcount.Text = FinalReport.countS3.ToString();
-            seg4fcount.Text = FinalReport.countS4.ToString();
-            seg5fcount.Text = FinalReport.countS5.ToString();
-            seg6fcount.Text = FinalReport.countS6.ToString();
-            seg7fcount.Text = FinalReport.countS7.ToString();
-            seg8fcount.Text = FinalReport.countS8.ToString();
-            seg9fcount.Text = FinalReport.countS9.ToString();
-            seg10fcount.Text = FinalReport.countS10.ToString();
+            seg1fcount.Text = FinalReport.CountS1.ToString();
+            seg2fcount.Text = FinalReport.CountS2.ToString();
+            seg3fcount.Text = FinalReport.CountS3.ToString();
+            seg4fcount.Text = FinalReport.CountS4.ToString();
+            seg5fcount.Text = FinalReport.CountS5.ToString();
+            seg6fcount.Text = FinalReport.CountS6.ToString();
+            seg7fcount.Text = FinalReport.CountS7.ToString();
+            seg8fcount.Text = FinalReport.CountS8.ToString();
+            seg9fcount.Text = FinalReport.CountS9.ToString();
+            seg10fcount.Text = FinalReport.CountS10.ToString();
 
             seg1density.Text = (FinalReport.FiberDensityS1 * 100).ToString() + "%";
             seg2density.Text = (FinalReport.FiberDensityS2 * 100).ToString() + "%";
@@ -267,14 +286,95 @@ namespace BambuShootProject.Droid
             seg9densitytotal.Text = (FinalReport.FiberDensityS9Total * 100).ToString() + "%";
             seg10densitytotal.Text = (FinalReport.FiberDensityS10Total * 100).ToString() + "%";
 
-            TotalCount.Text = FinalReport.totalSegCount.ToString();
+            TotalCount.Text = FinalReport.TotalSegCount.ToString();
             TotalDensity.Text = Math.Round((FinalReport.TotalFiberDensity * 100), 4).ToString() + "%";
 
             
 
             Share.Click += Share_Click;
             Save.Click += Save_Click;
+            DBAdd.Click += DBAdd_Click;
            
+        }
+
+        private void DBAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+                NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
+                try
+                {
+                    isOnline = networkInfo.IsConnected;
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex);
+                }
+
+                if (isOnline)
+                {
+                    RegisteredUser = new Users();
+                    validateUser();
+                }
+                else
+                    Toast.MakeText(this, "No Connection, Please Connect to Internet", ToastLength.Long).Show();
+
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+            }
+        }
+
+        private void validateUser()
+        {
+
+            //Pull the Validate User Dialog
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();  // Pull up the dialog from the activity
+            ValidateUser_Dialog ValidateUser_Dialog = new ValidateUser_Dialog();
+            ValidateUser_Dialog.Show(transaction, "dialog fragment");
+
+            ValidateUser_Dialog.ValidateEvent += ValidateUser_Dialog_ValidateEvent;
+        }
+
+        private async void ValidateUser_Dialog_ValidateEvent(object sender, OnValidateEventArgs e)
+        {
+            RegisteredUser.Id = e.id;
+            RegisteredUser.Username = e.username;
+            RegisteredUser.Password = e.password;
+
+            if (int.Parse(RegisteredUser.Id) > 0)
+            {
+
+                client = new MobileServiceClient(applicationURL);
+                ReportsTable = client.GetTable<Reports>();
+
+                var ReportsList = await ReportsTable.ToListAsync();
+                int count = ReportsList.Count + 1;
+
+                FinalReport.Id = count.ToString();
+                FinalReport.Userid = RegisteredUser.Id;
+
+                try
+                {
+                    await ReportsTable.InsertAsync(FinalReport);
+                    ReportsTableItems.Add(FinalReport);
+
+                    Toast.MakeText(this, "User Valid, Report Added", ToastLength.Long).Show();
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex);
+                }
+            }
+            else
+            {
+                Toast.MakeText(this, "User is not Registered", ToastLength.Long).Show();
+            }
+
+
+     
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -309,7 +409,7 @@ namespace BambuShootProject.Droid
             document.FinishPage(page);
 
             // save PDF
-            reportfilepath = FinalReport.originalimagefilepath + ".pdf";
+            reportfilepath = FinalReport.Originalimagefilepath + ".pdf";
             FileStream fileStream = new FileStream(reportfilepath, FileMode.Create);
             // write the document content
             document.WriteTo(fileStream);

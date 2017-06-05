@@ -21,6 +21,10 @@ namespace BambuShootProject.Droid
         Button gCreateBtn;
         EditText gUsername;
         EditText gPassword;
+        Users Userinformation;
+        Users Validating;
+        List<Users> UserList;
+
         // URL of the mobile app backend.
         const string applicationURL = @"https://bambushoot.azurewebsites.net";
 
@@ -38,8 +42,8 @@ namespace BambuShootProject.Droid
             client = new MobileServiceClient(applicationURL);
             UserTable = client.GetTable<Users>();
 
-            gUsername = view.FindViewById<EditText>(Resource.Id.UsernameEdt);
-            gPassword = view.FindViewById<EditText>(Resource.Id.PasswordEdt);
+            gUsername = view.FindViewById<EditText>(Resource.Id.usernameEdt);
+            gPassword = view.FindViewById<EditText>(Resource.Id.passwordEdt);
             gCreateBtn = view.FindViewById<Button>(Resource.Id.CreateBtn);
 
             gCreateBtn.Click += GCreateBtn_Click;
@@ -65,7 +69,25 @@ namespace BambuShootProject.Droid
                 somethingempty = true;
             }
             //Add here Validation of Username and Password
-         
+
+            Validating = new Users();
+            Validating.Username = gUsername.Text;
+
+            for (int i = 0; i < UserList.Count; i++)
+            {
+                if (UserList.ElementAt<Users>(i).Username.Equals(Validating.Username))
+                {
+                    gUsername.FindFocus();
+                    gUsername.Error = "Username Taken";
+                    somethingempty = true;
+                    break;
+                }
+                else
+                {
+                    somethingempty = false;
+                }
+
+            }
 
             return somethingempty;
 
@@ -74,19 +96,26 @@ namespace BambuShootProject.Droid
         {
            
             await RefreshUserItems();
-            
-            if ( verifyData(gUsername.Text, gPassword.Text) == false) { 
+            UserList = await UserTable.ToListAsync();
 
-            var UserList = await UserTable.ToListAsync();
+            if ( verifyData(gUsername.Text, gPassword.Text) == false) { 
+                
             int count = UserList.Count + 1;
 
-            Users Userinfo = new Users();
-            Userinfo.id = count.ToString();
-            Userinfo.username = gUsername.Text;
-            Userinfo.password = gPassword.Text;
+            Userinformation = new Users();
+            Userinformation.Id = count.ToString();
+            Userinformation.Username = gUsername.Text;
+            Userinformation.Password = gPassword.Text;
 
-            await UserTable.InsertAsync(Userinfo);
-            UserTableItems.Add(Userinfo);
+                try
+                {
+                    await UserTable.InsertAsync(Userinformation);
+                    UserTableItems.Add(Userinformation);
+                }
+                catch(Exception ex)
+                {
+                    Console.Write(ex);
+                }
 
             this.Dismiss();
           }

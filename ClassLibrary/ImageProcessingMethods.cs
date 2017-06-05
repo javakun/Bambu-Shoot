@@ -43,7 +43,7 @@ namespace ClassLibrary
             CvInvoke.Decolor(img, dest, dest2);
             CvInvoke.Threshold(dest, dest3, thresholdDef, 255, 0);
 
-            Image<Gray, byte> imggray = dest2.ToImage<Gray, Byte>();
+            Image<Gray, byte> imggray = dest.ToImage<Gray, Byte>();
             Image<Gray, byte> imgbw = dest3.ToImage<Gray, Byte>();
 
 
@@ -92,7 +92,7 @@ namespace ClassLibrary
             countf = CvInvoke.CountNonZero(dest3);
             countf = imgsrc.Total.ToInt32() - countf;
 
-
+            
             Mat imgseg = new Mat(dest3, seg);
             Mat imgseg1 = new Mat(dest3, seg1);
             Mat imgseg2 = new Mat(dest3, seg2);

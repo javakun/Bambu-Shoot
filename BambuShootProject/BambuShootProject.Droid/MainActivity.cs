@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Net;
+using ClassLibrary;
 
 namespace BambuShootProject.Droid
 {
@@ -19,6 +21,8 @@ namespace BambuShootProject.Droid
         public Button gBtnDatabase;
         public Button gBtnDataReportLib;
         public Button gBtnCreateUser;
+        bool isOnline;
+        Users RegisteredUser;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -38,14 +42,31 @@ namespace BambuShootProject.Droid
             gBtnDatabase.Click += GBtnDatabase_Click;
             gBtnDataReportLib.Click += GBtnDataReportLib_Click;
 
+            ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+            NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;       
+            try
+            {
+                isOnline = networkInfo.IsConnected;
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex);
+            }
         }
 
         private void GBtnCreateUser_Click(object sender, EventArgs e)
         {
-            //Pull the Create User Dialog
-            FragmentTransaction transaction = FragmentManager.BeginTransaction();  // Pull up the dialog from the activity
-            CreateUser_Dialog User_Dialog = new CreateUser_Dialog();
-            User_Dialog.Show(transaction, "dialog fragment");
+
+            if (isOnline)
+            {
+                //Pull the Create User Dialog
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();  // Pull up the dialog from the activity
+                CreateUser_Dialog User_Dialog = new CreateUser_Dialog();
+                User_Dialog.Show(transaction, "dialog fragment");
+            }
+            else
+                Toast.MakeText(this, "No Connection, Please Connect to Internet", ToastLength.Long).Show();
+            
         }
 
         private void GBtnDataReportLib_Click(object sender, EventArgs e)
@@ -56,8 +77,42 @@ namespace BambuShootProject.Droid
 
         private void GBtnDatabase_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(DatabasePage));
-            this.StartActivity(intent);
+            if (isOnline)
+            {
+                RegisteredUser = new Users();
+                validateUser(); 
+            }
+            else
+                Toast.MakeText(this, "No Connection, Please Connect to Internet", ToastLength.Long).Show();
+        }
+
+        private void validateUser()
+        {
+
+            //Pull the Validate User Dialog
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();  // Pull up the dialog from the activity
+            ValidateUser_Dialog ValidateUser_Dialog = new ValidateUser_Dialog();
+            ValidateUser_Dialog.Show(transaction, "dialog fragment");
+
+            ValidateUser_Dialog.ValidateEvent += ValidateUser_Dialog_ValidateEvent;
+        }
+
+        private void ValidateUser_Dialog_ValidateEvent(object sender, OnValidateEventArgs e)
+        {
+            RegisteredUser.Id = e.id;
+            RegisteredUser.Username = e.username;
+            RegisteredUser.Password = e.password;
+
+            if (int.Parse(RegisteredUser.Id) > 0)
+            {
+                Toast.MakeText(this, "User Valid", ToastLength.Long).Show();
+                Intent intent = new Intent(this, typeof(DatabasePage));
+                this.StartActivity(intent);
+            }
+            else
+            {
+                Toast.MakeText(this, "User is not Registered", ToastLength.Long).Show();
+            }
         }
 
         private void GBtnLoadImage_Click(object sender, EventArgs e)

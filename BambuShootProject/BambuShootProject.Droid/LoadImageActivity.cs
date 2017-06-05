@@ -97,19 +97,19 @@ namespace BambuShootProject.Droid
             
             bool somethingempty = false;
             //Check for empty edit text
-            if (reportsdata.imagetitle.Length == 0 )
+            if (reportsdata.Imagetitle.Length == 0 )
             {
                 imagetitle.FindFocus();
                 imagetitle.Error = "Empty Image Title";
                 somethingempty = true;
             }
-            if (reportsdata.location.Length == 0 )
+            if (reportsdata.Location.Length == 0 )
             {
                 location.FindFocus();
                 location.Error = "Empty Location";
                 somethingempty = true;
             }
-            if (reportsdata.nameofspecies.Length == 0)
+            if (reportsdata.Nameofspecies.Length == 0)
             {
                 nameofspecies.FindFocus();
                 nameofspecies.Error = "Empty Name of Species";
@@ -136,12 +136,12 @@ namespace BambuShootProject.Droid
 
             imageinfo = new ClassLibrary.Reports()
             {
-                imagetitle = imagetitle.Text,
-                location = location.Text,
-                nameofspecies = nameofspecies.Text,
-                dateofharvest = dateofharvest.DayOfMonth.ToString() + "-" + dateofharvest.Month.ToString() + "-" + dateofharvest.Year.ToString(),
-                originalimagefilepath = dest + "/" + imagetitle.Text + "_original.bmp" ,
-                editedimagefilepath = dest + "/" + imagetitle.Text + "_edited.bmp"
+                Imagetitle = imagetitle.Text,
+                Location = location.Text,
+                Nameofspecies = nameofspecies.Text,
+                Dateofharvest = dateofharvest.DayOfMonth.ToString() + "-" + dateofharvest.Month.ToString() + "-" + dateofharvest.Year.ToString(),
+                Originalimagefilepath = dest + "/" + imagetitle.Text + "_original.bmp" ,
+                Editedimagefilepath = dest + "/" + imagetitle.Text + "_edited.bmp"
 
             };
             if (verifyData(imageinfo) == false && ImagePicked)
