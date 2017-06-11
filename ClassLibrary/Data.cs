@@ -128,6 +128,13 @@ namespace ClassLibrary
 
     }
 
+    public class ReportsLib
+    {
+        public string imagetitle { get; set; }
+        public string pdfpath { get; set; }
+        public string originalimagepath { get; set; }
+    }
+
     public class ImgProcessData
     {
 

@@ -37,12 +37,14 @@
                     android:text="Crop"
                     android:id="@+id/cropBtn"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white" />
                 <Button
                     android:text="Rotate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rotateBtn" />
+                    android:id="@+id/rotateBtn"
+                    android:textColor="@android:color/white" />
             </LinearLayout>
             <RadioGroup
                 android:minWidth="25px"
@@ -51,7 +53,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Grayscale"
+                    android:text="Grayscale (Adaptive Threshold) *Better"
                     android:id="@+id/GSRadioBtn"
                     android:textColor="@android:color/black"
                     android:checked="true"
@@ -59,7 +61,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Black and White"
+                    android:text="Black and White (Threshold)"
                     android:id="@+id/BWRadioBtn"
                     android:textColor="@android:color/black"
                     android:buttonTint="#ff008000" />
@@ -76,8 +78,8 @@
                     android:id="@+id/editText_threshold"
                     android:hint="@string/threshold_placeholder"
                     android:maxLength="3"
-                    android:textColor="#000"
-                    android:textColorHint="#000"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
                     android:gravity="left"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -88,7 +90,8 @@
                     android:id="@+id/previewBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="25" />
+                    android:layout_weight="25"
+                    android:textColor="@android:color/white" />
             </LinearLayout>
             <ImageView xmlns:tools="http://schemas.android.com/tools"
                 android:src="@android:drawable/ic_menu_gallery"
@@ -103,7 +106,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/processimageBtn"
                 android:layout_marginLeft="10.0dp"
-                android:layout_marginRight="10.0dp" />
+                android:layout_marginRight="10.0dp"
+                android:textColor="@android:color/white" />
         </TableLayout>
     </ScrollView>
 </LinearLayout>

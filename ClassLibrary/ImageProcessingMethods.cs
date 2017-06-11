@@ -32,7 +32,6 @@ namespace ClassLibrary
             else
                 thresholdDef = threshold;
 
-            //Image<Bgr, byte> imgsrc = new Image<Bgr, byte>(BmpImage);
             Mat img = CvInvoke.Imread(filepath , Emgu.CV.CvEnum.ImreadModes.AnyColor);
             int width = img.Width;
             int height = img.Height;
@@ -59,7 +58,7 @@ namespace ClassLibrary
             return resultingfilter;
         }
 
-        public ImgProcessData FiberDensity(String filepath)
+        public ImgProcessData FiberDensity(String filepath, bool filter)
         {
             segmentos = new Bitmap[11];
             segmentcounts = new int[11];
@@ -88,7 +87,17 @@ namespace ClassLibrary
             System.Drawing.Rectangle seg8 = new System.Drawing.Rectangle(slice * 8, 0, slice, height);
             System.Drawing.Rectangle seg9 = new System.Drawing.Rectangle(slice * 9, 0, slice, height);
 
-            CvInvoke.AdaptiveThreshold(imgsrc, dest3, 255, Emgu.CV.CvEnum.AdaptiveThresholdType.MeanC, Emgu.CV.CvEnum.ThresholdType.Binary, 251, 1);
+            if (filter)
+            {
+                //Grayscale image
+                CvInvoke.AdaptiveThreshold(imgsrc, dest3, 255, Emgu.CV.CvEnum.AdaptiveThresholdType.MeanC, Emgu.CV.CvEnum.ThresholdType.Binary, 251, 1);
+            }
+            else
+            {
+                // Black and white image
+                dest3 = imgsrc;
+            }
+
             countf = CvInvoke.CountNonZero(dest3);
             countf = imgsrc.Total.ToInt32() - countf;
 

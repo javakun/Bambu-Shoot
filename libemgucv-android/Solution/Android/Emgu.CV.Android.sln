@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Emgu.Util", "..\..\Emgu.Util\Emgu.Util.shproj", "{98561642-5EC3-4244-BAF9-6876D9BA5527}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Emgu.CV", "..\..\Emgu.CV\Emgu.CV.shproj", "{12D024EE-D0A5-4BBC-B7C0-7B18CF1AB262}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Emgu.CV.Contrib", "..\..\Emgu.CV.Contrib\Emgu.CV.Contrib.shproj", "{11E54A7E-778D-466C-A176-71E150976AC1}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Emgu.CV.OCR", "..\..\Emgu.CV.OCR\Emgu.CV.OCR.shproj", "{7BC723CB-1678-415F-A65F-4027F8758A6F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Emgu.CV.Cuda", "..\..\Emgu.CV.Cuda\Emgu.CV.Cuda.shproj", "{7B22BB32-C867-45A7-AC53-5BDA820DB91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emgu.CV.World.Android", "..\..\Emgu.CV.World\Emgu.CV.World.Android.csproj", "{5F102C71-65C3-4D77-AE48-29C1E75F82BE}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\Emgu.Util\Emgu.Util.projitems*{98561642-5ec3-4244-baf9-6876d9ba5527}*SharedItemsImports = 13
+		..\..\Emgu.CV\Emgu.CV.projitems*{12d024ee-d0a5-4bbc-b7c0-7b18cf1ab262}*SharedItemsImports = 13
+		..\..\Emgu.CV.Cuda\Emgu.CV.Cuda.projitems*{7b22bb32-c867-45a7-ac53-5bda820db91c}*SharedItemsImports = 13
+		..\..\Emgu.CV.OCR\Emgu.CV.OCR.projitems*{5f102c71-65c3-4d77-ae48-29c1e75f82be}*SharedItemsImports = 4
+		..\..\Emgu.CV.Contrib\Emgu.CV.Contrib.projitems*{5f102c71-65c3-4d77-ae48-29c1e75f82be}*SharedItemsImports = 4
+		..\..\Emgu.CV\Emgu.CV.projitems*{5f102c71-65c3-4d77-ae48-29c1e75f82be}*SharedItemsImports = 4
+		..\..\Emgu.CV.Cuda\Emgu.CV.Cuda.projitems*{5f102c71-65c3-4d77-ae48-29c1e75f82be}*SharedItemsImports = 4
+		..\..\Emgu.Util\Emgu.Util.projitems*{5f102c71-65c3-4d77-ae48-29c1e75f82be}*SharedItemsImports = 4
+		..\..\Emgu.CV.Contrib\Emgu.CV.Contrib.projitems*{11e54a7e-778d-466c-a176-71e150976ac1}*SharedItemsImports = 13
+		..\..\Emgu.CV.OCR\Emgu.CV.OCR.projitems*{7bc723cb-1678-415f-a65f-4027f8758a6f}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Debug|x86.ActiveCfg = Debug|x86
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Debug|x86.Build.0 = Debug|x86
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Release|x86.ActiveCfg = Release|x86
+		{5F102C71-65C3-4D77-AE48-29C1E75F82BE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

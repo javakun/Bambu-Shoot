@@ -17,30 +17,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/CreateUserBtn"
-        android:layout_weight="5" />
+        android:layout_weight="5"
+        android:textColor="@android:color/white" />
     <Button
         android:text="Instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/instructionsbtn"
-        android:layout_weight="5" />
+        android:layout_weight="5"
+        android:textColor="@android:color/white" />
     <Button
         android:text="Process New Image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/processnewimagebtn"
-        android:layout_weight="5" />
+        android:layout_weight="5"
+        android:textColor="@android:color/white" />
     <Button
         android:text="My Data Report Library"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mydatareportlibrarybtn"
-        android:layout_weight="5" />
+        android:layout_weight="5"
+        android:textColor="@android:color/white" />
     <Button
         android:text="Database"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/databasebtn"
         android:drawableLeft="@drawable/database"
-        android:layout_weight="5" />
+        android:layout_weight="5"
+        android:textColor="@android:color/white" />
 </LinearLayout>

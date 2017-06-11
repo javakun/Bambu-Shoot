@@ -9,10 +9,12 @@ using Android.Widget;
 using Android.OS;
 using Android.Net;
 using ClassLibrary;
+using System.IO;
+using Android.Preferences;
 
 namespace BambuShootProject.Droid
 {
-	[Activity (Label = "Bambú Shoot", MainLauncher = true, Icon = "@drawable/BambuShootIcon", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation , ScreenOrientation = ScreenOrientation.Portrait)]
+	[Activity (Label = "Bambú Shoot", MainLauncher = true, Icon = "@drawable/BambuShootIcon", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation , ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
@@ -23,6 +25,7 @@ namespace BambuShootProject.Droid
         public Button gBtnCreateUser;
         bool isOnline;
         Users RegisteredUser;
+        bool savedfile;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -52,8 +55,20 @@ namespace BambuShootProject.Droid
             {
                 Console.Write(ex);
             }
-        }
 
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            savedfile = prefs.GetBoolean("key_for_my_bool_value",false);
+            if (savedfile)
+            {
+                gBtnDataReportLib.Enabled = true;
+            }
+            else
+            {
+                gBtnDataReportLib.Enabled = false;
+            }
+           
+        }
+       
         private void GBtnCreateUser_Click(object sender, EventArgs e)
         {
 

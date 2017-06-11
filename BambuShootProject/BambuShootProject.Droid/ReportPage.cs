@@ -22,10 +22,12 @@ using static Android.Graphics.Pdf.PdfDocument;
 using System.IO;
 using Microsoft.WindowsAzure.MobileServices;
 using Android.Net;
+using Android.Preferences;
 
 namespace BambuShootProject.Droid
 {
-    [Activity(Label = "ReportPage", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+
+    [Activity(Label = "Data Report", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ReportPage : Activity
     {
         ImageView LoadedImage;
@@ -90,14 +92,17 @@ namespace BambuShootProject.Droid
         TextView TotalCount;
         TextView TotalDensity;
         PlotView view;
-
+        ImgProcessData ImgReportdata;
         Button Save;
         Button Share;
         Button DBAdd;
+        Button ReturnMM;
         string reportfilepath;
         bool isOnline;
         const string applicationURL = @"https://bambushoot.azurewebsites.net";
         Users RegisteredUser;
+        EditText comments;
+
 
 
         // Create the client instance, using the mobile app backend URL.
@@ -105,7 +110,7 @@ namespace BambuShootProject.Droid
 
         private MobileServiceCollection<Reports, Reports> ReportsTableItems;
         private IMobileServiceTable<Reports> ReportsTable;
-
+        
         protected override void OnCreate(Bundle bundle)
         {
             Methods = new ImageProcessingMethods();
@@ -129,9 +134,12 @@ namespace BambuShootProject.Droid
             Segment9 = FindViewById<ImageView>(Resource.Id.segment9);
             Segment10 = FindViewById<ImageView>(Resource.Id.segment10);
 
+            comments = FindViewById<EditText>(Resource.Id.commentshow);
+
             Save = FindViewById<Button>(Resource.Id.saveinternal);
             Share = FindViewById<Button>(Resource.Id.share);
             DBAdd = FindViewById<Button>(Resource.Id.databaseadd);
+            ReturnMM = FindViewById<Button>(Resource.Id.returntoMM);
 
             //Set Original Image
             loadedimgbmp = BitmapFactory.DecodeFile(FinalReport.Originalimagefilepath);
@@ -141,8 +149,18 @@ namespace BambuShootProject.Droid
             editedimgbmp = BitmapFactory.DecodeFile(FinalReport.Editedimagefilepath);
             EditedImage.SetImageBitmap(editedimgbmp);
 
-            ImgProcessData ImgReportdata = new ImgProcessData();
-            ImgReportdata = Methods.FiberDensity(FinalReport.Editedimagefilepath);
+            bool filterbool = false;
+            if (FinalReport.Filter == "GrayScale")
+            {
+                filterbool = true;
+            }
+            else
+            {
+                filterbool = false;
+            }
+
+            ImgReportdata = new ImgProcessData();
+            ImgReportdata = Methods.FiberDensity(FinalReport.Editedimagefilepath,filterbool);
             FinalReport.Imagewidth = ImgReportdata.Width;
             FinalReport.Imageheight = ImgReportdata.Height;
 
@@ -185,6 +203,7 @@ namespace BambuShootProject.Droid
             view = FindViewById<PlotView>(Resource.Id.plot_view);
             view.Model = CreatePlotModel();
             view.Controller = ControlPlotModel();
+
 
             //Set Segment Images
             Segment1.SetImageBitmap(ImgReportdata.Segments[1]);
@@ -289,12 +308,54 @@ namespace BambuShootProject.Droid
             TotalCount.Text = FinalReport.TotalSegCount.ToString();
             TotalDensity.Text = Math.Round((FinalReport.TotalFiberDensity * 100), 4).ToString() + "%";
 
-            
+
+            Share.Enabled = false;
 
             Share.Click += Share_Click;
             Save.Click += Save_Click;
             DBAdd.Click += DBAdd_Click;
-           
+            ReturnMM.Click += ReturnMM_Click;
+
+
+        }
+
+        protected override void OnDestroy()
+        {
+            LoadedImage.Dispose();
+            EditedImage.Dispose();
+            loadedimgbmp.Dispose();
+            editedimgbmp.Dispose();
+            Segment1.Dispose();
+            Segment2.Dispose();
+            Segment3.Dispose();
+            Segment4.Dispose();
+            Segment5.Dispose();
+            Segment6.Dispose();
+            Segment7.Dispose();
+            Segment8.Dispose();
+            Segment9.Dispose();
+            Segment10.Dispose();
+
+            LoadedImage = null;
+            EditedImage = null;
+            loadedimgbmp = null;
+            editedimgbmp = null;
+
+            Segment1 = null;
+            Segment2 = null;
+            Segment3 = null;
+            Segment4 = null;
+            Segment5 = null;
+            Segment6 = null;
+            Segment7 = null;
+            Segment8 = null;
+            Segment9 = null;
+            Segment10 = null;
+        }
+        private void ReturnMM_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            this.StartActivity(intent);
         }
 
         private void DBAdd_Click(object sender, EventArgs e)
@@ -358,10 +419,14 @@ namespace BambuShootProject.Droid
 
                 try
                 {
+
                     await ReportsTable.InsertAsync(FinalReport);
-                    ReportsTableItems.Add(FinalReport);
 
                     Toast.MakeText(this, "User Valid, Report Added", ToastLength.Long).Show();
+
+                    ReportsTableItems.Add(FinalReport);
+
+                    
                 }
                 catch (Exception ex)
                 {
@@ -388,22 +453,113 @@ namespace BambuShootProject.Droid
             Page page = document.StartPage(pageInfo);
 
             // draw something on the page
+            Picture OI = new Picture();
+            Canvas canvas = OI.BeginRecording(loadedimgbmp.Width, loadedimgbmp.Height);
+            canvas.DrawBitmap(loadedimgbmp, null, new RectF(25f, 25f, 225f, 225f),null);
+            OI.EndRecording();
+            page.Canvas.DrawPicture(OI);
 
-            // matrix
-            //Matrix matrix = new Matrix();
-            //matrix.PreTranslate(500 , 500);
-            //matrix.PreScale(2, 2);
-            //page.Canvas.DrawBitmap(loadedimgbmp, matrix, null);
-            Picture picture = new Picture();
-            Canvas canvas = picture.BeginRecording(loadedimgbmp.Width, loadedimgbmp.Height);
-            canvas.DrawBitmap(loadedimgbmp, null, new RectF(0f, 0f, 300, 300),null);
-            picture.EndRecording();
-            page.Canvas.DrawPicture(picture);
+            Picture EI = new Picture();
+            Canvas canvas2 = EI.BeginRecording(editedimgbmp.Width, editedimgbmp.Height);
+            canvas2.DrawBitmap(editedimgbmp, null, new RectF(370f, 25f, 570f, 225f), null);
+            EI.EndRecording();
+            page.Canvas.DrawPicture(EI);
+
+            //Segments
+            Picture Seg1 = new Picture();
+            Canvas canvasSeg1 = Seg1.BeginRecording( ImgReportdata.Segments[1].Width, ImgReportdata.Segments[1].Height);
+            canvasSeg1.DrawBitmap(ImgReportdata.Segments[1], null, new RectF(300f, 250f, 320f, 450f), null);
+            Seg1.EndRecording();
+            page.Canvas.DrawPicture(Seg1);
+
+            Picture Seg2 = new Picture();
+            Canvas canvasSeg2 = Seg2.BeginRecording(ImgReportdata.Segments[2].Width, ImgReportdata.Segments[2].Height);
+            canvasSeg2.DrawBitmap(ImgReportdata.Segments[2], null, new RectF(330f, 250f, 350f, 450f), null);
+            Seg2.EndRecording();
+            page.Canvas.DrawPicture(Seg2);
+
+            Picture Seg3 = new Picture();
+            Canvas canvasSeg3 = Seg3.BeginRecording(ImgReportdata.Segments[3].Width, ImgReportdata.Segments[3].Height);
+            canvasSeg3.DrawBitmap(ImgReportdata.Segments[3], null, new RectF(360f, 250f, 380f, 450f), null);
+            Seg3.EndRecording();
+            page.Canvas.DrawPicture(Seg3);
+
+            Picture Seg4 = new Picture();
+            Canvas canvasSeg4 = Seg4.BeginRecording(ImgReportdata.Segments[4].Width, ImgReportdata.Segments[4].Height);
+            canvasSeg4.DrawBitmap(ImgReportdata.Segments[4], null, new RectF(390f, 250f, 410f, 450f), null);
+            Seg4.EndRecording();
+            page.Canvas.DrawPicture(Seg4);
+
+            Picture Seg5 = new Picture();
+            Canvas canvasSeg5 = Seg5.BeginRecording(ImgReportdata.Segments[5].Width, ImgReportdata.Segments[5].Height);
+            canvasSeg5.DrawBitmap(ImgReportdata.Segments[5], null, new RectF(420f, 250f, 440f, 450f), null);
+            Seg5.EndRecording();
+            page.Canvas.DrawPicture(Seg5);
+
+            Picture Seg6 = new Picture();
+            Canvas canvasSeg6 = Seg6.BeginRecording(ImgReportdata.Segments[6].Width, ImgReportdata.Segments[6].Height);
+            canvasSeg6.DrawBitmap(ImgReportdata.Segments[6], null, new RectF(450f, 250f, 470f, 450f), null);
+            Seg6.EndRecording();
+            page.Canvas.DrawPicture(Seg6);
+
+            Picture Seg7 = new Picture();
+            Canvas canvasSeg7 = Seg7.BeginRecording(ImgReportdata.Segments[7].Width, ImgReportdata.Segments[7].Height);
+            canvasSeg7.DrawBitmap(ImgReportdata.Segments[7], null, new RectF(480f, 250f, 500f, 450f), null);
+            Seg7.EndRecording();
+            page.Canvas.DrawPicture(Seg7);
+
+            Picture Seg8 = new Picture();
+            Canvas canvasSeg8 = Seg8.BeginRecording(ImgReportdata.Segments[8].Width, ImgReportdata.Segments[8].Height);
+            canvasSeg8.DrawBitmap(ImgReportdata.Segments[8], null, new RectF(510f, 250f, 530f, 450f), null);
+            Seg8.EndRecording();
+            page.Canvas.DrawPicture(Seg8);
+
+            Picture Seg9 = new Picture();
+            Canvas canvasSeg9 = Seg9.BeginRecording(ImgReportdata.Segments[9].Width, ImgReportdata.Segments[9].Height);
+            canvasSeg9.DrawBitmap(ImgReportdata.Segments[9], null, new RectF(540f, 250f, 560f, 450f), null);
+            Seg9.EndRecording();
+            page.Canvas.DrawPicture(Seg9);
+
+            Picture Seg10 = new Picture();
+            Canvas canvasSeg10 = Seg10.BeginRecording(ImgReportdata.Segments[10].Width, ImgReportdata.Segments[10].Height);
+            canvasSeg10.DrawBitmap(ImgReportdata.Segments[10], null, new RectF(570f, 250f, 590f, 450f), null);
+            Seg10.EndRecording();
+            page.Canvas.DrawPicture(Seg10);
+
+            //Paremeters
             Paint paint = new Paint();
             paint.Color = Color.Black;
-            paint.TextSize = 24;
-            page.Canvas.DrawText("HelloWorld", 0f, 100f, paint);
-            
+            paint.TextSize = 16;
+            page.Canvas.DrawText("Parameters: ", 25f, 250f, paint);
+            page.Canvas.DrawText("Image Title: " + FinalReport.Imagetitle, 25f, 270f, paint);
+            page.Canvas.DrawText("Location: " + FinalReport.Location, 25f, 290f, paint);
+            page.Canvas.DrawText("Name of Species: " + FinalReport.Nameofspecies, 25f, 310f, paint);
+            page.Canvas.DrawText("Date of Harvest: " + FinalReport.Dateofharvest, 25f, 330f, paint);
+            page.Canvas.DrawText("Image Width: " + FinalReport.Imagewidth, 25f, 350f, paint);
+            page.Canvas.DrawText("Image Height: " + FinalReport.Imageheight, 25f, 370f, paint);
+            page.Canvas.DrawText("Color Filter: " + FinalReport.Filter, 25f, 390f, paint);
+            page.Canvas.DrawText("Threshold: " + FinalReport.Threshold, 25f, 410f, paint);
+
+            Picture graph = new Picture();
+            Canvas graphcanvas = graph.BeginRecording(view.Width, view.Height);
+            view.Draw(graphcanvas);
+            graph.EndRecording();
+            page.Canvas.DrawPicture(graph,new RectF(25f, 450f, 250f, 750f));
+
+            page.Canvas.DrawText("Data Results \t\t FC \t\t\t\t\t FD of Seg \t\t\t\t FD Seg/TP", 260f, 500f, paint);
+            page.Canvas.DrawText("Segment 1 \t\t\t " + FinalReport.CountS1.ToString() + "\t\t\t" + (FinalReport.FiberDensityS1 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS1Total * 100).ToString() + "%", 260f, 520f,paint);
+            page.Canvas.DrawText("Segment 2 \t\t\t  " + FinalReport.CountS2.ToString() + "\t\t\t" + (FinalReport.FiberDensityS2 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS2Total * 100).ToString() + "%", 260f, 540f, paint);
+            page.Canvas.DrawText("Segment 3 \t\t\t " + FinalReport.CountS3.ToString() + "\t\t\t" + (FinalReport.FiberDensityS3 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS3Total * 100).ToString() + "%", 260f, 560f, paint);
+            page.Canvas.DrawText("Segment 4 \t\t\t " + FinalReport.CountS4.ToString() + "\t\t\t" + (FinalReport.FiberDensityS4 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS4Total * 100).ToString() + "%", 260f, 580f, paint);
+            page.Canvas.DrawText("Segment 5 \t\t\t " + FinalReport.CountS5.ToString() + "\t\t\t" + (FinalReport.FiberDensityS5 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS5Total * 100).ToString() + "%", 260f, 600f, paint);
+            page.Canvas.DrawText("Segment 6 \t\t\t " + FinalReport.CountS6.ToString() + "\t\t\t" + (FinalReport.FiberDensityS6 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS6Total * 100).ToString() + "%", 260f, 620f, paint);
+            page.Canvas.DrawText("Segment 7 \t\t\t " + FinalReport.CountS7.ToString() + "\t\t\t" + (FinalReport.FiberDensityS7 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS7Total * 100).ToString() + "%", 260f, 640f, paint);
+            page.Canvas.DrawText("Segment 8 \t\t\t " + FinalReport.CountS8.ToString() + "\t\t\t" + (FinalReport.FiberDensityS8 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS8Total * 100).ToString() + "%", 260f, 660f, paint);
+            page.Canvas.DrawText("Segment 9 \t\t\t " + FinalReport.CountS9.ToString() + "\t\t\t" + (FinalReport.FiberDensityS9 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS9Total * 100).ToString() + "%", 260f, 680f, paint);
+            page.Canvas.DrawText("Segment 10 \t\t\t" + FinalReport.CountS10.ToString() + "\t\t\t" + (FinalReport.FiberDensityS10 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS10Total * 100).ToString() + "%", 260f, 700f, paint);
+
+
+            page.Canvas.DrawText("Comments: " + comments.Text, 25f, 800f, paint);
 
             // finish the page
             document.FinishPage(page);
@@ -419,7 +575,32 @@ namespace BambuShootProject.Droid
             // close the document
             document.Close();
 
+          
+            //adding to library
+            string filename1 = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/LibraryListImages.txt";
+            using (var streamWriter = new StreamWriter(filename1, true))
+            {
+                streamWriter.WriteLine(FinalReport.Originalimagefilepath);
+            }
+            string filename2 = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/LibraryListPDFs.txt";
+            using (var streamWriter = new StreamWriter(filename2, true))
+            {
+                streamWriter.WriteLine(reportfilepath);
+            }
+            string filename3 = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/LibraryListImagetitles.txt";
+            using (var streamWriter = new StreamWriter(filename3, true))
+            {
+                streamWriter.WriteLine(FinalReport.Imagetitle);
+            }
+
             Toast.MakeText(this, "Saved", ToastLength.Long).Show();
+            Share.Enabled = true;
+
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            editor.PutBoolean("key_for_my_bool_value", true);
+            editor.Apply();
+
         }
 
         private void Share_Click(object sender, EventArgs e)
@@ -439,10 +620,8 @@ namespace BambuShootProject.Droid
         {
             var plotModel = new PlotModel { Title = " Fiber Density Chart" };
             
-            
-
             plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "Segments" });
-            plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Maximum = 100, Minimum = 0, Title = "Density %" });
+            plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Maximum = 100, Minimum = 1, Title = "Density %" });
 
             var series1 = new LineSeries
             {
@@ -451,7 +630,6 @@ namespace BambuShootProject.Droid
                 MarkerStroke = OxyColors.White
             };
 
-            series1.Points.Add(new DataPoint(0, 0));
             series1.Points.Add(new DataPoint(1, Math.Round(FinalReport.FiberDensityS1 * 100,3)));
             series1.Points.Add(new DataPoint(2, Math.Round(FinalReport.FiberDensityS2 * 100, 3)));
             series1.Points.Add(new DataPoint(3, Math.Round(FinalReport.FiberDensityS3 * 100, 3)));

@@ -14,10 +14,11 @@ using Java.IO;
 using System.IO;
 using Newtonsoft.Json;
 using Plugin.ShareFile;
+using Android.Preferences;
 
 namespace BambuShootProject.Droid
 {
-    [Activity(Label = "LoadImageActivity", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Load Image", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoadImageActivity : Activity
     {
         Button addImageBtn;
@@ -33,9 +34,6 @@ namespace BambuShootProject.Droid
         
         bool ImagePicked = false;
         ClassLibrary.Reports imageinfo;
-
-        //testing
-        //Button sharing;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -57,9 +55,6 @@ namespace BambuShootProject.Droid
           
             loadImageBtn.Click += LoadImageBtn_Click;
 
-            //Testing Share
-            //    sharing = FindViewById<Button>(Resource.Id.sharetest);
-            //   sharing.Click += Sharing_Click;
 
             addImageBtn.Click += async (sender, args) =>
             {
@@ -87,10 +82,21 @@ namespace BambuShootProject.Droid
 
         }
 
-    //    private void Sharing_Click(object sender, EventArgs e)
-    //    {
-    //        CrossShareFile.Current.ShareLocalFile(imageinfo.originalimagefilepath);
-    //    }
+        protected override void OnDestroy()
+        {
+                if (originalImage != null)
+                {
+                    originalImage.Dispose();
+                }
+                if (bitmap != null)
+                {
+                    bitmap.Dispose();
+                }
+
+                bitmap = null;
+                originalImage = null;
+          
+        }
 
         private bool verifyData(ClassLibrary.Reports reportsdata)
         {
@@ -158,6 +164,27 @@ namespace BambuShootProject.Droid
             Directory.CreateDirectory(newpath);
             Directory.CreateDirectory(newpath + "/" + imagetitle);
             String destination = newpath + "/" + imagetitle;
+
+            string filename1 = newpath + "/" + "LibraryListImages.txt";
+            string filename2 = newpath + "/" + "LibraryListPDFs.txt";
+            string filename3 = newpath + "/" + "LibraryListImagetitles.txt";
+
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+           var savedfile = prefs.GetBoolean("key_for_my_bool_value", false);
+            if (savedfile)
+            {
+                System.IO.File.AppendText(filename1);
+                System.IO.File.AppendText(filename2);
+                System.IO.File.AppendText(filename3);
+            }
+            else
+            {
+                System.IO.File.CreateText(filename1);
+                System.IO.File.CreateText(filename2);
+                System.IO.File.CreateText(filename3);
+            }
+
+          
             return destination;
         }
     

@@ -396,8 +396,8 @@
                                 android:id="@+id/fiberdensityseg1"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg1 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -409,7 +409,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow10"
@@ -435,8 +435,8 @@
                                 android:id="@+id/fibercountseg2"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg2 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -447,8 +447,8 @@
                                 android:id="@+id/fiberdensityseg2"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg2 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -460,7 +460,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow11"
@@ -475,8 +475,7 @@
                                 android:id="@+id/seg3title"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                />
+                                android:paddingRight="5dp" />
                             <TextView
                                 android:text=" Seg3 FCount"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -487,8 +486,8 @@
                                 android:id="@+id/fibercountseg3"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg3 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -500,7 +499,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg3 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -512,7 +511,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow12"
@@ -527,8 +526,7 @@
                                 android:id="@+id/seg4title"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                />
+                                android:paddingRight="5dp" />
                             <TextView
                                 android:text=" Seg4 FCount"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -540,7 +538,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg4 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -552,7 +550,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg4 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -564,7 +562,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow13"
@@ -590,8 +588,8 @@
                                 android:id="@+id/fibercountseg5"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg5 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -603,7 +601,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg5 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -615,7 +613,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow14"
@@ -641,8 +639,8 @@
                                 android:id="@+id/fibercountseg6"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg6 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -654,7 +652,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg6 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -666,7 +664,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow15"
@@ -692,8 +690,8 @@
                                 android:id="@+id/fibercountseg7"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg7 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -704,8 +702,8 @@
                                 android:id="@+id/fiberdensityseg7"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg7 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -717,7 +715,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow16"
@@ -732,8 +730,7 @@
                                 android:id="@+id/seg8title"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                              />
+                                android:paddingRight="5dp" />
                             <TextView
                                 android:text=" Seg8 FCount"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -745,7 +742,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg8 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -757,7 +754,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg8 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -769,7 +766,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow17"
@@ -795,8 +792,8 @@
                                 android:id="@+id/fibercountseg9"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg9 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -808,7 +805,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg9 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -820,7 +817,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                         <TableRow
                             android:id="@+id/tableRow18"
@@ -847,7 +844,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg10 FDensity"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -859,7 +856,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                             <TextView
                                 android:text="Seg10 FDensity Total"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -870,8 +867,8 @@
                                 android:id="@+id/fiberdensityseg10total"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                         </TableRow>
                     </TableLayout>
                     <TableLayout
@@ -919,8 +916,8 @@
                                 android:id="@+id/fibercounttotalinfo"
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
-                                android:paddingRight="5dp" 
-                                android:gravity="right"/>
+                                android:paddingRight="5dp"
+                                android:gravity="right" />
                             <TextView
                                 android:text="FDensity Total "
                                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -932,7 +929,7 @@
                                 android:textSize="24sp"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"
-                                android:gravity="right"/>
+                                android:gravity="right" />
                         </TableRow>
                     </TableLayout>
                 </LinearLayout>
@@ -964,7 +961,8 @@
                         android:layout_weight="75"
                         android:hint="Enter Comments"
                         android:textColor="@android:color/black"
-                        android:background="@drawable/border" />
+                        android:background="@drawable/border"
+                        android:id="@+id/commentshow"/>
                 </TableRow>
                 <TableRow
                     android:id="@+id/tableRow22"
@@ -975,23 +973,33 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/share"
                         android:id="@+id/share"
-                        android:layout_weight="25" />
+                        android:layout_weight="25"
+                        android:textColor="@android:color/white" />
                     <Button
                         android:text="Save"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/save"
                         android:id="@+id/saveinternal"
-                        android:layout_weight="25" />
+                        android:layout_weight="25"
+                        android:textColor="@android:color/white" />
                     <Button
-                        android:text="Database"
+                        android:text="Upload DB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/databaseadd"
                         android:drawableLeft="@drawable/database"
-                        android:layout_weight="25" />
+                        android:layout_weight="25"
+                        android:textColor="@android:color/white" />
                 </TableRow>
             </TableLayout>
+            <Button
+                android:text="Return to Main Menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/returntoMM"
+                android:padding="5dp"
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

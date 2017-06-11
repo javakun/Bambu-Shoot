@@ -17,7 +17,7 @@ using ClassLibrary;
 
 namespace BambuShootProject.Droid
 {
-    [Activity(Label = "InputCalibration", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Input Calibration", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class InputCalibration : Activity
     {
         ImageView LoadedImage;
@@ -61,11 +61,49 @@ namespace BambuShootProject.Droid
             LoadedImage.SetImageBitmap(loadedbmp);
             Methods = new ImageProcessingMethods();
             EditedImage.Visibility = ViewStates.Gone;
+            Threshold.Visibility = ViewStates.Invisible;
+
+
+
 
             Preview.Click += Preview_Click;
             Crop.Click += Crop_Click;
             ProcessImage.Click += ProcessImage_Click;
+            ColorFilter.CheckedChange += ColorFilter_CheckedChange;
 
+        }
+
+        protected override void OnDestroy()
+        {
+            LoadedImage.Dispose();
+            if (EditedImage != null)
+            {
+                EditedImage.Dispose();
+            }
+            loadedbmp.Dispose();
+            if (editedbmp != null)
+            {
+                editedbmp.Dispose();
+            }
+
+            LoadedImage = null;
+            EditedImage = null;
+            loadedbmp = null;
+            editedbmp = null;
+
+        }
+
+        private void ColorFilter_CheckedChange(object sender, RadioGroup.CheckedChangeEventArgs e)
+        {
+
+            if (ColorFilter.CheckedRadioButtonId == Resource.Id.BWRadioBtn)
+            {
+                Threshold.Visibility = ViewStates.Visible;
+            }
+            else
+            {
+                Threshold.Visibility = ViewStates.Invisible;
+            }
         }
 
         private void Preview_Click(object sender, EventArgs e)
@@ -119,5 +157,6 @@ namespace BambuShootProject.Droid
         {
 
         }
+
     }
 }

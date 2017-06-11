@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="150dp"
+    android:weightSum="100"
+    android:background="#F1F1F1">
+    <ImageView
+        android:id="@+id/loadedimgshow"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="0dp"
+        android:layout_weight="45"
+        android:layout_height="match_parent"
+        android:background="#3B5998"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="45">
+        <TextView
+            android:id="@+id/imagetitlelistviewtxt"
+            android:text="Image Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="45"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#000" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_weight="10"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:text="Open"
+            android:id="@+id/openpdf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sharepdf" />
+        <Button
+            android:text="Delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deletereport" />
+    </LinearLayout>
+</LinearLayout>

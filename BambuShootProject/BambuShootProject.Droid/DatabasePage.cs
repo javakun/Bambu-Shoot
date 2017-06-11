@@ -23,7 +23,7 @@ using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 
 namespace BambuShootProject.Droid
 {
-    [Activity(Label = "DatabasePage", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Database Report List", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class DatabasePage : Activity
     {
 

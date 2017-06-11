@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<monodoc>
-  <node label="Xamarin Components" name="components" parent="libraries" />
-  <node label="Emgu CV V3" name="emgucv-v3" parent="components" />
-  <source provider="ecma" basefile="emgucv-v3" path="emgucv-v3" />
-</monodoc>

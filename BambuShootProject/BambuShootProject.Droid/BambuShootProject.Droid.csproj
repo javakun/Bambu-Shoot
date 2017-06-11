@@ -40,6 +40,7 @@
     <EnableLLVM>False</EnableLLVM>
     <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
     <EnableProguard>False</EnableProguard>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -51,6 +52,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emgu.CV.World.Android, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libemgucv-android\bin\Emgu.CV.World.Android.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Azure.Mobile, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\nugetpackages\Microsoft.Azure.Mobile.0.10.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.dll</HintPath>
     </Reference>
@@ -136,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReportListAdapter.cs" />
     <Compile Include="ValidateUser_Dialog.cs" />
     <Compile Include="CreateUser_Dialog.cs" />
     <Compile Include="DatabaseAdapter.cs" />
@@ -181,6 +187,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ValidateUser.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Row_Reports.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -256,6 +265,19 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\save.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-es\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-fr\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-es\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-fr\styles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\..\nugetpackages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\nugetpackages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
