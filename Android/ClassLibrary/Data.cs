@@ -13,7 +13,7 @@ using Android.Graphics;
 
 namespace ClassLibrary
 {
-
+    // Users Model
     public class Users
     {
 
@@ -30,6 +30,7 @@ namespace ClassLibrary
 
     }
 
+    //Reports Model
     public class Reports
     {
         [JsonProperty(PropertyName = "id")]
@@ -132,6 +133,7 @@ namespace ClassLibrary
 
     }
 
+    //Library Model
     public class ReportsLib
     {
         public string imagetitle { get; set; }
@@ -139,6 +141,7 @@ namespace ClassLibrary
         public string originalimagepath { get; set; }
     }
 
+    //Image Processing Model
     public class ImgProcessData
     {
 

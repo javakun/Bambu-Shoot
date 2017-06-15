@@ -15,3 +15,6 @@ c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WP
 c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.pdb
 C:\Users\JaimeSofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\Emgu.CV.UI.dll
 C:\Users\JaimeSofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\ZedGraph.dll
+C:\Users\JaimeSofrito\Documents\Bambu-Shoot\Windows\BambuShootProject.WPF\bin\Debug\BambuShootProject.WPF.exe.config
+C:\Users\JaimeSofrito\Documents\Bambu-Shoot\Windows\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.exe
+C:\Users\JaimeSofrito\Documents\Bambu-Shoot\Windows\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.pdb
