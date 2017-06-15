@@ -106,6 +106,7 @@ namespace com.BambuShoot.droid
             Userinformation.Id = count.ToString();
             Userinformation.Username = gUsername.Text;
             Userinformation.Password = gPassword.Text;
+            Userinformation.DateUtc = DateTime.UtcNow;
 
                 try
                 {

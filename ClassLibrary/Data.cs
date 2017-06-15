@@ -26,6 +26,8 @@ namespace ClassLibrary
         [JsonProperty(PropertyName = "password")]
         public string Password { get; set; }
 
+        public DateTime DateUtc { get; set; }
+
     }
 
     public class Reports

@@ -62,13 +62,13 @@ namespace com.BambuShoot.droid
             EditedImage.Visibility = ViewStates.Gone;
             Threshold.Visibility = ViewStates.Invisible;
 
-            
             Preview.Click += Preview_Click;
             Rotate.Click += Rotate_Click;
             ProcessImage.Click += ProcessImage_Click;
             ColorFilter.CheckedChange += ColorFilter_CheckedChange;
 
         }
+
 
         private void Rotate_Click(object sender, EventArgs e)
         {

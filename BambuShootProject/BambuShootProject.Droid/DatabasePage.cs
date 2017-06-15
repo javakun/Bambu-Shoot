@@ -86,7 +86,7 @@ namespace com.BambuShoot.droid
             {
                 // Get the reports from table
                 var Reportlist = await ReportsTable.OrderBy(Reports => Reports.DateUtc).ToListAsync();
-                var Userlist = await UserTable.OrderBy(Users => Users.Id).ToListAsync();
+                var Userlist = await UserTable.OrderBy(Users => Users.DateUtc).ToListAsync();
                 
 
                 adapter.Clear();

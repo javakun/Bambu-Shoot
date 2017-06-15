@@ -586,7 +586,8 @@ namespace com.BambuShoot.droid
             page.Canvas.DrawText("Segment 8 \t\t\t " + FinalReport.CountS8.ToString() + "\t\t\t" + (FinalReport.FiberDensityS8 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS8Total * 100).ToString() + "%", 260f, 660f, paint);
             page.Canvas.DrawText("Segment 9 \t\t\t " + FinalReport.CountS9.ToString() + "\t\t\t" + (FinalReport.FiberDensityS9 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS9Total * 100).ToString() + "%", 260f, 680f, paint);
             page.Canvas.DrawText("Segment 10 \t\t\t" + FinalReport.CountS10.ToString() + "\t\t\t" + (FinalReport.FiberDensityS10 * 100).ToString() + "% \t\t\t" + (FinalReport.FiberDensityS10Total * 100).ToString() + "%", 260f, 700f, paint);
-
+            page.Canvas.DrawText("Total Count\t\t\t Total Density",260f,720f,paint);
+            page.Canvas.DrawText(FinalReport.TotalSegCount.ToString() + "\t\t\t" + (Math.Round(FinalReport.TotalFiberDensity,6)*100).ToString(), 260f, 740f, paint);
 
             page.Canvas.DrawText("Comments: " + comments.Text, 25f, 800f, paint);
 

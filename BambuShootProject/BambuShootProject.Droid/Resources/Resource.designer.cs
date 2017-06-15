@@ -52,6 +52,18 @@ namespace com.BambuShoot.droid
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f010002
+			public const int cropviewMaxScale = 2130771970;
+			
+			// aapt resource value: 0x7f010003
+			public const int cropviewMinScale = 2130771971;
+			
+			// aapt resource value: 0x7f010001
+			public const int cropviewViewportHeaderFooterColor = 2130771969;
+			
+			// aapt resource value: 0x7f010000
+			public const int cropviewViewportHeightRatio = 2130771968;
+			
 			static Attribute()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -78,25 +90,31 @@ namespace com.BambuShoot.droid
 			public const int database = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Icon = 2130837508;
+			public const int ic_content_add = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int Image1 = 2130837509;
+			public const int ic_content_content_cut = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int Image2 = 2130837510;
+			public const int Icon = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int LOGO_BambuShoot = 2130837511;
+			public const int Image1 = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int save = 2130837512;
+			public const int Image2 = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int share = 2130837513;
+			public const int LOGO_BambuShoot = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int test1 = 2130837514;
+			public const int save = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int share = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int test1 = 2130837516;
 			
 			static Drawable()
 			{
@@ -940,6 +958,37 @@ namespace com.BambuShoot.droid
 			}
 			
 			private Style()
+			{
+			}
+		}
+		
+		public partial class Styleable
+		{
+			
+			public static int[] CropView = new int[] {
+					2130771968,
+					2130771969,
+					2130771970,
+					2130771971};
+			
+			// aapt resource value: 2
+			public const int CropView_cropviewMaxScale = 2;
+			
+			// aapt resource value: 3
+			public const int CropView_cropviewMinScale = 3;
+			
+			// aapt resource value: 1
+			public const int CropView_cropviewViewportHeaderFooterColor = 1;
+			
+			// aapt resource value: 0
+			public const int CropView_cropviewViewportHeightRatio = 0;
+			
+			static Styleable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Styleable()
 			{
 			}
 		}
