@@ -1,0 +1,26 @@
+﻿<Window x:Class="BambuShootProject.WPF.ImageProcessWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BambuShootProject.WPF"
+        mc:Ignorable="d"
+         Title="ImageProcessWindow" Height="720" Width="1280">
+    <Grid>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="218" Margin="785,64,0,0" VerticalAlignment="Top" Width="313"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="30" Margin="145,407,0,0" TextWrapping="Wrap" Text="165" VerticalAlignment="Top" Width="203" FontSize="18" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="145,372,0,0" TextWrapping="Wrap" Text="Threshold (0-255)" VerticalAlignment="Top" Height="27" Width="231" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="button" Content="Preview" HorizontalAlignment="Left" Margin="572,285,0,0" VerticalAlignment="Top" Width="115" Height="46" Click="button_Click" FontSize="16" FontWeight="Bold"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="218" Margin="785,391,0,0" VerticalAlignment="Top" Width="313"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="807,43,0,0" TextWrapping="Wrap" Text="Original Image" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="807,370,0,0" TextWrapping="Wrap" Text="Preview Image" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton_TH" Content="Black and White Threshold" GroupName="method" HorizontalAlignment="Left" IsChecked="True" Margin="145,171,0,0" VerticalAlignment="Top" Height="27" Width="231" FontSize="18" Click="radioButton_TH_Click"/>
+        <RadioButton x:Name="radioButton_ATH" Content="Grayscale Adaptive Threshold" GroupName="method" HorizontalAlignment="Left" Margin="145,203,0,0" VerticalAlignment="Top" Height="27" Width="265" FontSize="18" Click="radioButton_ATH_Click"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="145,140,0,0" TextWrapping="Wrap" Text="Method " VerticalAlignment="Top" Height="26" Width="113" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="process" Content="Process" HorizontalAlignment="Left" Margin="542,559,0,0" VerticalAlignment="Top" Width="173" Height="50" FontSize="20" FontWeight="Bold" Click="process_Click"/>
+        <TextBlock x:Name="imageTitle" HorizontalAlignment="Left" Margin="1175,116,-373,0" TextWrapping="Wrap" Visibility="Hidden" VerticalAlignment="Top" Width="59"><Run Text="TextBlock"/></TextBlock>
+        <TextBlock x:Name="dateOfHarvest" HorizontalAlignment="Left" Margin="1175,116,-373,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="59" Visibility="Hidden"/>
+        <TextBlock x:Name="nameOfSpecies" HorizontalAlignment="Left" Margin="1175,116,-373,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="59" Visibility="Hidden"/>
+        <TextBlock x:Name="location" HorizontalAlignment="Left" Margin="1175,116,-373,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="59" Visibility="Hidden"/>
+    </Grid>
+</Window>

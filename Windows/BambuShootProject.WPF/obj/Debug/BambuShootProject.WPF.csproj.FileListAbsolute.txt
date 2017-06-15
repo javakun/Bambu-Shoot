@@ -1,0 +1,17 @@
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\BambuShootProject.WPF.exe.config
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\BambuShootProject.WPF.exe
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\BambuShootProject.WPF.pdb
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\Emgu.CV.World.dll
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.csprojResolveAssemblyReference.cache
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\MainWindow.g.cs
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\App.g.cs
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF_MarkupCompile.cache
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF_MarkupCompile.lref
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\MainWindow.baml
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.g.resources
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.Properties.Resources.resources
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.csproj.GenerateResource.Cache
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.exe
+c:\users\jaimesofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\obj\Debug\BambuShootProject.WPF.pdb
+C:\Users\JaimeSofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\Emgu.CV.UI.dll
+C:\Users\JaimeSofrito\documents\visual studio 2015\Projects\BambuShootProject.WPF\BambuShootProject.WPF\bin\Debug\ZedGraph.dll

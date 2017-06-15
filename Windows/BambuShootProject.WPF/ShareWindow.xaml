@@ -1,0 +1,16 @@
+﻿<Window x:Class="BambuShootProject.WPF.ShareWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BambuShootProject.WPF"
+        mc:Ignorable="d"
+        Title="ShareWindow" Height="300" Width="300">
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="24,53,0,0" TextWrapping="Wrap" Text="Enter Email" VerticalAlignment="Top" Width="207"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="24,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
+        <Button x:Name="button" Content="Send" HorizontalAlignment="Left" Margin="39,128,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.563,1.993" Click="button_Click"/>
+        <TextBlock x:Name="imageTitle" HorizontalAlignment="Left" Margin="248,44,0,0" TextWrapping="Wrap" Visibility="Hidden"  VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
