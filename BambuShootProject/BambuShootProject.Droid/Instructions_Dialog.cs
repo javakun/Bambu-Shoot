@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     class Instructions_Dialog:DialogFragment
     {

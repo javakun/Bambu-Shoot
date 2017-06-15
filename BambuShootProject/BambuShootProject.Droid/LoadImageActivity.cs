@@ -15,8 +15,10 @@ using System.IO;
 using Newtonsoft.Json;
 using Plugin.ShareFile;
 using Android.Preferences;
+using Android.Provider;
+using Android.Util;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     [Activity(Label = "Load Image", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoadImageActivity : Activity
@@ -25,13 +27,13 @@ namespace BambuShootProject.Droid
         Button loadImageBtn;
         ImageView originalImage;
         Bitmap bitmap;
-        String filepath;
         EditText imagetitle;
         EditText location;
         EditText nameofspecies;
         DatePicker dateofharvest;
         TextView NoImageSelected;
-        
+        Android.Net.Uri uri;
+
         bool ImagePicked = false;
         ClassLibrary.Reports imageinfo;
 
@@ -48,68 +50,83 @@ namespace BambuShootProject.Droid
             location = FindViewById<EditText>(Resource.Id.editText_location);
             nameofspecies = FindViewById<EditText>(Resource.Id.editText_Nameofspecies);
             dateofharvest = FindViewById<DatePicker>(Resource.Id.datePicker1);
-     
-
             originalImage = FindViewById<ImageView>(Resource.Id.imageView1);
             NoImageSelected = FindViewById<TextView>(Resource.Id.Noimageselected);
-          
+
             loadImageBtn.Click += LoadImageBtn_Click;
 
 
-            addImageBtn.Click += async (sender, args) =>
-            {
-                try
-                {
-                    var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync();
-                    if (file == null)
-                        return;
-                    var path = file.Path;
-                    Toast.MakeText(this, path, ToastLength.Long).Show();
-                    System.Diagnostics.Debug.WriteLine(path);
-                    bitmap = BitmapFactory.DecodeFile(file.Path);
-                    originalImage.SetImageBitmap(bitmap);
-                    filepath = file.Path;
-                    file.Dispose();
-                    ImagePicked = true;
-                }
-                catch (Exception ex)
-                {
-                    Toast.MakeText(this, ex.Message, ToastLength.Long).Show();
-                }
+            addImageBtn.Click += (sender, args) =>
+           {
 
-            };
+               Intent imagecrop = new Intent(Intent.ActionPick, MediaStore.Images.Media.ExternalContentUri);
+               imagecrop.PutExtra("crop", "true");
+               imagecrop.PutExtra("return-data", true);
+
+               String newpath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot";
+               Directory.CreateDirectory(newpath);
+
+               Java.IO.File f = new Java.IO.File(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/temporary_holder.bmp");
+               try
+               {
+                   f.CreateNewFile();
+               }
+               catch (Exception ex)
+               {
+                   System.Console.Write(ex);
+               }
+
+               uri = Android.Net.Uri.FromFile(f);
+               imagecrop.PutExtra(MediaStore.ExtraOutput, uri);
+               this.StartActivityForResult(Intent.CreateChooser(imagecrop, "Selecte a Photo"),1);
+              
+           };
 
 
         }
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if(resultCode == Result.Ok && data != null && requestCode == 1)
+            {
+                String filePath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/temporary_holder.bmp";
+                bitmap= BitmapFactory.DecodeFile(filePath);
+                originalImage.SetImageBitmap(bitmap);
+                ImagePicked = true;
+
+            }
+        }
+
 
         protected override void OnDestroy()
         {
-                if (originalImage != null)
-                {
-                    originalImage.Dispose();
-                }
-                if (bitmap != null)
-                {
-                    bitmap.Dispose();
-                }
-
-                bitmap = null;
+            base.OnDestroy();
+            if (originalImage != null)
+            {
+                originalImage.SetImageBitmap(null);
+                originalImage.Dispose();
                 originalImage = null;
-          
+            }
+            if (bitmap != null)
+            {
+                bitmap.Recycle();
+                bitmap.Dispose();
+                bitmap = null;
+            }
         }
 
         private bool verifyData(ClassLibrary.Reports reportsdata)
         {
-            
+
             bool somethingempty = false;
             //Check for empty edit text
-            if (reportsdata.Imagetitle.Length == 0 )
+            if (reportsdata.Imagetitle.Length == 0)
             {
                 imagetitle.FindFocus();
                 imagetitle.Error = "Empty Image Title";
                 somethingempty = true;
             }
-            if (reportsdata.Location.Length == 0 )
+            if (reportsdata.Location.Length == 0)
             {
                 location.FindFocus();
                 location.Error = "Empty Location";
@@ -121,9 +138,9 @@ namespace BambuShootProject.Droid
                 nameofspecies.Error = "Empty Name of Species";
                 somethingempty = true;
             }
-            if(!ImagePicked)
+            if (!ImagePicked)
             {
-                NoImageSelected.Visibility = ViewStates.Visible ;
+                NoImageSelected.Visibility = ViewStates.Visible;
                 somethingempty = true;
             }
             else
@@ -136,7 +153,7 @@ namespace BambuShootProject.Droid
         }
         private void LoadImageBtn_Click(object sender, EventArgs e)
         {
-           
+
             Intent intent = new Intent(this, typeof(InputCalibration));
             var dest = MakeNewFileDestination(imagetitle.Text);
 
@@ -146,22 +163,31 @@ namespace BambuShootProject.Droid
                 Location = location.Text,
                 Nameofspecies = nameofspecies.Text,
                 Dateofharvest = dateofharvest.DayOfMonth.ToString() + "-" + dateofharvest.Month.ToString() + "-" + dateofharvest.Year.ToString(),
-                Originalimagefilepath = dest + "/" + imagetitle.Text + "_original.bmp" ,
+                Originalimagefilepath = dest + "/" + imagetitle.Text + "_original.bmp",
                 Editedimagefilepath = dest + "/" + imagetitle.Text + "_edited.bmp"
 
             };
             if (verifyData(imageinfo) == false && ImagePicked)
-            { 
-                System.IO.File.Copy(filepath, System.IO.Path.Combine(dest, imagetitle.Text + "_original.bmp"), true);
-                System.IO.File.Copy(filepath, System.IO.Path.Combine(dest, imagetitle.Text + "_edited.bmp"), true);
+            {
+                FileStream original = new FileStream(System.IO.Path.Combine(dest, imagetitle.Text + "_original.bmp"), FileMode.Create);
+                bitmap.Compress(Bitmap.CompressFormat.Png, 100, original);
+                original.Flush();
+                original.Close();
+
+                FileStream edited = new FileStream(System.IO.Path.Combine(dest, imagetitle.Text + "_edited.bmp"), FileMode.Create);
+                bitmap.Compress(Bitmap.CompressFormat.Png, 100, edited);
+                edited.Flush();
+                edited.Close();
+
                 intent.PutExtra("Imageinfo", JsonConvert.SerializeObject(imageinfo));
                 this.StartActivity(intent);
+                Finish();
+             
             }
         }
         public String MakeNewFileDestination(String imagetitle)
         {
             String newpath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot";
-            Directory.CreateDirectory(newpath);
             Directory.CreateDirectory(newpath + "/" + imagetitle);
             String destination = newpath + "/" + imagetitle;
 
@@ -170,7 +196,7 @@ namespace BambuShootProject.Droid
             string filename3 = newpath + "/" + "LibraryListImagetitles.txt";
 
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-           var savedfile = prefs.GetBoolean("key_for_my_bool_value", false);
+            var savedfile = prefs.GetBoolean("key_for_my_bool_value", false);
             if (savedfile)
             {
                 System.IO.File.AppendText(filename1);
@@ -184,11 +210,11 @@ namespace BambuShootProject.Droid
                 System.IO.File.CreateText(filename3);
             }
 
-          
+
             return destination;
         }
-    
-        public void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }

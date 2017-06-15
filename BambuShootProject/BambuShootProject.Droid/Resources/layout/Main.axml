@@ -13,39 +13,38 @@
         android:id="@+id/BambuShootLogo"
         android:layout_marginBottom="0.0dp" />
     <Button
-        android:text="Create New User"
+        android:text="@string/CreateUserBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/CreateUserBtn"
         android:layout_weight="5"
         android:textColor="@android:color/white" />
     <Button
-        android:text="Instructions"
+        android:text="@string/instructionsbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/instructionsbtn"
         android:layout_weight="5"
         android:textColor="@android:color/white" />
     <Button
-        android:text="Process New Image"
+        android:text="@string/processnewimagebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/processnewimagebtn"
         android:layout_weight="5"
         android:textColor="@android:color/white" />
     <Button
-        android:text="My Data Report Library"
+        android:text="@string/mydatareportlibrarybtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mydatareportlibrarybtn"
         android:layout_weight="5"
         android:textColor="@android:color/white" />
     <Button
-        android:text="Database"
+        android:text="@string/databasebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/databasebtn"
-        android:drawableLeft="@drawable/database"
         android:layout_weight="5"
         android:textColor="@android:color/white" />
 </LinearLayout>

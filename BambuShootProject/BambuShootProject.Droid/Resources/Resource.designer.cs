@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("BambuShootProject.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("com.BambuShoot.droid.Resource", IsApplication=true)]
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
 	
 	
@@ -26,8 +26,8 @@ namespace BambuShootProject.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::ClassLibrary.Resource.String.ApplicationName = global::BambuShootProject.Droid.Resource.String.ApplicationName;
-			global::ClassLibrary.Resource.String.Hello = global::BambuShootProject.Droid.Resource.String.Hello;
+			global::ClassLibrary.Resource.String.ApplicationName = global::com.BambuShoot.droid.Resource.String.ApplicationName;
+			global::ClassLibrary.Resource.String.Hello = global::com.BambuShoot.droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -111,218 +111,218 @@ namespace BambuShootProject.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f08008b
-			public const int BWRadioBtn = 2131230859;
+			// aapt resource value: 0x7f08008d
+			public const int BWRadioBtn = 2131230861;
 			
-			// aapt resource value: 0x7f08009b
-			public const int BambuShootLogo = 2131230875;
+			// aapt resource value: 0x7f08009d
+			public const int BambuShootLogo = 2131230877;
 			
 			// aapt resource value: 0x7f080003
 			public const int CreateBtn = 2131230723;
 			
-			// aapt resource value: 0x7f08009c
-			public const int CreateUserBtn = 2131230876;
+			// aapt resource value: 0x7f08009e
+			public const int CreateUserBtn = 2131230878;
 			
 			// aapt resource value: 0x7f080000
 			public const int CreateUsertxt = 2131230720;
 			
-			// aapt resource value: 0x7f08008a
-			public const int GSRadioBtn = 2131230858;
+			// aapt resource value: 0x7f08008c
+			public const int GSRadioBtn = 2131230860;
 			
-			// aapt resource value: 0x7f080090
-			public const int Instructions = 2131230864;
+			// aapt resource value: 0x7f080092
+			public const int Instructions = 2131230866;
 			
 			// aapt resource value: 0x7f080004
 			public const int LinearLayout1 = 2131230724;
 			
-			// aapt resource value: 0x7f080083
-			public const int LinearLayoutinputcalibration1 = 2131230851;
+			// aapt resource value: 0x7f080086
+			public const int LinearLayoutinputcalibration1 = 2131230854;
 			
-			// aapt resource value: 0x7f080099
-			public const int Noimageselected = 2131230873;
+			// aapt resource value: 0x7f08009b
+			public const int Noimageselected = 2131230875;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int ValidateBtn = 2131230893;
+			// aapt resource value: 0x7f0800b2
+			public const int ValidateBtn = 2131230898;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int ValidateUsertxt = 2131230892;
-			
-			// aapt resource value: 0x7f080093
-			public const int addImageBtn = 2131230867;
-			
-			// aapt resource value: 0x7f080089
-			public const int colorfilterRadioGroup = 2131230857;
-			
-			// aapt resource value: 0x7f08003a
-			public const int colorfilterinfo = 2131230778;
-			
-			// aapt resource value: 0x7f080039
-			public const int colorfiltershow = 2131230777;
-			
-			// aapt resource value: 0x7f08007d
-			public const int commentshow = 2131230845;
-			
-			// aapt resource value: 0x7f08007c
-			public const int commenttitle = 2131230844;
-			
-			// aapt resource value: 0x7f080087
-			public const int cropBtn = 2131230855;
-			
-			// aapt resource value: 0x7f080081
-			public const int databaseadd = 2131230849;
-			
-			// aapt resource value: 0x7f0800a0
-			public const int databasebtn = 2131230880;
-			
-			// aapt resource value: 0x7f080023
-			public const int datareportvalues = 2131230755;
-			
-			// aapt resource value: 0x7f080098
-			public const int datePicker1 = 2131230872;
-			
-			// aapt resource value: 0x7f08002e
-			public const int dateofharvestinfo = 2131230766;
-			
-			// aapt resource value: 0x7f08002d
-			public const int dateofharvestsshow = 2131230765;
-			
-			// aapt resource value: 0x7f08000d
-			public const int dateofharvesttxtview = 2131230733;
-			
-			// aapt resource value: 0x7f0800ab
-			public const int deletereport = 2131230891;
-			
-			// aapt resource value: 0x7f080094
-			public const int editText_Imagetitle = 2131230868;
-			
-			// aapt resource value: 0x7f080096
-			public const int editText_Nameofspecies = 2131230870;
+			// aapt resource value: 0x7f0800b1
+			public const int ValidateUsertxt = 2131230897;
 			
 			// aapt resource value: 0x7f080095
-			public const int editText_location = 2131230869;
+			public const int addImageBtn = 2131230869;
 			
-			// aapt resource value: 0x7f08008d
-			public const int editText_threshold = 2131230861;
+			// aapt resource value: 0x7f08008b
+			public const int colorfilterRadioGroup = 2131230859;
 			
-			// aapt resource value: 0x7f080015
-			public const int editedimageview = 2131230741;
+			// aapt resource value: 0x7f08003d
+			public const int colorfilterinfo = 2131230781;
 			
-			// aapt resource value: 0x7f080043
-			public const int fibercountseg1 = 2131230787;
+			// aapt resource value: 0x7f08003c
+			public const int colorfiltershow = 2131230780;
 			
-			// aapt resource value: 0x7f080070
-			public const int fibercountseg10 = 2131230832;
+			// aapt resource value: 0x7f080080
+			public const int commentshow = 2131230848;
 			
-			// aapt resource value: 0x7f080048
-			public const int fibercountseg2 = 2131230792;
+			// aapt resource value: 0x7f08007f
+			public const int commenttitle = 2131230847;
 			
-			// aapt resource value: 0x7f08004d
-			public const int fibercountseg3 = 2131230797;
+			// aapt resource value: 0x7f080084
+			public const int databaseadd = 2131230852;
 			
-			// aapt resource value: 0x7f080052
-			public const int fibercountseg4 = 2131230802;
+			// aapt resource value: 0x7f0800a2
+			public const int databasebtn = 2131230882;
 			
-			// aapt resource value: 0x7f080057
-			public const int fibercountseg5 = 2131230807;
+			// aapt resource value: 0x7f080026
+			public const int datareportvalues = 2131230758;
 			
-			// aapt resource value: 0x7f08005c
-			public const int fibercountseg6 = 2131230812;
+			// aapt resource value: 0x7f08009a
+			public const int datePicker1 = 2131230874;
 			
-			// aapt resource value: 0x7f080061
-			public const int fibercountseg7 = 2131230817;
+			// aapt resource value: 0x7f080031
+			public const int dateofharvestinfo = 2131230769;
 			
-			// aapt resource value: 0x7f080066
-			public const int fibercountseg8 = 2131230822;
+			// aapt resource value: 0x7f080030
+			public const int dateofharvestsshow = 2131230768;
 			
-			// aapt resource value: 0x7f08006b
-			public const int fibercountseg9 = 2131230827;
+			// aapt resource value: 0x7f08000e
+			public const int dateofharvesttxtview = 2131230734;
 			
-			// aapt resource value: 0x7f08003e
-			public const int fibercounttitle = 2131230782;
+			// aapt resource value: 0x7f080009
+			public const int datetimetxtview = 2131230729;
 			
-			// aapt resource value: 0x7f080078
-			public const int fibercounttotalinfo = 2131230840;
+			// aapt resource value: 0x7f0800b0
+			public const int deletereport = 2131230896;
 			
-			// aapt resource value: 0x7f080075
-			public const int fibercounttotaltitle = 2131230837;
+			// aapt resource value: 0x7f080096
+			public const int editText_Imagetitle = 2131230870;
 			
-			// aapt resource value: 0x7f080044
-			public const int fiberdensityseg1 = 2131230788;
-			
-			// aapt resource value: 0x7f080071
-			public const int fiberdensityseg10 = 2131230833;
-			
-			// aapt resource value: 0x7f080072
-			public const int fiberdensityseg10total = 2131230834;
-			
-			// aapt resource value: 0x7f080045
-			public const int fiberdensityseg1total = 2131230789;
-			
-			// aapt resource value: 0x7f080049
-			public const int fiberdensityseg2 = 2131230793;
-			
-			// aapt resource value: 0x7f08004a
-			public const int fiberdensityseg2total = 2131230794;
-			
-			// aapt resource value: 0x7f08004e
-			public const int fiberdensityseg3 = 2131230798;
-			
-			// aapt resource value: 0x7f08004f
-			public const int fiberdensityseg3total = 2131230799;
-			
-			// aapt resource value: 0x7f080053
-			public const int fiberdensityseg4 = 2131230803;
-			
-			// aapt resource value: 0x7f080054
-			public const int fiberdensityseg4total = 2131230804;
-			
-			// aapt resource value: 0x7f080058
-			public const int fiberdensityseg5 = 2131230808;
-			
-			// aapt resource value: 0x7f080059
-			public const int fiberdensityseg5total = 2131230809;
-			
-			// aapt resource value: 0x7f08005d
-			public const int fiberdensityseg6 = 2131230813;
-			
-			// aapt resource value: 0x7f08005e
-			public const int fiberdensityseg6total = 2131230814;
-			
-			// aapt resource value: 0x7f080062
-			public const int fiberdensityseg7 = 2131230818;
-			
-			// aapt resource value: 0x7f080063
-			public const int fiberdensityseg7total = 2131230819;
-			
-			// aapt resource value: 0x7f080067
-			public const int fiberdensityseg8 = 2131230823;
-			
-			// aapt resource value: 0x7f080068
-			public const int fiberdensityseg8total = 2131230824;
-			
-			// aapt resource value: 0x7f08006c
-			public const int fiberdensityseg9 = 2131230828;
-			
-			// aapt resource value: 0x7f08006d
-			public const int fiberdensityseg9total = 2131230829;
-			
-			// aapt resource value: 0x7f08003f
-			public const int fiberdensitysegtitle = 2131230783;
-			
-			// aapt resource value: 0x7f080079
-			public const int fiberdensitytotalallinfo = 2131230841;
-			
-			// aapt resource value: 0x7f080076
-			public const int fiberdensitytotalalltitle = 2131230838;
-			
-			// aapt resource value: 0x7f080040
-			public const int fiberdensitytotaltitle = 2131230784;
-			
-			// aapt resource value: 0x7f080021
-			public const int graphlayout = 2131230753;
+			// aapt resource value: 0x7f080098
+			public const int editText_Nameofspecies = 2131230872;
 			
 			// aapt resource value: 0x7f080097
-			public const int harvestdate = 2131230871;
+			public const int editText_location = 2131230871;
+			
+			// aapt resource value: 0x7f08008f
+			public const int editText_threshold = 2131230863;
+			
+			// aapt resource value: 0x7f080018
+			public const int editedimageview = 2131230744;
+			
+			// aapt resource value: 0x7f080046
+			public const int fibercountseg1 = 2131230790;
+			
+			// aapt resource value: 0x7f080073
+			public const int fibercountseg10 = 2131230835;
+			
+			// aapt resource value: 0x7f08004b
+			public const int fibercountseg2 = 2131230795;
+			
+			// aapt resource value: 0x7f080050
+			public const int fibercountseg3 = 2131230800;
+			
+			// aapt resource value: 0x7f080055
+			public const int fibercountseg4 = 2131230805;
+			
+			// aapt resource value: 0x7f08005a
+			public const int fibercountseg5 = 2131230810;
+			
+			// aapt resource value: 0x7f08005f
+			public const int fibercountseg6 = 2131230815;
+			
+			// aapt resource value: 0x7f080064
+			public const int fibercountseg7 = 2131230820;
+			
+			// aapt resource value: 0x7f080069
+			public const int fibercountseg8 = 2131230825;
+			
+			// aapt resource value: 0x7f08006e
+			public const int fibercountseg9 = 2131230830;
+			
+			// aapt resource value: 0x7f080041
+			public const int fibercounttitle = 2131230785;
+			
+			// aapt resource value: 0x7f08007b
+			public const int fibercounttotalinfo = 2131230843;
+			
+			// aapt resource value: 0x7f080078
+			public const int fibercounttotaltitle = 2131230840;
+			
+			// aapt resource value: 0x7f080047
+			public const int fiberdensityseg1 = 2131230791;
+			
+			// aapt resource value: 0x7f080074
+			public const int fiberdensityseg10 = 2131230836;
+			
+			// aapt resource value: 0x7f080075
+			public const int fiberdensityseg10total = 2131230837;
+			
+			// aapt resource value: 0x7f080048
+			public const int fiberdensityseg1total = 2131230792;
+			
+			// aapt resource value: 0x7f08004c
+			public const int fiberdensityseg2 = 2131230796;
+			
+			// aapt resource value: 0x7f08004d
+			public const int fiberdensityseg2total = 2131230797;
+			
+			// aapt resource value: 0x7f080051
+			public const int fiberdensityseg3 = 2131230801;
+			
+			// aapt resource value: 0x7f080052
+			public const int fiberdensityseg3total = 2131230802;
+			
+			// aapt resource value: 0x7f080056
+			public const int fiberdensityseg4 = 2131230806;
+			
+			// aapt resource value: 0x7f080057
+			public const int fiberdensityseg4total = 2131230807;
+			
+			// aapt resource value: 0x7f08005b
+			public const int fiberdensityseg5 = 2131230811;
+			
+			// aapt resource value: 0x7f08005c
+			public const int fiberdensityseg5total = 2131230812;
+			
+			// aapt resource value: 0x7f080060
+			public const int fiberdensityseg6 = 2131230816;
+			
+			// aapt resource value: 0x7f080061
+			public const int fiberdensityseg6total = 2131230817;
+			
+			// aapt resource value: 0x7f080065
+			public const int fiberdensityseg7 = 2131230821;
+			
+			// aapt resource value: 0x7f080066
+			public const int fiberdensityseg7total = 2131230822;
+			
+			// aapt resource value: 0x7f08006a
+			public const int fiberdensityseg8 = 2131230826;
+			
+			// aapt resource value: 0x7f08006b
+			public const int fiberdensityseg8total = 2131230827;
+			
+			// aapt resource value: 0x7f08006f
+			public const int fiberdensityseg9 = 2131230831;
+			
+			// aapt resource value: 0x7f080070
+			public const int fiberdensityseg9total = 2131230832;
+			
+			// aapt resource value: 0x7f080042
+			public const int fiberdensitysegtitle = 2131230786;
+			
+			// aapt resource value: 0x7f08007c
+			public const int fiberdensitytotalallinfo = 2131230844;
+			
+			// aapt resource value: 0x7f080079
+			public const int fiberdensitytotalalltitle = 2131230841;
+			
+			// aapt resource value: 0x7f080043
+			public const int fiberdensitytotaltitle = 2131230787;
+			
+			// aapt resource value: 0x7f080024
+			public const int graphlayout = 2131230756;
+			
+			// aapt resource value: 0x7f080099
+			public const int harvestdate = 2131230873;
 			
 			// aapt resource value: 0x7f080005
 			public const int horizontalScrollView1 = 2131230725;
@@ -330,50 +330,50 @@ namespace BambuShootProject.Droid
 			// aapt resource value: 0x7f080007
 			public const int horizontalScrollView2 = 2131230727;
 			
-			// aapt resource value: 0x7f080016
-			public const int imageSegments = 2131230742;
+			// aapt resource value: 0x7f080019
+			public const int imageSegments = 2131230745;
 			
-			// aapt resource value: 0x7f080092
-			public const int imageView1 = 2131230866;
+			// aapt resource value: 0x7f080094
+			public const int imageView1 = 2131230868;
+			
+			// aapt resource value: 0x7f080037
+			public const int imageheightinfo = 2131230775;
+			
+			// aapt resource value: 0x7f080036
+			public const int imageheightshow = 2131230774;
+			
+			// aapt resource value: 0x7f080016
+			public const int imageslayout = 2131230742;
+			
+			// aapt resource value: 0x7f080015
+			public const int imagetitlebar = 2131230741;
+			
+			// aapt resource value: 0x7f0800ac
+			public const int imagetitlelistviewtxt = 2131230892;
+			
+			// aapt resource value: 0x7f08000b
+			public const int imagetitletxtview = 2131230731;
+			
+			// aapt resource value: 0x7f080089
+			public const int imagetransform = 2131230857;
 			
 			// aapt resource value: 0x7f080034
-			public const int imageheightinfo = 2131230772;
+			public const int imagewidthinfo = 2131230772;
 			
 			// aapt resource value: 0x7f080033
-			public const int imageheightshow = 2131230771;
+			public const int imagewidthshow = 2131230771;
 			
-			// aapt resource value: 0x7f080013
-			public const int imageslayout = 2131230739;
+			// aapt resource value: 0x7f080088
+			public const int inputscroll = 2131230856;
+			
+			// aapt resource value: 0x7f08009f
+			public const int instructionsbtn = 2131230879;
 			
 			// aapt resource value: 0x7f080012
-			public const int imagetitlebar = 2131230738;
+			public const int librarylistview = 2131230738;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int imagetitlelistviewtxt = 2131230887;
-			
-			// aapt resource value: 0x7f08000a
-			public const int imagetitletxtview = 2131230730;
-			
-			// aapt resource value: 0x7f080086
-			public const int imagetransform = 2131230854;
-			
-			// aapt resource value: 0x7f080031
-			public const int imagewidthinfo = 2131230769;
-			
-			// aapt resource value: 0x7f080030
-			public const int imagewidthshow = 2131230768;
-			
-			// aapt resource value: 0x7f080085
-			public const int inputscroll = 2131230853;
-			
-			// aapt resource value: 0x7f08009d
-			public const int instructionsbtn = 2131230877;
-			
-			// aapt resource value: 0x7f08000f
-			public const int librarylistview = 2131230735;
-			
-			// aapt resource value: 0x7f0800a8
-			public const int linearLayout1 = 2131230888;
+			// aapt resource value: 0x7f0800ad
+			public const int linearLayout1 = 2131230893;
 			
 			// aapt resource value: 0x7f080008
 			public const int linearLayout2 = 2131230728;
@@ -381,260 +381,275 @@ namespace BambuShootProject.Droid
 			// aapt resource value: 0x7f080006
 			public const int linearLayout3 = 2131230726;
 			
-			// aapt resource value: 0x7f080024
-			public const int linearLayoutfortables = 2131230756;
-			
-			// aapt resource value: 0x7f080084
-			public const int linearLayoutinputcalibration2 = 2131230852;
-			
-			// aapt resource value: 0x7f08000e
-			public const int listViewReports = 2131230734;
-			
-			// aapt resource value: 0x7f080014
-			public const int loadedimageview = 2131230740;
-			
-			// aapt resource value: 0x7f0800a6
-			public const int loadedimgshow = 2131230886;
-			
-			// aapt resource value: 0x7f08009a
-			public const int loadimageBtn = 2131230874;
-			
-			// aapt resource value: 0x7f080028
-			public const int locationinfo = 2131230760;
-			
 			// aapt resource value: 0x7f080027
-			public const int locationshow = 2131230759;
+			public const int linearLayoutfortables = 2131230759;
 			
-			// aapt resource value: 0x7f08000b
-			public const int locationtxtview = 2131230731;
+			// aapt resource value: 0x7f080087
+			public const int linearLayoutinputcalibration2 = 2131230855;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int menu_refresh = 2131230894;
+			// aapt resource value: 0x7f080011
+			public const int listViewReports = 2131230737;
 			
-			// aapt resource value: 0x7f08009f
-			public const int mydatareportlibrarybtn = 2131230879;
+			// aapt resource value: 0x7f080017
+			public const int loadedimageview = 2131230743;
+			
+			// aapt resource value: 0x7f0800ab
+			public const int loadedimgshow = 2131230891;
+			
+			// aapt resource value: 0x7f08009c
+			public const int loadimageBtn = 2131230876;
 			
 			// aapt resource value: 0x7f08002b
-			public const int nameofspeciesinfo = 2131230763;
+			public const int locationinfo = 2131230763;
 			
 			// aapt resource value: 0x7f08002a
-			public const int nameofspeciesshow = 2131230762;
+			public const int locationshow = 2131230762;
 			
 			// aapt resource value: 0x7f08000c
-			public const int nameofspeciestxtview = 2131230732;
+			public const int locationtxtview = 2131230732;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int openpdf = 2131230889;
+			// aapt resource value: 0x7f0800b3
+			public const int menu_refresh = 2131230899;
+			
+			// aapt resource value: 0x7f0800a1
+			public const int mydatareportlibrarybtn = 2131230881;
+			
+			// aapt resource value: 0x7f08002e
+			public const int nameofspeciesinfo = 2131230766;
+			
+			// aapt resource value: 0x7f08002d
+			public const int nameofspeciesshow = 2131230765;
+			
+			// aapt resource value: 0x7f08000d
+			public const int nameofspeciestxtview = 2131230733;
+			
+			// aapt resource value: 0x7f0800ae
+			public const int openpdf = 2131230894;
 			
 			// aapt resource value: 0x7f080002
 			public const int passwordEdt = 2131230722;
 			
-			// aapt resource value: 0x7f080022
-			public const int plot_view = 2131230754;
+			// aapt resource value: 0x7f080025
+			public const int plot_view = 2131230757;
+			
+			// aapt resource value: 0x7f080090
+			public const int previewBtn = 2131230864;
 			
 			// aapt resource value: 0x7f08008e
-			public const int previewBtn = 2131230862;
-			
-			// aapt resource value: 0x7f08008c
-			public const int previewlayout = 2131230860;
-			
-			// aapt resource value: 0x7f08008f
-			public const int processimageBtn = 2131230863;
-			
-			// aapt resource value: 0x7f08009e
-			public const int processnewimagebtn = 2131230878;
-			
-			// aapt resource value: 0x7f080010
-			public const int reportScroll = 2131230736;
-			
-			// aapt resource value: 0x7f080011
-			public const int reportlayout = 2131230737;
-			
-			// aapt resource value: 0x7f08003d
-			public const int resultstitle = 2131230781;
-			
-			// aapt resource value: 0x7f080082
-			public const int returntoMM = 2131230850;
-			
-			// aapt resource value: 0x7f080088
-			public const int rotateBtn = 2131230856;
-			
-			// aapt resource value: 0x7f080080
-			public const int saveinternal = 2131230848;
+			public const int previewlayout = 2131230862;
 			
 			// aapt resource value: 0x7f080091
-			public const int scrollView1 = 2131230865;
+			public const int processimageBtn = 2131230865;
 			
-			// aapt resource value: 0x7f08006f
-			public const int seg10title = 2131230831;
+			// aapt resource value: 0x7f0800a0
+			public const int processnewimagebtn = 2131230880;
 			
-			// aapt resource value: 0x7f080042
-			public const int seg1title = 2131230786;
+			// aapt resource value: 0x7f080013
+			public const int reportScroll = 2131230739;
 			
-			// aapt resource value: 0x7f080047
-			public const int seg2title = 2131230791;
+			// aapt resource value: 0x7f080014
+			public const int reportlayout = 2131230740;
 			
-			// aapt resource value: 0x7f08004c
-			public const int seg3title = 2131230796;
+			// aapt resource value: 0x7f080040
+			public const int resultstitle = 2131230784;
 			
-			// aapt resource value: 0x7f080051
-			public const int seg4title = 2131230801;
+			// aapt resource value: 0x7f080085
+			public const int returntoMM = 2131230853;
 			
-			// aapt resource value: 0x7f080056
-			public const int seg5title = 2131230806;
+			// aapt resource value: 0x7f08008a
+			public const int rotateBtn = 2131230858;
 			
-			// aapt resource value: 0x7f08005b
-			public const int seg6title = 2131230811;
+			// aapt resource value: 0x7f080083
+			public const int saveinternal = 2131230851;
 			
-			// aapt resource value: 0x7f080060
-			public const int seg7title = 2131230816;
+			// aapt resource value: 0x7f080093
+			public const int scrollView1 = 2131230867;
 			
-			// aapt resource value: 0x7f080065
-			public const int seg8title = 2131230821;
+			// aapt resource value: 0x7f080072
+			public const int seg10title = 2131230834;
 			
-			// aapt resource value: 0x7f08006a
-			public const int seg9title = 2131230826;
+			// aapt resource value: 0x7f080045
+			public const int seg1title = 2131230789;
 			
-			// aapt resource value: 0x7f080017
-			public const int segment1 = 2131230743;
+			// aapt resource value: 0x7f08004a
+			public const int seg2title = 2131230794;
 			
-			// aapt resource value: 0x7f080020
-			public const int segment10 = 2131230752;
+			// aapt resource value: 0x7f08004f
+			public const int seg3title = 2131230799;
 			
-			// aapt resource value: 0x7f080018
-			public const int segment2 = 2131230744;
+			// aapt resource value: 0x7f080054
+			public const int seg4title = 2131230804;
 			
-			// aapt resource value: 0x7f080019
-			public const int segment3 = 2131230745;
+			// aapt resource value: 0x7f080059
+			public const int seg5title = 2131230809;
+			
+			// aapt resource value: 0x7f08005e
+			public const int seg6title = 2131230814;
+			
+			// aapt resource value: 0x7f080063
+			public const int seg7title = 2131230819;
+			
+			// aapt resource value: 0x7f080068
+			public const int seg8title = 2131230824;
+			
+			// aapt resource value: 0x7f08006d
+			public const int seg9title = 2131230829;
 			
 			// aapt resource value: 0x7f08001a
-			public const int segment4 = 2131230746;
+			public const int segment1 = 2131230746;
+			
+			// aapt resource value: 0x7f080023
+			public const int segment10 = 2131230755;
 			
 			// aapt resource value: 0x7f08001b
-			public const int segment5 = 2131230747;
+			public const int segment2 = 2131230747;
 			
 			// aapt resource value: 0x7f08001c
-			public const int segment6 = 2131230748;
+			public const int segment3 = 2131230748;
 			
 			// aapt resource value: 0x7f08001d
-			public const int segment7 = 2131230749;
+			public const int segment4 = 2131230749;
 			
 			// aapt resource value: 0x7f08001e
-			public const int segment8 = 2131230750;
+			public const int segment5 = 2131230750;
 			
 			// aapt resource value: 0x7f08001f
-			public const int segment9 = 2131230751;
+			public const int segment6 = 2131230751;
 			
-			// aapt resource value: 0x7f08007f
-			public const int share = 2131230847;
+			// aapt resource value: 0x7f080020
+			public const int segment7 = 2131230752;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int sharepdf = 2131230890;
+			// aapt resource value: 0x7f080021
+			public const int segment8 = 2131230753;
 			
-			// aapt resource value: 0x7f080025
-			public const int tableLayout1 = 2131230757;
+			// aapt resource value: 0x7f080022
+			public const int segment9 = 2131230754;
 			
-			// aapt resource value: 0x7f08003b
-			public const int tableLayout2 = 2131230779;
+			// aapt resource value: 0x7f080082
+			public const int share = 2131230850;
 			
-			// aapt resource value: 0x7f080073
-			public const int tableLayout3 = 2131230835;
+			// aapt resource value: 0x7f0800af
+			public const int sharepdf = 2131230895;
 			
-			// aapt resource value: 0x7f08007a
-			public const int tableLayout4 = 2131230842;
+			// aapt resource value: 0x7f080028
+			public const int tableLayout1 = 2131230760;
 			
-			// aapt resource value: 0x7f080026
-			public const int tableRow1 = 2131230758;
+			// aapt resource value: 0x7f08003e
+			public const int tableLayout2 = 2131230782;
 			
-			// aapt resource value: 0x7f080046
-			public const int tableRow10 = 2131230790;
+			// aapt resource value: 0x7f080076
+			public const int tableLayout3 = 2131230838;
 			
-			// aapt resource value: 0x7f08004b
-			public const int tableRow11 = 2131230795;
-			
-			// aapt resource value: 0x7f080050
-			public const int tableRow12 = 2131230800;
-			
-			// aapt resource value: 0x7f080055
-			public const int tableRow13 = 2131230805;
-			
-			// aapt resource value: 0x7f08005a
-			public const int tableRow14 = 2131230810;
-			
-			// aapt resource value: 0x7f08005f
-			public const int tableRow15 = 2131230815;
-			
-			// aapt resource value: 0x7f080064
-			public const int tableRow16 = 2131230820;
-			
-			// aapt resource value: 0x7f080069
-			public const int tableRow17 = 2131230825;
-			
-			// aapt resource value: 0x7f08006e
-			public const int tableRow18 = 2131230830;
-			
-			// aapt resource value: 0x7f080074
-			public const int tableRow19 = 2131230836;
+			// aapt resource value: 0x7f08007d
+			public const int tableLayout4 = 2131230845;
 			
 			// aapt resource value: 0x7f080029
-			public const int tableRow2 = 2131230761;
+			public const int tableRow1 = 2131230761;
+			
+			// aapt resource value: 0x7f080049
+			public const int tableRow10 = 2131230793;
+			
+			// aapt resource value: 0x7f08004e
+			public const int tableRow11 = 2131230798;
+			
+			// aapt resource value: 0x7f080053
+			public const int tableRow12 = 2131230803;
+			
+			// aapt resource value: 0x7f080058
+			public const int tableRow13 = 2131230808;
+			
+			// aapt resource value: 0x7f08005d
+			public const int tableRow14 = 2131230813;
+			
+			// aapt resource value: 0x7f080062
+			public const int tableRow15 = 2131230818;
+			
+			// aapt resource value: 0x7f080067
+			public const int tableRow16 = 2131230823;
+			
+			// aapt resource value: 0x7f08006c
+			public const int tableRow17 = 2131230828;
+			
+			// aapt resource value: 0x7f080071
+			public const int tableRow18 = 2131230833;
 			
 			// aapt resource value: 0x7f080077
-			public const int tableRow20 = 2131230839;
-			
-			// aapt resource value: 0x7f08007b
-			public const int tableRow21 = 2131230843;
-			
-			// aapt resource value: 0x7f08007e
-			public const int tableRow22 = 2131230846;
+			public const int tableRow19 = 2131230839;
 			
 			// aapt resource value: 0x7f08002c
-			public const int tableRow3 = 2131230764;
+			public const int tableRow2 = 2131230764;
+			
+			// aapt resource value: 0x7f08007a
+			public const int tableRow20 = 2131230842;
+			
+			// aapt resource value: 0x7f08007e
+			public const int tableRow21 = 2131230846;
+			
+			// aapt resource value: 0x7f080081
+			public const int tableRow22 = 2131230849;
 			
 			// aapt resource value: 0x7f08002f
-			public const int tableRow4 = 2131230767;
+			public const int tableRow3 = 2131230767;
 			
 			// aapt resource value: 0x7f080032
-			public const int tableRow5 = 2131230770;
+			public const int tableRow4 = 2131230770;
 			
 			// aapt resource value: 0x7f080035
-			public const int tableRow6 = 2131230773;
+			public const int tableRow5 = 2131230773;
 			
 			// aapt resource value: 0x7f080038
-			public const int tableRow7 = 2131230776;
+			public const int tableRow6 = 2131230776;
 			
-			// aapt resource value: 0x7f08003c
-			public const int tableRow8 = 2131230780;
+			// aapt resource value: 0x7f08003b
+			public const int tableRow7 = 2131230779;
 			
-			// aapt resource value: 0x7f080041
-			public const int tableRow9 = 2131230785;
+			// aapt resource value: 0x7f08003f
+			public const int tableRow8 = 2131230783;
 			
-			// aapt resource value: 0x7f080037
-			public const int thresholdinfo = 2131230775;
+			// aapt resource value: 0x7f080044
+			public const int tableRow9 = 2131230788;
 			
-			// aapt resource value: 0x7f080036
-			public const int thresholdshow = 2131230774;
+			// aapt resource value: 0x7f08003a
+			public const int thresholdinfo = 2131230778;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int txtDateofHarvest = 2131230885;
+			// aapt resource value: 0x7f080039
+			public const int thresholdshow = 2131230777;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int txtImageTitle = 2131230882;
+			// aapt resource value: 0x7f08000f
+			public const int totalfibercounttxtview = 2131230735;
+			
+			// aapt resource value: 0x7f080010
+			public const int totalfiberdensitytxtview = 2131230736;
+			
+			// aapt resource value: 0x7f0800a8
+			public const int txtDateofHarvest = 2131230888;
 			
 			// aapt resource value: 0x7f0800a3
-			public const int txtLocation = 2131230883;
+			public const int txtDatetime = 2131230883;
+			
+			// aapt resource value: 0x7f0800a5
+			public const int txtImageTitle = 2131230885;
+			
+			// aapt resource value: 0x7f0800a6
+			public const int txtLocation = 2131230886;
+			
+			// aapt resource value: 0x7f0800a7
+			public const int txtNameofspecies = 2131230887;
+			
+			// aapt resource value: 0x7f0800a9
+			public const int txtTotalCountFiber = 2131230889;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int txtTotalDensityFiber = 2131230890;
 			
 			// aapt resource value: 0x7f0800a4
-			public const int txtNameofspecies = 2131230884;
-			
-			// aapt resource value: 0x7f0800a1
-			public const int txtUsername = 2131230881;
+			public const int txtUsername = 2131230884;
 			
 			// aapt resource value: 0x7f080001
 			public const int usernameEdt = 2131230721;
 			
-			// aapt resource value: 0x7f080009
-			public const int usernametxtview = 2131230729;
+			// aapt resource value: 0x7f08000a
+			public const int usernametxtview = 2131230730;
 			
 			static Id()
 			{
@@ -714,47 +729,194 @@ namespace BambuShootProject.Droid
 			// aapt resource value: 0x7f050001
 			public const int ApplicationName = 2131034113;
 			
+			// aapt resource value: 0x7f05002b
+			public const int BWRadioBtn = 2131034155;
+			
+			// aapt resource value: 0x7f050005
+			public const int CreateBtn = 2131034117;
+			
+			// aapt resource value: 0x7f050038
+			public const int CreateUserBtn = 2131034168;
+			
+			// aapt resource value: 0x7f050002
+			public const int CreateUsertxt = 2131034114;
+			
+			// aapt resource value: 0x7f05002a
+			public const int GSRadioBtn = 2131034154;
+			
 			// aapt resource value: 0x7f050000
 			public const int Hello = 2131034112;
 			
-			// aapt resource value: 0x7f050002
-			public const int app_name = 2131034114;
+			// aapt resource value: 0x7f05002f
+			public const int Instructions = 2131034159;
 			
-			// aapt resource value: 0x7f050007
-			public const int date_harvest = 2131034119;
+			// aapt resource value: 0x7f050036
+			public const int Noimageselected = 2131034166;
+			
+			// aapt resource value: 0x7f05003e
+			public const int ValidateBtn = 2131034174;
+			
+			// aapt resource value: 0x7f05003d
+			public const int ValidateUsertxt = 2131034173;
+			
+			// aapt resource value: 0x7f050030
+			public const int addImageBtn = 2131034160;
+			
+			// aapt resource value: 0x7f05003f
+			public const int app_name = 2131034175;
+			
+			// aapt resource value: 0x7f050015
+			public const int colorfiltershow = 2131034133;
+			
+			// aapt resource value: 0x7f050024
+			public const int commenttitle = 2131034148;
+			
+			// aapt resource value: 0x7f050027
+			public const int databaseadd = 2131034151;
+			
+			// aapt resource value: 0x7f05003c
+			public const int databasebtn = 2131034172;
 			
 			// aapt resource value: 0x7f05000e
-			public const int date_harvest_placeholder = 2131034126;
+			public const int datareportvalues = 2131034126;
 			
-			// aapt resource value: 0x7f050004
-			public const int image_title = 2131034116;
+			// aapt resource value: 0x7f050034
+			public const int date_harvest_placeholder = 2131034164;
+			
+			// aapt resource value: 0x7f050011
+			public const int dateofharvestsshow = 2131034129;
 			
 			// aapt resource value: 0x7f05000b
-			public const int imagetitle_placeholder = 2131034123;
-			
-			// aapt resource value: 0x7f050005
-			public const int location = 2131034117;
-			
-			// aapt resource value: 0x7f05000c
-			public const int location_placeholder = 2131034124;
+			public const int dateofharvesttxtview = 2131034123;
 			
 			// aapt resource value: 0x7f050006
-			public const int name_species = 2131034118;
+			public const int datetimetxtview = 2131034118;
 			
-			// aapt resource value: 0x7f05000d
-			public const int name_species_placeholder = 2131034125;
+			// aapt resource value: 0x7f050017
+			public const int fibercounttitle = 2131034135;
+			
+			// aapt resource value: 0x7f050018
+			public const int fiberdensitysegtitle = 2131034136;
+			
+			// aapt resource value: 0x7f050019
+			public const int fiberdensitytotaltitle = 2131034137;
+			
+			// aapt resource value: 0x7f050035
+			public const int harvestdate = 2131034165;
+			
+			// aapt resource value: 0x7f050013
+			public const int imageheightshow = 2131034131;
+			
+			// aapt resource value: 0x7f050031
+			public const int imagetitle_placeholder = 2131034161;
 			
 			// aapt resource value: 0x7f050008
-			public const int threshold = 2131034120;
+			public const int imagetitletxtview = 2131034120;
+			
+			// aapt resource value: 0x7f050012
+			public const int imagewidthshow = 2131034130;
+			
+			// aapt resource value: 0x7f050039
+			public const int instructionsbtn = 2131034169;
+			
+			// aapt resource value: 0x7f050037
+			public const int loadimageBtn = 2131034167;
+			
+			// aapt resource value: 0x7f050032
+			public const int location_placeholder = 2131034162;
+			
+			// aapt resource value: 0x7f05000f
+			public const int locationshow = 2131034127;
 			
 			// aapt resource value: 0x7f050009
-			public const int threshold_placeholder = 2131034121;
+			public const int locationtxtview = 2131034121;
 			
-			// aapt resource value: 0x7f050003
-			public const int username = 2131034115;
+			// aapt resource value: 0x7f05003b
+			public const int mydatareportlibrarybtn = 2131034171;
+			
+			// aapt resource value: 0x7f050033
+			public const int name_species_placeholder = 2131034163;
+			
+			// aapt resource value: 0x7f050010
+			public const int nameofspeciesshow = 2131034128;
 			
 			// aapt resource value: 0x7f05000a
-			public const int username_placeholder = 2131034122;
+			public const int nameofspeciestxtview = 2131034122;
+			
+			// aapt resource value: 0x7f050004
+			public const int passwordEdt = 2131034116;
+			
+			// aapt resource value: 0x7f05002d
+			public const int previewBtn = 2131034157;
+			
+			// aapt resource value: 0x7f05002e
+			public const int processimageBtn = 2131034158;
+			
+			// aapt resource value: 0x7f05003a
+			public const int processnewimagebtn = 2131034170;
+			
+			// aapt resource value: 0x7f050016
+			public const int resultstitle = 2131034134;
+			
+			// aapt resource value: 0x7f050028
+			public const int returntoMM = 2131034152;
+			
+			// aapt resource value: 0x7f050029
+			public const int rotateBtn = 2131034153;
+			
+			// aapt resource value: 0x7f050026
+			public const int saveinternal = 2131034150;
+			
+			// aapt resource value: 0x7f050023
+			public const int seg10title = 2131034147;
+			
+			// aapt resource value: 0x7f05001a
+			public const int seg1title = 2131034138;
+			
+			// aapt resource value: 0x7f05001b
+			public const int seg2title = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int seg3title = 2131034140;
+			
+			// aapt resource value: 0x7f05001d
+			public const int seg4title = 2131034141;
+			
+			// aapt resource value: 0x7f05001e
+			public const int seg5title = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int seg6title = 2131034143;
+			
+			// aapt resource value: 0x7f050020
+			public const int seg7title = 2131034144;
+			
+			// aapt resource value: 0x7f050021
+			public const int seg8title = 2131034145;
+			
+			// aapt resource value: 0x7f050022
+			public const int seg9title = 2131034146;
+			
+			// aapt resource value: 0x7f050025
+			public const int share = 2131034149;
+			
+			// aapt resource value: 0x7f05002c
+			public const int threshold_placeholder = 2131034156;
+			
+			// aapt resource value: 0x7f050014
+			public const int thresholdshow = 2131034132;
+			
+			// aapt resource value: 0x7f05000c
+			public const int totalfibercounttxtview = 2131034124;
+			
+			// aapt resource value: 0x7f05000d
+			public const int totalfiberdensitytxtview = 2131034125;
+			
+			// aapt resource value: 0x7f050003
+			public const int usernameEdt = 2131034115;
+			
+			// aapt resource value: 0x7f050007
+			public const int usernametxtview = 2131034119;
 			
 			static String()
 			{

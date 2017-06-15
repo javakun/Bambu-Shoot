@@ -29,7 +29,7 @@
                     android:id="@+id/imageView1" />
             </LinearLayout>
             <Button
-                android:text="Select Image to Process "
+                android:text="@string/addImageBtn"
                 android:id="@+id/addImageBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                 android:textColorHint="@android:color/darker_gray"
                 android:gravity="left" />
             <TextView
-                android:text="Pick Harvest Date:"
+                android:text="@string/harvestdate"
                 android:id="@+id/harvestdate"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@android:color/black"
@@ -95,29 +95,20 @@
                 android:paddingBottom="20dp"
                 android:layout_marginTop="10dp" />
             <TextView xmlns:tools="http://schemas.android.com/tools"
-                android:text="Image not Selected"
+                android:text="@string/Noimageselected"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/Noimageselected"
                 android:textColor="@android:color/black"
                 tools:visibility="gone"
                 android:visibility="gone" />
             <Button
-                android:text="Load"
+                android:text="@string/loadimageBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/loadimageBtn"
                 android:layout_marginLeft="10.0dp"
                 android:layout_marginRight="10.0dp"
                 android:textColor="@android:color/white" />
-        <!-- Testing Share
-            <Button
-                android:text="Share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/share"
-                android:id="@+id/sharetest"
-                android:layout_weight="25" />
-            -->
         </TableLayout>
     </ScrollView>
 </LinearLayout>

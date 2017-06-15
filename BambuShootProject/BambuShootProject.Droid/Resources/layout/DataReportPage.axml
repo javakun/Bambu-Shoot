@@ -130,7 +130,7 @@
                     android:layout_height="300dp" />
             </LinearLayout>
             <TextView
-                android:text="Processed Image Values"
+                android:text="@string/datareportvalues"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
                         <TableRow
                             android:id="@+id/tableRow1">
                             <TextView
-                                android:text="Location:"
+                                android:text="@string/locationshow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_height="wrap_content"
                                 android:textColor="#333333"
@@ -182,7 +182,7 @@
                         <TableRow
                             android:id="@+id/tableRow2">
                             <TextView
-                                android:text="Name of Species:"
+                                android:text="@string/nameofspeciesshow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
                         <TableRow
                             android:id="@+id/tableRow3">
                             <TextView
-                                android:text="Date of Harvest:"
+                                android:text="@string/dateofharvestsshow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -224,7 +224,7 @@
                         <TableRow
                             android:id="@+id/tableRow4">
                             <TextView
-                                android:text="Image Width:"
+                                android:text="@string/imagewidthshow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -245,7 +245,7 @@
                         <TableRow
                             android:id="@+id/tableRow5">
                             <TextView
-                                android:text="Image Height:"
+                                android:text="@string/imageheightshow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -266,7 +266,7 @@
                         <TableRow
                             android:id="@+id/tableRow6">
                             <TextView
-                                android:text="Threshold:"
+                                android:text="@string/thresholdshow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
                         <TableRow
                             android:id="@+id/tableRow7">
                             <TextView
-                                android:text="Color Filter:"
+                                android:text="@string/colorfiltershow"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -316,7 +316,7 @@
                         <TableRow
                             android:id="@+id/tableRow8">
                             <TextView
-                                android:text="Data Results"
+                                android:text="@string/resultstitle"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -327,7 +327,7 @@
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp" />
                             <TextView
-                                android:text="Fiber Count"
+                                android:text="@string/fibercounttitle"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -338,7 +338,7 @@
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp" />
                             <TextView
-                                android:text="FDensity of Seg"
+                                android:text="@string/fiberdensitysegtitle"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -349,7 +349,7 @@
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp" />
                             <TextView
-                                android:text="FDensity Seg/TPixels"
+                                android:text="@string/fiberdensitytotaltitle"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -364,7 +364,7 @@
                             android:id="@+id/tableRow9"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment1"
+                                android:text="@string/seg1title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -415,7 +415,7 @@
                             android:id="@+id/tableRow10"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment2"
+                                android:text="@string/seg2title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -466,7 +466,7 @@
                             android:id="@+id/tableRow11"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment3"
+                                android:text="@string/seg3title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -517,7 +517,7 @@
                             android:id="@+id/tableRow12"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment4"
+                                android:text="@string/seg4title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -568,7 +568,7 @@
                             android:id="@+id/tableRow13"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment5"
+                                android:text="@string/seg5title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -619,7 +619,7 @@
                             android:id="@+id/tableRow14"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment6"
+                                android:text="@string/seg6title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -670,7 +670,7 @@
                             android:id="@+id/tableRow15"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment7"
+                                android:text="@string/seg7title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -721,7 +721,7 @@
                             android:id="@+id/tableRow16"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment8"
+                                android:text="@string/seg8title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -772,7 +772,7 @@
                             android:id="@+id/tableRow17"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment9"
+                                android:text="@string/seg9title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -823,7 +823,7 @@
                             android:id="@+id/tableRow18"
                             android:paddingTop="5dp">
                             <TextView
-                                android:text="Segment10"
+                                android:text="@string/seg10title"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -881,7 +881,7 @@
                         <TableRow
                             android:id="@+id/tableRow19">
                             <TextView
-                                android:text="Fiber Count Total"
+                                android:text="@string/totalfibercounttxtview"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -892,7 +892,7 @@
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp" />
                             <TextView
-                                android:text="Fiber Density Total"
+                                android:text="@string/totalfiberdensitytxtview"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -944,7 +944,7 @@
                     android:id="@+id/tableRow21"
                     android:layout_weight="100">
                     <TextView
-                        android:text="Comments:"
+                        android:text="@string/commenttitle"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -962,13 +962,13 @@
                         android:hint="Enter Comments"
                         android:textColor="@android:color/black"
                         android:background="@drawable/border"
-                        android:id="@+id/commentshow"/>
+                        android:id="@+id/commentshow" />
                 </TableRow>
                 <TableRow
                     android:id="@+id/tableRow22"
                     android:layout_weight="75">
                     <Button
-                        android:text="Share"
+                        android:text="@string/share"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/share"
@@ -976,7 +976,7 @@
                         android:layout_weight="25"
                         android:textColor="@android:color/white" />
                     <Button
-                        android:text="Save"
+                        android:text="@string/saveinternal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/save"
@@ -984,7 +984,7 @@
                         android:layout_weight="25"
                         android:textColor="@android:color/white" />
                     <Button
-                        android:text="Upload DB"
+                        android:text="@string/databaseadd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/databaseadd"
@@ -994,7 +994,7 @@
                 </TableRow>
             </TableLayout>
             <Button
-                android:text="Return to Main Menu"
+                android:text="@string/returntoMM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/returntoMM"

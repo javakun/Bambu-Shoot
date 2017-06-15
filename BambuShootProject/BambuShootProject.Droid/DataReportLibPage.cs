@@ -12,7 +12,7 @@ using ClassLibrary;
 using System.IO;
 using Android.Content.PM;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     [Activity(Label = "Data Report Library", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class DataReportLibPage : Activity

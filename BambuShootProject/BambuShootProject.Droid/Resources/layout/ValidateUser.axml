@@ -7,7 +7,7 @@
     android:minHeight="400dp"
     android:orientation="vertical">
     <TextView
-        android:text="Validate User:"
+        android:text="@string/ValidateUsertxt"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/usernameEdt"
-        android:hint="Enter Username:"
+        android:hint="@string/usernameEdt"
         android:textColorHint="@android:color/darker_gray"
         android:textColor="#000"
         android:maxLength="20" />
@@ -25,13 +25,13 @@
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Password:"
+        android:hint="@string/passwordEdt"
         android:id="@+id/passwordEdt"
         android:textColorHint="@android:color/darker_gray"
         android:textColor="#000"
         android:maxLength="20" />
     <Button
-        android:text="Validate"
+        android:text="@string/ValidateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ValidateBtn"

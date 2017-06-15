@@ -6,7 +6,7 @@
     android:minWidth="300dp"
     android:minHeight="400dp">
     <TextView
-        android:text="Instructions:"
+        android:text="@string/Instructions"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

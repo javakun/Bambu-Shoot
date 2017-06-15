@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BambuShootProject.Droid", "BambuShootProject\BambuShootProject.Droid\BambuShootProject.Droid.csproj", "{A4F90701-A698-463D-8F4D-C80C1372F21B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.BambuShoot.droid", "BambuShootProject\BambuShootProject.Droid\com.BambuShoot.droid.csproj", "{A4F90701-A698-463D-8F4D-C80C1372F21B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{88CD9712-BA2D-4862-804D-8F93C1B299A0}"
 EndProject

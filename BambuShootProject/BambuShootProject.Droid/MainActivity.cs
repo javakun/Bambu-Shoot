@@ -12,17 +12,17 @@ using ClassLibrary;
 using System.IO;
 using Android.Preferences;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
 	[Activity (Label = "Bambú Shoot", MainLauncher = true, Icon = "@drawable/BambuShootIcon", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation , ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
-        public Button gBtnInstructions;            // Initialize Button as Global Variable
-        public Button gBtnLoadImage;
-        public Button gBtnDatabase;
-        public Button gBtnDataReportLib;
-        public Button gBtnCreateUser;
+        Button gBtnInstructions;            
+        Button gBtnLoadImage;
+        Button gBtnDatabase;
+        Button gBtnDataReportLib;
+        Button gBtnCreateUser;
         bool isOnline;
         Users RegisteredUser;
         bool savedfile;

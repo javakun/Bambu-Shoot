@@ -60,6 +60,8 @@ namespace ClassLibrary
         [JsonProperty(PropertyName = "filter")]
         public string Filter { get; set; }
 
+        public DateTime DateUtc { get; set; }
+
         //Value for image transform 0-255
         [JsonProperty(PropertyName = "threshold")]
         public int Threshold { get; set; }

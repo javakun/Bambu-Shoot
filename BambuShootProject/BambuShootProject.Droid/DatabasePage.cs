@@ -1,5 +1,4 @@
 ﻿
-#define OFFLINE_SYNC_ENABLED
 
 using System;
 using System.Collections.Generic;
@@ -16,12 +15,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using ClassLibrary;
 
-#if OFFLINE_SYNC_ENABLED
-using Microsoft.WindowsAzure.MobileServices.Sync;
-using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
-#endif
-
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     [Activity(Label = "Database Report List", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class DatabasePage : Activity
@@ -36,18 +30,10 @@ namespace BambuShootProject.Droid
         // Create the client instance, using the mobile app backend URL.
         private MobileServiceClient client;
 
-#if OFFLINE_SYNC_ENABLED
-        private IMobileServiceSyncTable<Users> UserTable;
-        private IMobileServiceSyncTable<Reports> ReportsTable;
-
-        const string localDbFilename = "syncstore.db";
-
-#else
         private IMobileServiceTable<ClassLibrary.Users> UserTable;
         private IMobileServiceTable<ClassLibrary.Reports> ReportsTable;
-#endif
 
-        protected async  override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -56,15 +42,8 @@ namespace BambuShootProject.Droid
 
             client = new MobileServiceClient(applicationURL);
 
-#if OFFLINE_SYNC_ENABLED
-            await InitLocalStoreAsync();
-            // Get the sync table instance to use to store Report rows.
-            ReportsTable = client.GetSyncTable<Reports>();
-            UserTable = client.GetSyncTable<Users>();
-#else
             ReportsTable = client.GetTable<ClassLibrary.Reports>();
             UserTable = client.GetTable<ClassLibrary.Users>();
-#endif
 
             OnRefreshItemsSelected();
             adapter = new DatabaseAdapter(this,Resource.Layout.Row_list_Report_DB);
@@ -72,47 +51,6 @@ namespace BambuShootProject.Droid
             ReportView.Adapter = adapter;
 
         }
-
-#if OFFLINE_SYNC_ENABLED
-        private async Task InitLocalStoreAsync()
-        {
-            
-            try
-            {
-                var store = new MobileServiceSQLiteStore(localDbFilename);
-                store.DefineTable<ClassLibrary.Reports>();
-                await client.SyncContext.InitializeAsync(store);
-             }
-            catch(Exception ex)
-            {
-                Console.Write(ex);
-            }
-            
-
-        }
-
-        private async Task SyncAsync(bool pullData = false)
-        {
-            try
-            {
-                await client.SyncContext.PushAsync();
-
-                if (pullData)
-                {
-                    await ReportsTable.PullAsync("allReports", ReportsTable.CreateQuery()); // query ID is used for incremental sync
-                    //await UserTable.PullAsync("allUsers", UserTable.CreateQuery());
-                }
-            }
-            catch (Java.Net.MalformedURLException)
-            {
-                CreateAndShowDialog(new Exception("There was an error creating the Mobile Service. Verify the URL"), "Error");
-            }
-            catch (Exception e)
-            {
-                CreateAndShowDialog(e, "Error");
-            }
-        }
-#endif
 
         //Initializes the activity menu
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -137,10 +75,6 @@ namespace BambuShootProject.Droid
         // Called when the refresh menu option is selected.
         private async void OnRefreshItemsSelected()
         {
-#if OFFLINE_SYNC_ENABLED
-			// Get changes from the mobile app backend.
-            await SyncAsync(pullData: true);
-#endif
             // refresh view using local store.
             await RefreshItemsFromTableAsync();
         }
@@ -151,8 +85,8 @@ namespace BambuShootProject.Droid
             try
             {
                 // Get the reports from table
-                var Reportlist = await ReportsTable.ToListAsync();
-                //  var Userlist = await UserTable.ToListAsync();
+                var Reportlist = await ReportsTable.OrderBy(Reports => Reports.DateUtc).ToListAsync();
+                var Userlist = await UserTable.OrderBy(Users => Users.Id).ToListAsync();
                 
 
                 adapter.Clear();
@@ -160,8 +94,8 @@ namespace BambuShootProject.Droid
                 foreach (ClassLibrary.Reports current in Reportlist)
                     adapter.AddReports(current);
                 
-               // foreach (ClassLibrary.Users current in Userlist)
-              //      adapter.AddUsers(current);
+                foreach (ClassLibrary.Users current in Userlist)
+                    adapter.AddUsers(current);
 
             }
             catch (Exception e)

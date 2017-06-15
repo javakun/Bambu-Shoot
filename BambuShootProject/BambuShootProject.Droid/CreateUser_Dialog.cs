@@ -14,7 +14,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using ClassLibrary;
 using System.Threading.Tasks;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     class CreateUser_Dialog:DialogFragment
     {
@@ -110,14 +110,15 @@ namespace BambuShootProject.Droid
                 try
                 {
                     await UserTable.InsertAsync(Userinformation);
+
                     UserTableItems.Add(Userinformation);
                 }
                 catch(Exception ex)
                 {
                     Console.Write(ex);
                 }
-
-            this.Dismiss();
+                Toast.MakeText(this.Activity, "User Added", ToastLength.Short).Show();
+                this.Dismiss();
           }
      
         }

@@ -1,18 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Bambú Shoot</string>
-  <string name="username">User Name</string>
-  <string name="image_title">Image Title</string>
-  <string name="location">Location</string>
-  <string name="name_species">Name of Species</string>
-  <string name="date_harvest">Date of Harvest</string>
-  <string name="threshold">Threshold</string>
+  <!--English-->
+  <string name="CreateUsertxt">Create a New User:</string>
+  <string name="usernameEdt">Enter Username:</string>
+  <string name="passwordEdt">Enter Password:</string>
+  <string name="CreateBtn">Create</string>
 
+  <string name="datetimetxtview">Date and Time</string>
+  <string name="usernametxtview">Username</string>
+  <string name="imagetitletxtview">Image Title</string>
+  <string name="locationtxtview">Location</string>
+  <string name="nameofspeciestxtview">Name of Species</string>
+  <string name="dateofharvesttxtview">Date of Harvest</string>
+  <string name="totalfibercounttxtview">Total Fiber Count</string>
+  <string name="totalfiberdensitytxtview">Total Fiber Density</string>
+  
+  
+  <string name="datareportvalues">Processed Image Values</string>
+  <string name="locationshow">Location:</string>
+  <string name="nameofspeciesshow">Name of Species:</string>
+  <string name="dateofharvestsshow">Date of Harvest:</string>
+  <string name="imagewidthshow">Image Width:</string>
+  <string name="imageheightshow">Image Height:</string>
+  <string name="thresholdshow">Threshold:</string>
+  <string name="colorfiltershow">Color Filter:</string>
+  <string name="resultstitle">Data Results</string>
+  <string name="fibercounttitle">Fiber Count</string>
+  <string name="fiberdensitysegtitle">FDensity of Seg</string>
+  <string name="fiberdensitytotaltitle">FDensity Seg/TPixels</string>
+  <string name="seg1title">Segment1</string>
+  <string name="seg2title">Segment2</string>
+  <string name="seg3title">Segment3</string>
+  <string name="seg4title">Segment4</string>
+  <string name="seg5title">Segment5</string>
+  <string name="seg6title">Segment6</string>
+  <string name="seg7title">Segment7</string>
+  <string name="seg8title">Segment8</string>
+  <string name="seg9title">Segment9</string>
+  <string name="seg10title">Segment10</string>
+  <string name="commenttitle">Comments:</string>
+  <string name="share">Share</string>
+  <string name="saveinternal">Save</string>
+  <string name="databaseadd">Upload DB</string>
+  <string name="returntoMM">Return to Main Menu</string>
+  
+  
+  <string name="rotateBtn">Rotate 90 degrees</string>
+  <string name="GSRadioBtn">Grayscale (Adaptive Threshold) Better</string>
+  <string name="BWRadioBtn">Black and White (Threshold)</string>
   <string name="threshold_placeholder">Enter Threshold (0-255) </string>
-  <string name="username_placeholder">Enter User Name </string>
+  <string name="previewBtn">Preview</string>
+  <string name="processimageBtn">Process</string>
+  
+  <string name="Instructions">Instructions:</string>
+  <string name="addImageBtn">Select Image to Process</string>
   <string name="imagetitle_placeholder">Enter Image Title </string>
   <string name="location_placeholder">Enter Location</string>
   <string name="name_species_placeholder">Enter Name of Species</string>
   <string name="date_harvest_placeholder">Enter Date of Harvest</string>
+  
+  <string name="harvestdate">Pick Harvest Date:</string>
+  <string name="Noimageselected">Image not Selected</string>
+  <string name="loadimageBtn">Load</string>
+  <string name="CreateUserBtn">Create New User</string>
+  
+  <string name="instructionsbtn">Instructions</string>
+  <string name="processnewimagebtn">Process New Image</string>
+  <string name="mydatareportlibrarybtn">My Data Report Library</string>
+  <string name="databasebtn">Database</string>
+  
+  <string name="ValidateUsertxt">Validate User:</string>
+  <string name="ValidateBtn">Validate</string>
+  
+  <string name="app_name">Bambú Shoot</string>
+
+
+
   
 </resources>

@@ -29,29 +29,39 @@
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="100">
+                    android:layout_weight="210">
+                    <TextView
+                        android:id="@+id/datetimetxtview"
+                        android:text="@string/datetimetxtview"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="35"
+                        android:gravity="center"
+                        android:textColor="#333333"
+                        android:paddingRight="50dip"
+                        android:paddingLeft="30dip" />
                     <TextView
                         android:id="@+id/usernametxtview"
-                        android:text="Username"
+                        android:text="@string/usernametxtview"
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
                         android:layout_weight="20"
                         android:gravity="center"
                         android:textColor="#333333"
-                        android:paddingRight="10dip"
+                        android:paddingRight="20dip"
                         android:paddingLeft="10dip" />
                     <TextView
                         android:id="@+id/imagetitletxtview"
-                        android:text="Image Title"
+                        android:text="@string/imagetitletxtview"
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
-                        android:layout_weight="20"
-                        android:paddingRight="10dip"
+                        android:layout_weight="25"
+                        android:paddingRight="20dip"
                         android:gravity="center"
                         android:textColor="#333333" />
                     <TextView
                         android:id="@+id/locationtxtview"
-                        android:text="Location"
+                        android:text="@string/locationtxtview"
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
                         android:layout_weight="20"
@@ -60,7 +70,7 @@
                         android:textColor="#333333" />
                     <TextView
                         android:id="@+id/nameofspeciestxtview"
-                        android:text="Name of Species"
+                        android:text="@string/nameofspeciestxtview"
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
                         android:layout_weight="20"
@@ -69,12 +79,30 @@
                         android:textColor="#333333" />
                     <TextView
                         android:id="@+id/dateofharvesttxtview"
-                        android:text="Date of Harvest"
+                        android:text="@string/dateofharvesttxtview"
                         android:layout_height="match_parent"
                         android:layout_width="wrap_content"
                         android:layout_weight="20"
                         android:paddingRight="10dip"
                         android:paddingLeft="10dip"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/totalfibercounttxtview"
+                        android:text="@string/totalfibercounttxtview"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="25"
+                        android:paddingRight="10dip"
+                        android:gravity="center"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/totalfiberdensitytxtview"
+                        android:text="@string/totalfiberdensitytxtview"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="25"
+                        android:paddingRight="10dip"
                         android:gravity="center"
                         android:textColor="#333333" />
                 </LinearLayout>

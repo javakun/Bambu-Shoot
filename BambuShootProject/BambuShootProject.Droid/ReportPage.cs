@@ -24,7 +24,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using Android.Net;
 using Android.Preferences;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
 
     [Activity(Label = "Data Report", ConfigurationChanges = ConfigChanges.Locale | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -108,7 +108,6 @@ namespace BambuShootProject.Droid
         // Create the client instance, using the mobile app backend URL.
         private MobileServiceClient client;
 
-        private MobileServiceCollection<Reports, Reports> ReportsTableItems;
         private IMobileServiceTable<Reports> ReportsTable;
         
         protected override void OnCreate(Bundle bundle)
@@ -321,43 +320,76 @@ namespace BambuShootProject.Droid
 
         protected override void OnDestroy()
         {
+            base.OnDestroy();
+            LoadedImage.SetImageBitmap(null);
             LoadedImage.Dispose();
-            EditedImage.Dispose();
-            loadedimgbmp.Dispose();
-            editedimgbmp.Dispose();
-            Segment1.Dispose();
-            Segment2.Dispose();
-            Segment3.Dispose();
-            Segment4.Dispose();
-            Segment5.Dispose();
-            Segment6.Dispose();
-            Segment7.Dispose();
-            Segment8.Dispose();
-            Segment9.Dispose();
-            Segment10.Dispose();
-
             LoadedImage = null;
+
+            EditedImage.SetImageBitmap(null);
+            EditedImage.Dispose();
             EditedImage = null;
+
+            loadedimgbmp.Recycle();
+            loadedimgbmp.Dispose();
             loadedimgbmp = null;
+
+            editedimgbmp.Recycle();
+            editedimgbmp.Dispose();
             editedimgbmp = null;
 
+            Segment1.SetImageBitmap(null);
+            Segment1.Dispose();
             Segment1 = null;
+
+            Segment2.SetImageBitmap(null);
+            Segment2.Dispose();
             Segment2 = null;
+
+            Segment3.SetImageBitmap(null);
+            Segment3.Dispose();
             Segment3 = null;
+
+            Segment4.SetImageBitmap(null);
+            Segment4.Dispose();
             Segment4 = null;
+
+            Segment5.SetImageBitmap(null);
+            Segment5.Dispose();
             Segment5 = null;
+
+            Segment6.SetImageBitmap(null);
+            Segment6.Dispose();
             Segment6 = null;
+
+            Segment7.SetImageBitmap(null);
+            Segment7.Dispose();
             Segment7 = null;
+
+            Segment8.SetImageBitmap(null);
+            Segment8.Dispose();
             Segment8 = null;
+
+            Segment9.SetImageBitmap(null);
+            Segment9.Dispose();
             Segment9 = null;
+
+            Segment10.SetImageBitmap(null);
+            Segment10.Dispose();
             Segment10 = null;
+
         }
         private void ReturnMM_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MainActivity));
             this.StartActivity(intent);
+           
         }
-
+        public override void OnBackPressed()
+        {
+            var intent = new Intent(this, typeof(MainActivity))
+                    .SetFlags(ActivityFlags.ReorderToFront);
+            StartActivity(intent);
+        }
         private void DBAdd_Click(object sender, EventArgs e)
         {
             try
@@ -416,16 +448,13 @@ namespace BambuShootProject.Droid
 
                 FinalReport.Id = count.ToString();
                 FinalReport.Userid = RegisteredUser.Id;
-
+                FinalReport.DateUtc = DateTime.UtcNow;
                 try
                 {
 
                     await ReportsTable.InsertAsync(FinalReport);
 
                     Toast.MakeText(this, "User Valid, Report Added", ToastLength.Long).Show();
-
-                    ReportsTableItems.Add(FinalReport);
-
                     
                 }
                 catch (Exception ex)

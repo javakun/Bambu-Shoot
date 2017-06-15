@@ -16,7 +16,7 @@ using System.IO;
 using Plugin.Media.Abstractions;
 using static Android.Graphics.BitmapFactory;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     public class ReportListAdapter : BaseAdapter<ReportsLib>
     {
@@ -24,7 +24,7 @@ namespace BambuShootProject.Droid
         int layoutResourceId;
         List<ReportsLib> reports;
         Bitmap smalloriginalbmp;
-        int positioncurrent;
+
 
         public ReportListAdapter(Activity activity, int layoutResourceId, List<ReportsLib> listreports)
         {
@@ -36,7 +36,6 @@ namespace BambuShootProject.Droid
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var row = convertView;
-            var currentItem = this[position];
 
             if (row == null)
             {
@@ -44,7 +43,6 @@ namespace BambuShootProject.Droid
                 row = inflater.Inflate(layoutResourceId, parent, false);
             }
 
-            positioncurrent = position;
             ImageView Loadedimage = row.FindViewById<ImageView>(Resource.Id.loadedimgshow);
             //Resize Image
             //  smalloriginalbmp = Bitmap.CreateScaledBitmap(BitmapFactory.DecodeFile(reports[position].originalimagepath), 150, 150, false);
@@ -67,21 +65,27 @@ namespace BambuShootProject.Droid
 
 
             Button Open = row.FindViewById<Button>(Resource.Id.openpdf);
-            Open.Click += Open_Click;
+            Open.Click += (sender, args) =>
+            {
+               OpenFile(reports[position].pdfpath);
+            };
             Button Share = row.FindViewById<Button>(Resource.Id.sharepdf);
-            Share.Click += Share_Click;
+            Share.Click += (sender, args) =>
+            {
+                CrossShareFile.Current.ShareLocalFile(reports[position].pdfpath);
+            };
 
             Button Delete = row.FindViewById<Button>(Resource.Id.deletereport);
-            Delete.Click += Delete_Click;
+            Delete.Click += (sender, args) =>
+            {
+                DeleteRep(position);
+            };
+
 
             return row;
 
         }
 
-        private void Open_Click(object sender, EventArgs e)
-        {
-            OpenFile(reports[positioncurrent].pdfpath);
-        }
         public void OpenFile(string filePath)
         {
 
@@ -136,7 +140,7 @@ namespace BambuShootProject.Droid
             }
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void DeleteRep(int position)
         {
 
             string line = null;
@@ -151,7 +155,7 @@ namespace BambuShootProject.Droid
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (!line.Contains(reports[positioncurrent].originalimagepath))
+                        if (!line.Contains(reports[position].originalimagepath))
                         {
                             writer.WriteLine(line);
                         }
@@ -172,7 +176,7 @@ namespace BambuShootProject.Droid
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (!line.Contains(reports[positioncurrent].pdfpath))
+                        if (!line.Contains(reports[position].pdfpath))
                         {
                             writer.WriteLine(line);
                         }
@@ -191,7 +195,7 @@ namespace BambuShootProject.Droid
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (!line.Contains(reports[positioncurrent].imagetitle))
+                        if (!line.Contains(reports[position].imagetitle))
                         {
                             writer.WriteLine(line);
                         }
@@ -199,13 +203,8 @@ namespace BambuShootProject.Droid
                 }
             }
             System.IO.File.Copy(temp3, filename3, true);
-            Directory.Delete(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/" + reports[positioncurrent].imagetitle, true);
+            Directory.Delete(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath + "/BambuShoot/" + reports[position].imagetitle, true);
             this.activity.Recreate();
-        }
-
-        private void Share_Click(object sender, EventArgs e)
-        {
-            CrossShareFile.Current.ShareLocalFile(reports[positioncurrent].pdfpath);
         }
 
         public override ReportsLib this[int position]

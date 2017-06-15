@@ -13,57 +13,84 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="1">
-          <LinearLayout
-              android:orientation="horizontal"
-              android:layout_width="fill_parent"
-              android:layout_height="50dp"
-              android:weightSum="100">
-            <TextView
-                android:id="@+id/txtUsername"
-                android:text="Username"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="20"
-                android:padding="10dip"
-                android:gravity="left"
-                android:textColor="#333333" />
-            <TextView
-                android:id="@+id/txtImageTitle"
-                android:text="Image Title"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="20"
-                android:padding="10dip"
-                android:gravity="left"
-                android:textColor="#333333" />
-            <TextView
-                android:id="@+id/txtLocation"
-                android:text="Location"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="20"
-                android:padding="10dip"
-                android:gravity="left"
-                android:textColor="#333333" />
-            <TextView
-                android:id="@+id/txtNameofspecies"
-                android:text="Name of Species"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="20"
-                android:padding="10dip"
-                android:gravity="left"
-                android:textColor="#333333" />
-            <TextView
-                android:id="@+id/txtDateofHarvest"
-                android:text="Date of Harvest"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="20"
-                android:padding="10dip"
-                android:gravity="left"
-                android:textColor="#333333" />
-          </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:weightSum="160">
+                <TextView
+                    android:id="@+id/txtDatetime"
+                    android:text="Date Time"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtUsername"
+                    android:text="Username"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtImageTitle"
+                    android:text="Image Title"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:text="Location"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtNameofspecies"
+                    android:text="Name of Species"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtDateofHarvest"
+                    android:text="Date of Harvest"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtTotalCountFiber"
+                    android:text="Total Fiber Count"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/txtTotalDensityFiber"
+                    android:text="Total Fiber Density"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:padding="10dip"
+                    android:gravity="left"
+                    android:textColor="#333333" />
+            </LinearLayout>
         </TableLayout>
     </ScrollView>
 </LinearLayout>

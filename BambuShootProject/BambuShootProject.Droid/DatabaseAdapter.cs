@@ -10,8 +10,9 @@ using Android.Views;
 using Android.Widget;
 using ClassLibrary;
 using Android.Graphics;
+using Java.Lang;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     public class DatabaseAdapter : BaseAdapter<Reports>
     {
@@ -30,8 +31,7 @@ namespace BambuShootProject.Droid
         public override View GetView (int position, View convertView, ViewGroup parent)
         {
             var row = convertView;
-            var currentItem = this [position];
-
+     
             if (row == null)
             {
                 var inflater = activity.LayoutInflater;
@@ -40,23 +40,24 @@ namespace BambuShootProject.Droid
             
             row.SetBackgroundColor(GetColorFromInteger(gAlternatingColors[position % gAlternatingColors.Length]));
 
-          //  int userreport = reports[position].userid;
+           int userreport = int.Parse(reports[position].Userid)-1 ;
 
             TextView username = row.FindViewById<TextView>(Resource.Id.txtUsername);
-            //username.Text = users[userreport].username;
-            username.Text = reports[position].Userid;
-
             TextView imagetitle = row.FindViewById<TextView>(Resource.Id.txtImageTitle);
-            imagetitle.Text = reports[position].Imagetitle;
-
             TextView location = row.FindViewById<TextView>(Resource.Id.txtLocation);
-            location.Text = reports[position].Location;
-
             TextView nameofspecies = row.FindViewById<TextView>(Resource.Id.txtNameofspecies);
-            nameofspecies.Text = reports[position].Nameofspecies;
-
             TextView dateofharvest = row.FindViewById<TextView>(Resource.Id.txtDateofHarvest);
+            TextView datetime = row.FindViewById<TextView>(Resource.Id.txtDatetime);
+            TextView totalcountfiber = row.FindViewById<TextView>(Resource.Id.txtTotalCountFiber);
+            TextView totalfiberdensity = row.FindViewById<TextView>(Resource.Id.txtTotalDensityFiber);
+            username.Text = users[userreport].Username; 
+            imagetitle.Text = reports[position].Imagetitle;
+            location.Text = reports[position].Location;
+            nameofspecies.Text = reports[position].Nameofspecies;
             dateofharvest.Text = reports[position].Dateofharvest;
+            datetime.Text = reports[position].DateUtc.ToString();
+            totalcountfiber.Text = reports[position].TotalSegCount.ToString();
+            totalfiberdensity.Text = (System.Math.Round(reports[position].TotalFiberDensity,6)*100).ToString()+"%";
 
             if ((position % 2) == 1)
             {
@@ -66,6 +67,9 @@ namespace BambuShootProject.Droid
                 location.SetTextColor(Color.White);
                 nameofspecies.SetTextColor(Color.White);
                 dateofharvest.SetTextColor(Color.White);
+                datetime.SetTextColor(Color.White);
+                totalcountfiber.SetTextColor(Color.White);
+                totalfiberdensity.SetTextColor(Color.White);
             }
 
             else
@@ -76,6 +80,9 @@ namespace BambuShootProject.Droid
                 location.SetTextColor(Color.Black);
                 nameofspecies.SetTextColor(Color.Black);
                 dateofharvest.SetTextColor(Color.Black);
+                datetime.SetTextColor(Color.Black);
+                totalcountfiber.SetTextColor(Color.Black);
+                totalfiberdensity.SetTextColor(Color.Black);
             }
 
             return row;

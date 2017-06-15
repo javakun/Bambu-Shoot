@@ -1,18 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Bambú Shoot</string>
-  <string name="username">Nombre de Usuario</string>
-  <string name="image_title">Image Title</string>
-  <string name="location">Location</string>
-  <string name="name_species">Name of Species</string>
-  <string name="date_harvest">Date of Harvest</string>
-  <string name="threshold">Threshold</string>
+  <!--Spanish-->
+  <string name="CreateUsertxt">Crea un nuevo usuario:</string>
+  <string name="usernameEdt">Nombre de usuario:</string>
+  <string name="passwordEdt">Contraseña:</string>
+  <string name="CreateBtn">Crear</string>
 
-  <string name="threshold_placeholder">Enter Threshold (0-255) </string>
-  <string name="username_placeholder">Enter User Name </string>
-  <string name="imagetitle_placeholder">Enter Image Title </string>
-  <string name="location_placeholder">Enter Location</string>
-  <string name="name_species_placeholder">Enter Name of Species</string>
-  <string name="date_harvest_placeholder">Enter Date of Harvest</string>
-  
+  <string name="datetimetxtview">Fecha y Hora</string>
+  <string name="usernametxtview">Nombre de Usuario</string>
+  <string name="imagetitletxtview">Título de la imagen</string>
+  <string name="locationtxtview">Ubicación</string>
+  <string name="nameofspeciestxtview">Nombre de la especie</string>
+  <string name="dateofharvesttxtview">Fecha de cosecha</string>
+  <string name="totalfibercounttxtview">Cantidad Total de Fibra</string>
+  <string name="totalfiberdensitytxtview">Densidad Total de Fibra</string>
+
+  <!--ToDo-->
+
+  <string name="datareportvalues">Valores de imagen procesados</string>
+  <string name="locationshow">Ubicación:</string>
+  <string name="nameofspeciesshow">Nombre de la especie:</string>
+  <string name="dateofharvestsshow">Fecha de cosecha:</string>
+  <string name="imagewidthshow">Ancho de la imagen:</string>
+  <string name="imageheightshow">Altura de imagen:</string>
+  <string name="thresholdshow">Límite:</string>
+  <string name="colorfiltershow">Filtro de color:</string>
+  <string name="resultstitle">Resultados de los datos</string>
+  <string name="fibercounttitle">Cuenta de fibra</string>
+  <string name="fiberdensitysegtitle">FDen del seg</string>
+  <string name="fiberdensitytotaltitle">FDen del Seg/píx.tot</string>
+  <string name="seg1title">Segmento1</string>
+  <string name="seg2title">Segmento2</string>
+  <string name="seg3title">Segmento3</string>
+  <string name="seg4title">Segmento4</string>
+  <string name="seg5title">Segmento5</string>
+  <string name="seg6title">Segmento6</string>
+  <string name="seg7title">Segmento7</string>
+  <string name="seg8title">Segmento8</string>
+  <string name="seg9title">Segmento9</string>
+  <string name="seg10title">Segmento10</string>
+  <string name="commenttitle">Comentarios:</string>
+  <string name="share">Compartir</string>
+  <string name="saveinternal">Guardar</string>
+  <string name="databaseadd">Cargar DB</string>
+  <string name="returntoMM">Regresar al menú principal</string>
+
+
+  <string name="rotateBtn">Rotar 90 grados</string>
+  <string name="GSRadioBtn">Escala de grises (umbral adaptativo) mejor</string>
+  <string name="BWRadioBtn">Blanco y negro (Umbral)</string>
+  <string name="threshold_placeholder">Introduzca el umbral (0-255)</string>
+  <string name="previewBtn">Muestra</string>
+  <string name="processimageBtn">Procesar</string>
+
+  <string name="Instructions">Instrucciones:</string>
+  <string name="addImageBtn">Seleccione la imagen para procesar</string>
+  <string name="imagetitle_placeholder">Ingrese el título de la imagen</string>
+  <string name="location_placeholder">Ingresar la ubicación</string>
+  <string name="name_species_placeholder">Introduzca el Nombre de la Especie</string>
+  <string name="date_harvest_placeholder">Introduzca la Fecha de Cosecha</string>
+
+  <string name="harvestdate">Pick Fecha de cosecha:</string>
+  <string name="Noimageselected">Imagen no seleccionada</string>
+  <string name="loadimageBtn">Cargar</string>
+  <string name="CreateUserBtn">Crear nuevo usuario</string>
+
+  <string name="instructionsbtn">Instrucciones</string>
+  <string name="processnewimagebtn">Procesar nueva imagen</string>
+  <string name="mydatareportlibrarybtn">Mi biblioteca de informes de datos</string>
+  <string name="databasebtn">Base de datos</string>
+
+  <string name="ValidateUsertxt">Validar Usuario:</string>
+  <string name="ValidateBtn">Validar</string>
+
+  <string name="app_name">Bambú Shoot</string>
+
+
+
 </resources>

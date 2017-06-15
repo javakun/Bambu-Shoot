@@ -14,7 +14,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using ClassLibrary;
 using System.Threading.Tasks;
 
-namespace BambuShootProject.Droid
+namespace com.BambuShoot.droid
 {
     public class OnValidateEventArgs : EventArgs
     {
