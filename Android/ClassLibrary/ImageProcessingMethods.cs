@@ -24,14 +24,17 @@ namespace ClassLibrary
         double[] densitysegs;
         double totaldensity;
 
+        // Color Filtering Method
         public Bitmap BWandGrayScaleFiltering(String filepath, int threshold, bool colorfiltermode)
         {
+            // Default Threshold value
             int thresholdDef;
             if (threshold == 0)
                 thresholdDef = 165;
             else
                 thresholdDef = threshold;
 
+            //Read Image File
             Mat img = CvInvoke.Imread(filepath , Emgu.CV.CvEnum.ImreadModes.AnyColor);
             int width = img.Width;
             int height = img.Height;
@@ -39,13 +42,15 @@ namespace ClassLibrary
             Mat dest3 = new Mat();
             Mat dest2 = new Mat();
 
+            //Decolor Image to create Grayscale
             CvInvoke.Decolor(img, dest, dest2);
+            //Threshold Image to create BW
             CvInvoke.Threshold(dest, dest3, thresholdDef, 255, 0);
 
             Image<Gray, byte> imggray = dest.ToImage<Gray, Byte>();
             Image<Gray, byte> imgbw = dest3.ToImage<Gray, Byte>();
 
-
+            //Return image by filter selected
             if (colorfiltermode == true)
             {          
                 resultingfilter = imggray.ToBitmap();
@@ -58,6 +63,7 @@ namespace ClassLibrary
             return resultingfilter;
         }
 
+        //Fiber Density Method 
         public ImgProcessData FiberDensity(String filepath, bool filter)
         {
             segmentos = new Bitmap[11];
@@ -76,6 +82,8 @@ namespace ClassLibrary
             Mat dest = new Mat();
             Mat dest3 = new Mat();
             Mat dest2 = new Mat();
+
+            // Create Segments
             System.Drawing.Rectangle seg = new System.Drawing.Rectangle(0, 0, slice, height);
             System.Drawing.Rectangle seg1 = new System.Drawing.Rectangle(slice, 0, slice, height);
             System.Drawing.Rectangle seg2 = new System.Drawing.Rectangle(slice * 2, 0, slice, height);
@@ -89,7 +97,7 @@ namespace ClassLibrary
 
             if (filter)
             {
-                //Grayscale image
+                //Grayscale image. Use AdaptiveThreshold 
                 CvInvoke.AdaptiveThreshold(imgsrc, dest3, 255, Emgu.CV.CvEnum.AdaptiveThresholdType.MeanC, Emgu.CV.CvEnum.ThresholdType.Binary, 251, 1);
             }
             else
@@ -98,6 +106,7 @@ namespace ClassLibrary
                 dest3 = imgsrc;
             }
 
+            //Count White pixels and substract from the total image size  = Total Fiber Count
             countf = CvInvoke.CountNonZero(dest3);
             countf = imgsrc.Total.ToInt32() - countf;
 
@@ -138,7 +147,7 @@ namespace ClassLibrary
             segmentos[9] = canto8.ToBitmap();
             segmentos[10] = canto9.ToBitmap();
 
-            //Counts the # of Matrix
+            //Counts the # of white pixels - Segment size = Count of the segment
             count = CvInvoke.CountNonZero(imgseg);
             count1 = CvInvoke.CountNonZero(imgseg1);
             count2 = CvInvoke.CountNonZero(imgseg2);
@@ -161,6 +170,7 @@ namespace ClassLibrary
             segmentcounts[9] = imgseg8.Total.ToInt32() - count8;
             segmentcounts[10] = imgseg9.Total.ToInt32() - count9;
 
+            //Calculate the density: Seg Count / Seg Size
             densitysegs[1] = (double) segmentcounts[1] / (canto.Height * canto.Width);
             densitysegs[2] = (double) segmentcounts[2] / (canto1.Height * canto1.Width);
             densitysegs[3] = (double) segmentcounts[3] / (canto2.Height * canto2.Width);
@@ -172,7 +182,10 @@ namespace ClassLibrary
             densitysegs[9] = (double) segmentcounts[9] / (canto8.Height * canto8.Width);
             densitysegs[10] = (double) segmentcounts[10] / (canto9.Height * canto9.Width);
 
+            //Calulate total density: Total Count/ Image Size
             totaldensity = (double) countf / (imgsrc.Height * imgsrc.Width);
+
+            //Pass Data by Model
             ImgProcessData Alldata = new ImgProcessData()
             {
                 Segments = segmentos,

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -39,7 +38,9 @@ namespace com.BambuShoot.droid
             base.OnCreateView(inflater, container, savedInstanceState);
             var view = inflater.Inflate(Resource.Layout.CreateUser, container, false);  // creates the dialog layout in the view 
 
+            //initiate Client
             client = new MobileServiceClient(applicationURL);
+            //Get User Table from client
             UserTable = client.GetTable<Users>();
 
             gUsername = view.FindViewById<EditText>(Resource.Id.usernameEdt);
@@ -68,13 +69,14 @@ namespace com.BambuShoot.droid
                 gPassword.Error = "Empty Password";
                 somethingempty = true;
             }
-            //Add here Validation of Username and Password
+            //Validation of Username and Password
 
             Validating = new Users();
             Validating.Username = gUsername.Text;
 
             for (int i = 0; i < UserList.Count; i++)
             {
+                //Check on list for taken username
                 if (UserList.ElementAt<Users>(i).Username.Equals(Validating.Username))
                 {
                     gUsername.FindFocus();
@@ -94,8 +96,9 @@ namespace com.BambuShoot.droid
         }
         private async void GCreateBtn_Click(object sender, EventArgs e)
         {
-           
+           //Refresh List
             await RefreshUserItems();
+            //Turn table into List
             UserList = await UserTable.ToListAsync();
 
             if ( verifyData(gUsername.Text, gPassword.Text) == false) { 
